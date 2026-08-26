@@ -17,6 +17,7 @@ import { Route as MenuRouteImport } from './routes/menu'
 import { Route as OperationsRouteImport } from './routes/operations'
 import { Route as PeopleRouteImport } from './routes/people'
 import { Route as ProductRouteImport } from './routes/product'
+import { Route as ReputationRouteImport } from './routes/reputation'
 import { Route as TrucksRouteImport } from './routes/trucks'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const ProductRoute = ProductRouteImport.update({
   path: '/product',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReputationRoute = ReputationRouteImport.update({
+  id: '/reputation',
+  path: '/reputation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TrucksRoute = TrucksRouteImport.update({
   id: '/trucks',
   path: '/trucks',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/operations': typeof OperationsRoute
   '/people': typeof PeopleRoute
   '/product': typeof ProductRoute
+  '/reputation': typeof ReputationRoute
   '/trucks': typeof TrucksRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/operations': typeof OperationsRoute
   '/people': typeof PeopleRoute
   '/product': typeof ProductRoute
+  '/reputation': typeof ReputationRoute
   '/trucks': typeof TrucksRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/operations': typeof OperationsRoute
   '/people': typeof PeopleRoute
   '/product': typeof ProductRoute
+  '/reputation': typeof ReputationRoute
   '/trucks': typeof TrucksRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/operations'
     | '/people'
     | '/product'
+    | '/reputation'
     | '/trucks'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/operations'
     | '/people'
     | '/product'
+    | '/reputation'
     | '/trucks'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/operations'
     | '/people'
     | '/product'
+    | '/reputation'
     | '/trucks'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   OperationsRoute: typeof OperationsRoute
   PeopleRoute: typeof PeopleRoute
   ProductRoute: typeof ProductRoute
+  ReputationRoute: typeof ReputationRoute
   TrucksRoute: typeof TrucksRoute
 }
 
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reputation': {
+      id: '/reputation'
+      path: '/reputation'
+      fullPath: '/reputation'
+      preLoaderRoute: typeof ReputationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/trucks': {
       id: '/trucks'
       path: '/trucks'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   OperationsRoute: OperationsRoute,
   PeopleRoute: PeopleRoute,
   ProductRoute: ProductRoute,
+  ReputationRoute: ReputationRoute,
   TrucksRoute: TrucksRoute,
 }
 export const routeTree = rootRouteImport
