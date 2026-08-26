@@ -254,13 +254,15 @@ function DigitalPage() {
             >
               zaki-hub-fresh-fast.lovable.app
             </a>
-            <div className="mt-4">
-              <AssetPlaceholder label="Proposed website mockup" batch="Batch 6" ratio="4/3" />
-            </div>
             <div className="mt-3">
               <Pill tone="gold">Conceptual future state — not live Zaki property</Pill>
             </div>
           </Panel>
+        </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          <AssetFrame label="Website prototype — homepage" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
+          <AssetFrame label="Website prototype — menu" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
+          <AssetFrame label="Website prototype — catering" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
         </div>
       </Section>
     </div>
