@@ -33,10 +33,14 @@ export const Route = createFileRoute("/digital")({
   component: DigitalPage,
 });
 
-function Evidence({ label, batch, problem, recommended }: { label: string; batch: string; problem: string; recommended: string }) {
+function Evidence({ label, batch, problem, recommended, src, alt }: { label: string; batch: string; problem: string; recommended: string; src?: string; alt?: string }) {
   return (
     <div className="rounded-lg border border-border bg-card p-5 shadow-card">
-      <AssetPlaceholder label={label} batch={batch} ratio="16/10" />
+      {src ? (
+        <AssetFrame label={label} batch={batch} src={src} alt={alt ?? label} ratio="16/10" type="evidence" />
+      ) : (
+        <AssetPlaceholder label={label} batch={batch} ratio="16/10" />
+      )}
       <div className="mt-4 space-y-3">
         <div>
           <p className="eyebrow">Problem / opportunity</p>
