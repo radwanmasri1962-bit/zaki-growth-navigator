@@ -14,6 +14,8 @@ import {
   Table,
 } from "@/components/dash/primitives";
 import chickenBowl from "@/assets/chicken-bowl.webp.asset.json";
+import { AssetFrame } from "@/components/dash/primitives";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/")({
   head: () => ({
