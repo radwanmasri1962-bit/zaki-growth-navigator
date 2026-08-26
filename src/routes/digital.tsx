@@ -172,12 +172,16 @@ function DigitalPage() {
           <Evidence
             label="Instagram profile & grid"
             batch="Batch 4"
+            src={zakiAssets.instagramProfile}
+            alt="Zaki Grill Instagram profile with bio, follower count and post grid"
             problem="Inconsistent visual presentation and unclear calls to action; truck locations not reliably communicated."
             recommended="Content calendar, consistent grid, truck-location posts, catering call to action."
           />
           <Evidence
             label="Facebook page"
             batch="Batch 4"
+            src={zakiAssets.facebookPage}
+            alt="Zaki Grill Facebook page with details, recommendations and location posts"
             problem="Duplicate information risk and unclear ordering path."
             recommended="Aligned information, direct ordering link, events and catering promotion."
           />
