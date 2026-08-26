@@ -41,7 +41,7 @@ type Module = {
 };
 
 const MODULES: Module[] = [
-  { id: "discovery", name: "Diagnostic & discovery", area: "Foundation", project: 2500, retainer: 0, note: "Founder sessions, on-site observation, baseline data pack." },
+  { id: "discovery", name: "Complimentary strategic diagnostic", area: "Foundation", project: 0, retainer: 0, note: "Founder sessions, on-site observation, baseline data pack. Client price $0 — JARA goodwill investment." },
   { id: "recipes", name: "Recipe standardization", area: "Product", project: 3200, retainer: 350, note: "Recipe cards, portioning, taste-consistency controls." },
   { id: "sops", name: "SOP & operations manual", area: "Operations", project: 4200, retainer: 450, note: "Priority SOP set across kitchen, hygiene, cash, trucks." },
   { id: "training", name: "Training system", area: "People", project: 3000, retainer: 400, note: "Onboarding path, role training, verification checklists." },
@@ -85,6 +85,21 @@ function PricingPage() {
         intro="Internal commercial architecture for the JARA AI engagement with Zaki Grill. Figures are working scenario inputs for Radwan's own modelling — not a client-issued quote."
         internal
       />
+
+      <Section title="Complimentary Strategic Diagnostic" kicker="JARA goodwill investment">
+        <Panel eyebrow="Client price $0" title="Discovery & validation is not charged" tone="gold">
+          <p className="text-sm leading-relaxed">
+            The diagnostic phase — founder sessions, on-site observation, channel and menu capture,
+            digital and reputation evidence collection and the verified baseline data pack — is
+            delivered at no charge as a JARA AI goodwill investment in the relationship.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <Pill tone="gold">Complimentary strategic diagnostic</Pill>
+            <Pill tone="green">Client price $0</Pill>
+            <Pill tone="warn">Internal: real delivery cost still carried by JARA</Pill>
+          </div>
+        </Panel>
+      </Section>
 
       <Section title="Structure Options" kicker="Model design">
         <div className="grid gap-4 lg:grid-cols-3">
