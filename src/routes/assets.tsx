@@ -82,6 +82,44 @@ const BATCHES: { batch: string; name: string; items: string[]; status: "Partial"
   },
 ];
 
+
+type RegisterRow = {
+  name: string;
+  category: string;
+  page: string;
+  status: "Deployed" | "Available" | "Pending upload";
+  source: "Type A — Zaki evidence" | "Type B — JARA concept";
+  verified: boolean;
+  batch: string;
+  updated: string;
+};
+
+const REGISTER: RegisterRow[] = [
+  { name: "Zaki wordmark (cleaned)", category: "Brand", page: "Header, Client view", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 1", updated: "Latest update" },
+  { name: "JARA AI logo (light / dark)", category: "Brand", page: "Footer, Client view", status: "Deployed", source: "Type B — JARA concept", verified: true, batch: "Batch 1", updated: "Latest update" },
+  { name: "Budd Dairy location", category: "Location", page: "Business, Overview", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 3", updated: "Latest update" },
+  { name: "Chicken bowl", category: "Product", page: "Overview, Product, Menu", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 2", updated: "Latest update" },
+  { name: "Chicken shawarma", category: "Product", page: "Product, Catering", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 2", updated: "Latest update" },
+  { name: "Professional food photography library", category: "Product", page: "Product, Menu, Digital", status: "Available", source: "Type B — JARA concept", verified: false, batch: "Batch 2", updated: "Awaiting deployment" },
+  { name: "Worthington location", category: "Location", page: "Business", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
+  { name: "Food truck fleet", category: "Operations", page: "Business, Trucks", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
+  { name: "Kitchen / prep operation", category: "Operations", page: "Business, Operations", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
+  { name: "Counter / service operation", category: "Operations", page: "Business", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
+  { name: "Team at work", category: "People", page: "Business, People, Founder", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
+  { name: "Ahmed / founder portrait", category: "People", page: "Founder", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
+  { name: "Current physical menu / menu board", category: "Menu", page: "Menu", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 5", updated: "—" },
+  { name: "Current online menu", category: "Menu", page: "Menu, Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 5", updated: "—" },
+  { name: "Modifiers / options / ordering screen", category: "Menu", page: "Menu", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 5", updated: "—" },
+  { name: "Google Business Profile", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
+  { name: "DoorDash listing", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
+  { name: "Grubhub / Seamless listing", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
+  { name: "Yelp profile", category: "Digital", page: "Digital, Reputation", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
+  { name: "Instagram profile", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
+  { name: "Facebook page", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
+  { name: "Catering setup / tray", category: "Catering", page: "Catering", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 2", updated: "—" },
+  { name: "Website prototype screens", category: "Concept", page: "Digital", status: "Pending upload", source: "Type B — JARA concept", verified: false, batch: "Batch 6", updated: "—" },
+];
+
 function AssetsPage() {
   return (
     <div>
@@ -111,6 +149,23 @@ function AssetsPage() {
             </div>
           ))}
         </div>
+      </Section>
+
+      <Section title="Asset Deployment Register" kicker="Deployment tracking" description="Every asset position in the dashboard, its source type and its deployment status.">
+        <Table
+          head={["Asset name", "Category", "Page", "Status", "Source", "Verified", "Batch", "Last updated"]}
+          rows={REGISTER.map((r) => [
+            <span className="font-semibold">{r.name}</span>,
+            r.category,
+            r.page,
+            <Pill tone={r.status === "Deployed" ? "green" : r.status === "Available" ? "gold" : "warn"}>{r.status}</Pill>,
+            r.source,
+            r.verified ? <Pill tone="green">Verified</Pill> : <Pill tone="warn">Pending</Pill>,
+            r.batch,
+            r.updated,
+          ])}
+          caption="Type A — real Zaki evidence. Type B — JARA AI concept asset. Type C — GATIUM design reference (never used as Zaki content)."
+        />
       </Section>
 
       <Section title="Batch Status" kicker="Upload pipeline">
