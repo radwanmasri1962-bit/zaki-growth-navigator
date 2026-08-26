@@ -3,6 +3,7 @@ import {
   AssetPlaceholder,
   Bullets,
   Flow,
+  HubDiagram,
   KeyValue,
   Note,
   Panel,
