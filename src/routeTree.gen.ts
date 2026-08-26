@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BusinessRouteImport } from './routes/business'
+import { Route as CateringRouteImport } from './routes/catering'
+import { Route as DigitalRouteImport } from './routes/digital'
+import { Route as FounderRouteImport } from './routes/founder'
+import { Route as MenuRouteImport } from './routes/menu'
+import { Route as OperationsRouteImport } from './routes/operations'
+import { Route as OpportunitiesRouteImport } from './routes/opportunities'
+import { Route as PeopleRouteImport } from './routes/people'
+import { Route as ProductRouteImport } from './routes/product'
+import { Route as ReputationRouteImport } from './routes/reputation'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as SystemsRouteImport } from './routes/systems'
+import { Route as TrucksRouteImport } from './routes/trucks'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BusinessRoute = BusinessRouteImport.update({
+  id: '/business',
+  path: '/business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CateringRoute = CateringRouteImport.update({
+  id: '/catering',
+  path: '/catering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalRoute = DigitalRouteImport.update({
+  id: '/digital',
+  path: '/digital',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FounderRoute = FounderRouteImport.update({
+  id: '/founder',
+  path: '/founder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuRoute = MenuRouteImport.update({
+  id: '/menu',
+  path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperationsRoute = OperationsRouteImport.update({
+  id: '/operations',
+  path: '/operations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpportunitiesRoute = OpportunitiesRouteImport.update({
+  id: '/opportunities',
+  path: '/opportunities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PeopleRoute = PeopleRouteImport.update({
+  id: '/people',
+  path: '/people',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductRoute = ProductRouteImport.update({
+  id: '/product',
+  path: '/product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReputationRoute = ReputationRouteImport.update({
+  id: '/reputation',
+  path: '/reputation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SystemsRoute = SystemsRouteImport.update({
+  id: '/systems',
+  path: '/systems',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrucksRoute = TrucksRouteImport.update({
+  id: '/trucks',
+  path: '/trucks',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/business': typeof BusinessRoute
+  '/catering': typeof CateringRoute
+  '/digital': typeof DigitalRoute
+  '/founder': typeof FounderRoute
+  '/menu': typeof MenuRoute
+  '/operations': typeof OperationsRoute
+  '/opportunities': typeof OpportunitiesRoute
+  '/people': typeof PeopleRoute
+  '/product': typeof ProductRoute
+  '/reputation': typeof ReputationRoute
+  '/roadmap': typeof RoadmapRoute
+  '/systems': typeof SystemsRoute
+  '/trucks': typeof TrucksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/business': typeof BusinessRoute
+  '/catering': typeof CateringRoute
+  '/digital': typeof DigitalRoute
+  '/founder': typeof FounderRoute
+  '/menu': typeof MenuRoute
+  '/operations': typeof OperationsRoute
+  '/opportunities': typeof OpportunitiesRoute
+  '/people': typeof PeopleRoute
+  '/product': typeof ProductRoute
+  '/reputation': typeof ReputationRoute
+  '/roadmap': typeof RoadmapRoute
+  '/systems': typeof SystemsRoute
+  '/trucks': typeof TrucksRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/business': typeof BusinessRoute
+  '/catering': typeof CateringRoute
+  '/digital': typeof DigitalRoute
+  '/founder': typeof FounderRoute
+  '/menu': typeof MenuRoute
+  '/operations': typeof OperationsRoute
+  '/opportunities': typeof OpportunitiesRoute
+  '/people': typeof PeopleRoute
+  '/product': typeof ProductRoute
+  '/reputation': typeof ReputationRoute
+  '/roadmap': typeof RoadmapRoute
+  '/systems': typeof SystemsRoute
+  '/trucks': typeof TrucksRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/business'
+    | '/catering'
+    | '/digital'
+    | '/founder'
+    | '/menu'
+    | '/operations'
+    | '/opportunities'
+    | '/people'
+    | '/product'
+    | '/reputation'
+    | '/roadmap'
+    | '/systems'
+    | '/trucks'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/business'
+    | '/catering'
+    | '/digital'
+    | '/founder'
+    | '/menu'
+    | '/operations'
+    | '/opportunities'
+    | '/people'
+    | '/product'
+    | '/reputation'
+    | '/roadmap'
+    | '/systems'
+    | '/trucks'
+  id:
+    | '__root__'
+    | '/'
+    | '/business'
+    | '/catering'
+    | '/digital'
+    | '/founder'
+    | '/menu'
+    | '/operations'
+    | '/opportunities'
+    | '/people'
+    | '/product'
+    | '/reputation'
+    | '/roadmap'
+    | '/systems'
+    | '/trucks'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BusinessRoute: typeof BusinessRoute
+  CateringRoute: typeof CateringRoute
+  DigitalRoute: typeof DigitalRoute
+  FounderRoute: typeof FounderRoute
+  MenuRoute: typeof MenuRoute
+  OperationsRoute: typeof OperationsRoute
+  OpportunitiesRoute: typeof OpportunitiesRoute
+  PeopleRoute: typeof PeopleRoute
+  ProductRoute: typeof ProductRoute
+  ReputationRoute: typeof ReputationRoute
+  RoadmapRoute: typeof RoadmapRoute
+  SystemsRoute: typeof SystemsRoute
+  TrucksRoute: typeof TrucksRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/business': {
+      id: '/business'
+      path: '/business'
+      fullPath: '/business'
+      preLoaderRoute: typeof BusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catering': {
+      id: '/catering'
+      path: '/catering'
+      fullPath: '/catering'
+      preLoaderRoute: typeof CateringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital': {
+      id: '/digital'
+      path: '/digital'
+      fullPath: '/digital'
+      preLoaderRoute: typeof DigitalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/founder': {
+      id: '/founder'
+      path: '/founder'
+      fullPath: '/founder'
+      preLoaderRoute: typeof FounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu': {
+      id: '/menu'
+      path: '/menu'
+      fullPath: '/menu'
+      preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operations': {
+      id: '/operations'
+      path: '/operations'
+      fullPath: '/operations'
+      preLoaderRoute: typeof OperationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opportunities': {
+      id: '/opportunities'
+      path: '/opportunities'
+      fullPath: '/opportunities'
+      preLoaderRoute: typeof OpportunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/people': {
+      id: '/people'
+      path: '/people'
+      fullPath: '/people'
+      preLoaderRoute: typeof PeopleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product': {
+      id: '/product'
+      path: '/product'
+      fullPath: '/product'
+      preLoaderRoute: typeof ProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reputation': {
+      id: '/reputation'
+      path: '/reputation'
+      fullPath: '/reputation'
+      preLoaderRoute: typeof ReputationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/systems': {
+      id: '/systems'
+      path: '/systems'
+      fullPath: '/systems'
+      preLoaderRoute: typeof SystemsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trucks': {
+      id: '/trucks'
+      path: '/trucks'
+      fullPath: '/trucks'
+      preLoaderRoute: typeof TrucksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BusinessRoute: BusinessRoute,
+  CateringRoute: CateringRoute,
+  DigitalRoute: DigitalRoute,
+  FounderRoute: FounderRoute,
+  MenuRoute: MenuRoute,
+  OperationsRoute: OperationsRoute,
+  OpportunitiesRoute: OpportunitiesRoute,
+  PeopleRoute: PeopleRoute,
+  ProductRoute: ProductRoute,
+  ReputationRoute: ReputationRoute,
+  RoadmapRoute: RoadmapRoute,
+  SystemsRoute: SystemsRoute,
+  TrucksRoute: TrucksRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
