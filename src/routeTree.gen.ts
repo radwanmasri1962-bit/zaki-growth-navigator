@@ -10,16 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AssetsRouteImport } from './routes/assets'
 import { Route as BusinessRouteImport } from './routes/business'
 import { Route as CateringRouteImport } from './routes/catering'
+import { Route as ClientViewRouteImport } from './routes/client-view'
 import { Route as DigitalRouteImport } from './routes/digital'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as OperationsRouteImport } from './routes/operations'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PeopleRouteImport } from './routes/people'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductRouteImport } from './routes/product'
 import { Route as ReputationRouteImport } from './routes/reputation'
+import { Route as RisksRouteImport } from './routes/risks'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 import { Route as SystemsRouteImport } from './routes/systems'
 import { Route as TrucksRouteImport } from './routes/trucks'
@@ -27,6 +31,11 @@ import { Route as TrucksRouteImport } from './routes/trucks'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssetsRoute = AssetsRouteImport.update({
+  id: '/assets',
+  path: '/assets',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BusinessRoute = BusinessRouteImport.update({
@@ -37,6 +46,11 @@ const BusinessRoute = BusinessRouteImport.update({
 const CateringRoute = CateringRouteImport.update({
   id: '/catering',
   path: '/catering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientViewRoute = ClientViewRouteImport.update({
+  id: '/client-view',
+  path: '/client-view',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DigitalRoute = DigitalRouteImport.update({
@@ -69,6 +83,11 @@ const PeopleRoute = PeopleRouteImport.update({
   path: '/people',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductRoute = ProductRouteImport.update({
   id: '/product',
   path: '/product',
@@ -77,6 +96,11 @@ const ProductRoute = ProductRouteImport.update({
 const ReputationRoute = ReputationRouteImport.update({
   id: '/reputation',
   path: '/reputation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RisksRoute = RisksRouteImport.update({
+  id: '/risks',
+  path: '/risks',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RoadmapRoute = RoadmapRouteImport.update({
@@ -97,32 +121,40 @@ const TrucksRoute = TrucksRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/assets': typeof AssetsRoute
   '/business': typeof BusinessRoute
   '/catering': typeof CateringRoute
+  '/client-view': typeof ClientViewRoute
   '/digital': typeof DigitalRoute
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
   '/operations': typeof OperationsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
+  '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
+  '/risks': typeof RisksRoute
   '/roadmap': typeof RoadmapRoute
   '/systems': typeof SystemsRoute
   '/trucks': typeof TrucksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/assets': typeof AssetsRoute
   '/business': typeof BusinessRoute
   '/catering': typeof CateringRoute
+  '/client-view': typeof ClientViewRoute
   '/digital': typeof DigitalRoute
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
   '/operations': typeof OperationsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
+  '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
+  '/risks': typeof RisksRoute
   '/roadmap': typeof RoadmapRoute
   '/systems': typeof SystemsRoute
   '/trucks': typeof TrucksRoute
@@ -130,16 +162,20 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/assets': typeof AssetsRoute
   '/business': typeof BusinessRoute
   '/catering': typeof CateringRoute
+  '/client-view': typeof ClientViewRoute
   '/digital': typeof DigitalRoute
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
   '/operations': typeof OperationsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
+  '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
+  '/risks': typeof RisksRoute
   '/roadmap': typeof RoadmapRoute
   '/systems': typeof SystemsRoute
   '/trucks': typeof TrucksRoute
@@ -148,48 +184,60 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/assets'
     | '/business'
     | '/catering'
+    | '/client-view'
     | '/digital'
     | '/founder'
     | '/menu'
     | '/operations'
     | '/opportunities'
     | '/people'
+    | '/pricing'
     | '/product'
     | '/reputation'
+    | '/risks'
     | '/roadmap'
     | '/systems'
     | '/trucks'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/assets'
     | '/business'
     | '/catering'
+    | '/client-view'
     | '/digital'
     | '/founder'
     | '/menu'
     | '/operations'
     | '/opportunities'
     | '/people'
+    | '/pricing'
     | '/product'
     | '/reputation'
+    | '/risks'
     | '/roadmap'
     | '/systems'
     | '/trucks'
   id:
     | '__root__'
     | '/'
+    | '/assets'
     | '/business'
     | '/catering'
+    | '/client-view'
     | '/digital'
     | '/founder'
     | '/menu'
     | '/operations'
     | '/opportunities'
     | '/people'
+    | '/pricing'
     | '/product'
     | '/reputation'
+    | '/risks'
     | '/roadmap'
     | '/systems'
     | '/trucks'
@@ -197,16 +245,20 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AssetsRoute: typeof AssetsRoute
   BusinessRoute: typeof BusinessRoute
   CateringRoute: typeof CateringRoute
+  ClientViewRoute: typeof ClientViewRoute
   DigitalRoute: typeof DigitalRoute
   FounderRoute: typeof FounderRoute
   MenuRoute: typeof MenuRoute
   OperationsRoute: typeof OperationsRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
   PeopleRoute: typeof PeopleRoute
+  PricingRoute: typeof PricingRoute
   ProductRoute: typeof ProductRoute
   ReputationRoute: typeof ReputationRoute
+  RisksRoute: typeof RisksRoute
   RoadmapRoute: typeof RoadmapRoute
   SystemsRoute: typeof SystemsRoute
   TrucksRoute: typeof TrucksRoute
@@ -221,6 +273,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/assets': {
+      id: '/assets'
+      path: '/assets'
+      fullPath: '/assets'
+      preLoaderRoute: typeof AssetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/business': {
       id: '/business'
       path: '/business'
@@ -233,6 +292,13 @@ declare module '@tanstack/react-router' {
       path: '/catering'
       fullPath: '/catering'
       preLoaderRoute: typeof CateringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client-view': {
+      id: '/client-view'
+      path: '/client-view'
+      fullPath: '/client-view'
+      preLoaderRoute: typeof ClientViewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/digital': {
@@ -277,6 +343,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PeopleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/product': {
       id: '/product'
       path: '/product'
@@ -289,6 +362,13 @@ declare module '@tanstack/react-router' {
       path: '/reputation'
       fullPath: '/reputation'
       preLoaderRoute: typeof ReputationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/risks': {
+      id: '/risks'
+      path: '/risks'
+      fullPath: '/risks'
+      preLoaderRoute: typeof RisksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/roadmap': {
@@ -317,16 +397,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AssetsRoute: AssetsRoute,
   BusinessRoute: BusinessRoute,
   CateringRoute: CateringRoute,
+  ClientViewRoute: ClientViewRoute,
   DigitalRoute: DigitalRoute,
   FounderRoute: FounderRoute,
   MenuRoute: MenuRoute,
   OperationsRoute: OperationsRoute,
   OpportunitiesRoute: OpportunitiesRoute,
   PeopleRoute: PeopleRoute,
+  PricingRoute: PricingRoute,
   ProductRoute: ProductRoute,
   ReputationRoute: ReputationRoute,
+  RisksRoute: RisksRoute,
   RoadmapRoute: RoadmapRoute,
   SystemsRoute: SystemsRoute,
   TrucksRoute: TrucksRoute,
