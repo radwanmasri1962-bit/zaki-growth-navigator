@@ -116,18 +116,18 @@ function Overview() {
               tone="green"
               columns={2}
               items={[
-                "Recognizable local concept",
-                "Popular, generous food",
-                "Strong product photography potential",
+                "Recognizable Columbus food concept",
+                "Popular and generous food",
+                "Strong product appeal",
+                "Established customer following",
                 "Positive customer sentiment",
-                "Established Columbus presence",
-                "Approximately four food trucks",
-                "Permanent Budd Dairy presence",
+                "Budd Dairy presence",
+                "Worthington presence",
+                "Four-food-truck fleet",
                 "Existing delivery demand",
-                "Real social following",
-                "Authentic founder story",
                 "Distinct halal positioning",
-                "Entrepreneurial momentum",
+                "Authentic founder story",
+                "Strong entrepreneurial momentum",
               ]}
             />
           </Panel>
@@ -136,26 +136,100 @@ function Overview() {
               tone="warn"
               columns={2}
               items={[
-                "Central operating system",
-                "Formal recipe library",
-                "Complete SOP architecture",
-                "Structured training",
-                "Formal chef controls",
-                "Integrated truck management",
-                "Consistent digital ecosystem",
-                "Systematic reputation engine",
-                "Structured catering pipeline",
-                "Management dashboard",
-                "Owner delegation architecture",
-                "Professional communication support",
+                "No strong owned website",
+                "No centralized operating system",
+                "Incomplete recipe documentation",
+                "Incomplete SOP architecture",
+                "Limited structured training",
+                "Chef control depends heavily on Ahmed",
+                "Staffing remains a major owner burden",
+                "Food truck management requires systems",
+                "Digital channels are fragmented",
+                "No structured CRM / customer database strategy",
+                "No systematic reputation engine",
+                "Google / Yelp review growth opportunity",
+                "Catering infrastructure underdeveloped",
+                "Direct catering funnel missing",
+                "Professional communication support missing",
+                "Management reporting is limited",
+                "Excessive dependency on Ahmed",
               ]}
             />
           </Panel>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
           <Note>
             This is a transformation project, not a rescue project. Preliminary JARA assessment —
             subject to full operational discovery.
+          </Note>
+          <Panel eyebrow="JARA progress" title="Professional food photography" tone="gold">
+            <p className="text-sm leading-relaxed">
+              A professional Zaki food-photography library has been developed by JARA AI and is
+              available for deployment.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Pill tone="green">Completed</Pill>
+              <Pill tone="gold">Available for deployment</Pill>
+            </div>
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              The remaining weakness is not photography itself — it is the deployment and
+              consistency of these assets across the customer journey.
+            </p>
+          </Panel>
+        </div>
+      </Section>
+
+      <Section
+        title="Owner Dependency"
+        kicker="The central strategic insight"
+        description="Ahmed currently functions as the operating hub of the business. Almost every decision path terminates with him. The objective is not to remove Ahmed from his company — it is to remove him from unnecessary daily operational dependency."
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          <HubDiagram
+            eyebrow="Current state — everything flows to one person"
+            tone="warn"
+            inputs={[
+              "Staffing",
+              "Chef",
+              "Recipes",
+              "Training",
+              "Food trucks",
+              "Customers",
+              "Catering",
+              "Suppliers",
+              "Reviews",
+              "Digital",
+              "Problems",
+              "Big client communication",
+              "Daily decisions",
+            ]}
+            hub="Ahmed"
+            hubNote="Owner dependency"
+          />
+          <HubDiagram
+            eyebrow="Future state — systems absorb the operation"
+            tone="green"
+            inputs={[
+              "People system",
+              "Recipe system",
+              "SOP system",
+              "Training system",
+              "Truck system",
+              "Catering system",
+              "CRM",
+              "Digital system",
+              "Reputation system",
+              "Management reporting",
+            ]}
+            hub="Ahmed"
+            hubNote="Future role"
+            roles={["Owner", "Leader", "Decision maker", "Relationship builder", "Growth driver"]}
+          />
+        </div>
+        <div className="mt-4">
+          <Note>
+            Remove Ahmed from unnecessary daily operational dependency — not from the business he
+            built.
           </Note>
         </div>
       </Section>
