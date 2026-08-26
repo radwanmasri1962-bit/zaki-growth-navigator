@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  AssetFrame,
   AssetPlaceholder,
   Bullets,
   Flow,
@@ -12,6 +13,7 @@ import {
 } from "@/components/dash/primitives";
 import chickenBowl from "@/assets/chicken-bowl.webp.asset.json";
 import shawarma from "@/assets/chicken-shawarma.png.asset.json";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/product")({
   head: () => ({
