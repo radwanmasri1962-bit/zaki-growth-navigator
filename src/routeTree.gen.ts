@@ -21,6 +21,7 @@ import { Route as PeopleRouteImport } from './routes/people'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductRouteImport } from './routes/product'
 import { Route as ReputationRouteImport } from './routes/reputation'
+import { Route as RisksRouteImport } from './routes/risks'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 import { Route as SystemsRouteImport } from './routes/systems'
 import { Route as TrucksRouteImport } from './routes/trucks'
@@ -85,6 +86,11 @@ const ReputationRoute = ReputationRouteImport.update({
   path: '/reputation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RisksRoute = RisksRouteImport.update({
+  id: '/risks',
+  path: '/risks',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RoadmapRoute = RoadmapRouteImport.update({
   id: '/roadmap',
   path: '/roadmap',
@@ -114,6 +120,7 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
+  '/risks': typeof RisksRoute
   '/roadmap': typeof RoadmapRoute
   '/systems': typeof SystemsRoute
   '/trucks': typeof TrucksRoute
@@ -131,6 +138,7 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
+  '/risks': typeof RisksRoute
   '/roadmap': typeof RoadmapRoute
   '/systems': typeof SystemsRoute
   '/trucks': typeof TrucksRoute
@@ -149,6 +157,7 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
+  '/risks': typeof RisksRoute
   '/roadmap': typeof RoadmapRoute
   '/systems': typeof SystemsRoute
   '/trucks': typeof TrucksRoute
@@ -168,6 +177,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/product'
     | '/reputation'
+    | '/risks'
     | '/roadmap'
     | '/systems'
     | '/trucks'
@@ -185,6 +195,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/product'
     | '/reputation'
+    | '/risks'
     | '/roadmap'
     | '/systems'
     | '/trucks'
@@ -202,6 +213,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/product'
     | '/reputation'
+    | '/risks'
     | '/roadmap'
     | '/systems'
     | '/trucks'
@@ -220,6 +232,7 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   ProductRoute: typeof ProductRoute
   ReputationRoute: typeof ReputationRoute
+  RisksRoute: typeof RisksRoute
   RoadmapRoute: typeof RoadmapRoute
   SystemsRoute: typeof SystemsRoute
   TrucksRoute: typeof TrucksRoute
@@ -311,6 +324,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReputationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/risks': {
+      id: '/risks'
+      path: '/risks'
+      fullPath: '/risks'
+      preLoaderRoute: typeof RisksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/roadmap': {
       id: '/roadmap'
       path: '/roadmap'
@@ -348,6 +368,7 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   ProductRoute: ProductRoute,
   ReputationRoute: ReputationRoute,
+  RisksRoute: RisksRoute,
   RoadmapRoute: RoadmapRoute,
   SystemsRoute: SystemsRoute,
   TrucksRoute: TrucksRoute,
