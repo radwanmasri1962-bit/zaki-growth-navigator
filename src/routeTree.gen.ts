@@ -16,6 +16,7 @@ import { Route as DigitalRouteImport } from './routes/digital'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as OperationsRouteImport } from './routes/operations'
+import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PeopleRouteImport } from './routes/people'
 import { Route as ProductRouteImport } from './routes/product'
 import { Route as ReputationRouteImport } from './routes/reputation'
@@ -58,6 +59,11 @@ const OperationsRoute = OperationsRouteImport.update({
   path: '/operations',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OpportunitiesRoute = OpportunitiesRouteImport.update({
+  id: '/opportunities',
+  path: '/opportunities',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PeopleRoute = PeopleRouteImport.update({
   id: '/people',
   path: '/people',
@@ -97,6 +103,7 @@ export interface FileRoutesByFullPath {
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
   '/operations': typeof OperationsRoute
+  '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
@@ -112,6 +119,7 @@ export interface FileRoutesByTo {
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
   '/operations': typeof OperationsRoute
+  '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
@@ -128,6 +136,7 @@ export interface FileRoutesById {
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
   '/operations': typeof OperationsRoute
+  '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
@@ -145,6 +154,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/menu'
     | '/operations'
+    | '/opportunities'
     | '/people'
     | '/product'
     | '/reputation'
@@ -160,6 +170,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/menu'
     | '/operations'
+    | '/opportunities'
     | '/people'
     | '/product'
     | '/reputation'
@@ -175,6 +186,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/menu'
     | '/operations'
+    | '/opportunities'
     | '/people'
     | '/product'
     | '/reputation'
@@ -191,6 +203,7 @@ export interface RootRouteChildren {
   FounderRoute: typeof FounderRoute
   MenuRoute: typeof MenuRoute
   OperationsRoute: typeof OperationsRoute
+  OpportunitiesRoute: typeof OpportunitiesRoute
   PeopleRoute: typeof PeopleRoute
   ProductRoute: typeof ProductRoute
   ReputationRoute: typeof ReputationRoute
@@ -250,6 +263,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OperationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/opportunities': {
+      id: '/opportunities'
+      path: '/opportunities'
+      fullPath: '/opportunities'
+      preLoaderRoute: typeof OpportunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/people': {
       id: '/people'
       path: '/people'
@@ -303,6 +323,7 @@ const rootRouteChildren: RootRouteChildren = {
   FounderRoute: FounderRoute,
   MenuRoute: MenuRoute,
   OperationsRoute: OperationsRoute,
+  OpportunitiesRoute: OpportunitiesRoute,
   PeopleRoute: PeopleRoute,
   ProductRoute: ProductRoute,
   ReputationRoute: ReputationRoute,
