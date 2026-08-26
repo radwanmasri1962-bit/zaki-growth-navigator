@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import zakiLogo from "@/assets/zaki-logo.png.asset.json";
+import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraDark from "@/assets/jara-logo-dark.png.asset.json";
 import chickenBowl from "@/assets/chicken-bowl.webp.asset.json";
 import {
