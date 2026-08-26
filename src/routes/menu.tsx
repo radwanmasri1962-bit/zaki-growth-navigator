@@ -137,13 +137,14 @@ function MenuPage() {
 
       <Section title="Menu Engineering Framework" kicker="Pillar 06" description="Applied only once sales and food-cost data exists. No sales or cost data is fabricated.">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
+          {([
             ["Star", "High margin · High popularity", "Protect and feature", "green"],
             ["Plowhorse", "Low margin · High popularity", "Re-engineer cost or price", "gold"],
             ["Puzzle", "High margin · Low popularity", "Reposition and promote", "gold"],
             ["Dog", "Low margin · Low popularity", "Simplify or remove", "warn"],
-          ].map(([t, d, a, tone]) => (
-            <Panel key={t} tone={tone as "green" | "gold" | "warn"} eyebrow={d} title={t}>
+          ] as const).map(([t, d, a, tone]) => (
+            <Panel key={t} tone={tone} eyebrow={d} title={t}>
+
               <p className="text-sm text-secondary-foreground">{a}</p>
             </Panel>
           ))}
