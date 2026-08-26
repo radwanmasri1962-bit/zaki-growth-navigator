@@ -108,26 +108,40 @@ function FounderPage() {
         </div>
       </Section>
 
-      <Section title="Founder Story Module" kicker="Storytelling asset" description="Potentially reusable in website, PR, social, catering and brand storytelling.">
+      <Section
+        title="Founder Story Module"
+        kicker="Storytelling asset"
+        description="Ahmed's story is commercially and emotionally important to the Zaki brand — a self-made Palestinian immigrant entrepreneur who built a recognized Columbus food business from the ground up. Reusable in website, PR, social, catering and brand storytelling."
+      >
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
-          <Panel>
+          <Panel eyebrow="Approximately 20 years" title="Palestine to Zaki today">
             <Flow
               vertical
               steps={[
-                "20 years ago — arrives with limited resources and limited language",
-                "Learns / works / builds",
+                "Palestine",
+                "Arrives in America",
+                "Limited English",
+                "Limited formal education and resources",
+                "Works",
+                "Learns",
+                "Builds",
                 "Food business",
                 "Customer following",
                 "Food trucks",
-                "Budd Dairy Food Hall",
+                "Budd Dairy",
+                "Worthington",
                 "Zaki today",
-                "Next chapter — systems + team + scale",
+                "Next chapter — systems + people + scale",
               ]}
             />
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              He built the business through instinct, hard work, relationships and food. The next
+              stage requires systems, so that the business no longer depends entirely on the founder.
+            </p>
           </Panel>
           <div className="grid gap-4">
-            <AssetPlaceholder label="Ahmed / founder portrait" batch="Batch 3" ratio="4/5" />
-            <AssetPlaceholder label="Team / kitchen image" batch="Batch 3" ratio="4/3" />
+            <AssetFrame label="Ahmed / founder portrait" batch="Batch 3" ratio="4/5" type="evidence" caption="Founder portrait for brand story, website and PR use." />
+            <AssetFrame label="Team / kitchen image" batch="Batch 3" ratio="4/3" type="evidence" caption="Team at work — supports the people and training narrative." />
           </div>
         </div>
       </Section>
