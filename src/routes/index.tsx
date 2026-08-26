@@ -40,16 +40,16 @@ function Overview() {
       <PageHeader
         eyebrow="Overview · Executive dashboard"
         title="Zaki Grill — Business Transformation & Opportunity Map"
-        intro="Zaki Grill is an established Columbus, Ohio halal Mediterranean concept with a permanent Budd Dairy Food Hall presence, roughly four food trucks and demand across multiple delivery marketplaces. The business has grown organically and has now outgrown the way it is managed. This dashboard documents the business, diagnoses the operating model, maps the opportunity and prices the potential JARA AI engagement."
+        intro="Zaki Grill is an established Columbus, Ohio halal Mediterranean operation: Budd Dairy Food Hall, a Worthington location, four food trucks across the market and events, plus catering and delivery demand. This is a multi-format restaurant business with real market presence. It has grown organically and has now outgrown the way it is managed. This dashboard documents the business, diagnoses the operating model, maps the opportunity and prices the potential JARA AI engagement."
       />
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-        <StatCard label="Business" value="Established" note="Operating history, real demand" tone="green" />
-        <StatCard label="Footprint" value="Budd Dairy + ~4 Trucks" note="Multi-channel operation" tone="green" />
-        <StatCard label="Product" value="Strong" note="Food outperforms presentation" tone="green" />
-        <StatCard label="Digital presence" value="Fragmented" note="Third-party dependent" tone="warn" />
+        <StatCard label="Business" value="Established" note="Multi-year operating history" tone="green" />
+        <StatCard label="Locations" value="Budd Dairy + Worthington" note="Two fixed positions" tone="green" />
+        <StatCard label="Mobile fleet" value="4 Food Trucks" note="Market + events coverage" tone="green" />
+        <StatCard label="Product" value="Strong" note="Food and product appeal lead" tone="green" />
+        <StatCard label="Digital presence" value="Fragmented" note="Assets not yet deployed" tone="warn" />
         <StatCard label="Operating model" value="Founder Dependent" note="Management capacity is the limit" tone="warn" />
-        <StatCard label="Transformation" value="Opportunity Identified" note="Systems, not reinvention" tone="gold" />
       </div>
 
       <Section title="Project Summary" kicker="Snapshot">
