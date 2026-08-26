@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BusinessRouteImport } from './routes/business'
+import { Route as CateringRouteImport } from './routes/catering'
 import { Route as DigitalRouteImport } from './routes/digital'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as MenuRouteImport } from './routes/menu'
@@ -28,6 +29,11 @@ const IndexRoute = IndexRouteImport.update({
 const BusinessRoute = BusinessRouteImport.update({
   id: '/business',
   path: '/business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CateringRoute = CateringRouteImport.update({
+  id: '/catering',
+  path: '/catering',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DigitalRoute = DigitalRouteImport.update({
@@ -74,6 +80,7 @@ const TrucksRoute = TrucksRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/business': typeof BusinessRoute
+  '/catering': typeof CateringRoute
   '/digital': typeof DigitalRoute
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/business': typeof BusinessRoute
+  '/catering': typeof CateringRoute
   '/digital': typeof DigitalRoute
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
@@ -99,6 +107,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/business': typeof BusinessRoute
+  '/catering': typeof CateringRoute
   '/digital': typeof DigitalRoute
   '/founder': typeof FounderRoute
   '/menu': typeof MenuRoute
@@ -113,6 +122,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/business'
+    | '/catering'
     | '/digital'
     | '/founder'
     | '/menu'
@@ -125,6 +135,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/business'
+    | '/catering'
     | '/digital'
     | '/founder'
     | '/menu'
@@ -137,6 +148,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/business'
+    | '/catering'
     | '/digital'
     | '/founder'
     | '/menu'
@@ -150,6 +162,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BusinessRoute: typeof BusinessRoute
+  CateringRoute: typeof CateringRoute
   DigitalRoute: typeof DigitalRoute
   FounderRoute: typeof FounderRoute
   MenuRoute: typeof MenuRoute
@@ -174,6 +187,13 @@ declare module '@tanstack/react-router' {
       path: '/business'
       fullPath: '/business'
       preLoaderRoute: typeof BusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catering': {
+      id: '/catering'
+      path: '/catering'
+      fullPath: '/catering'
+      preLoaderRoute: typeof CateringRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/digital': {
@@ -238,6 +258,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BusinessRoute: BusinessRoute,
+  CateringRoute: CateringRoute,
   DigitalRoute: DigitalRoute,
   FounderRoute: FounderRoute,
   MenuRoute: MenuRoute,
