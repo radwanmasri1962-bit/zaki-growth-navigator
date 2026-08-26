@@ -211,8 +211,24 @@ function DigitalPage() {
               channels.
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <AssetPlaceholder label="Instagram evidence" batch="Batch 4" ratio="4/5" />
-              <AssetPlaceholder label="Facebook evidence" batch="Batch 4" ratio="4/5" />
+              <AssetFrame
+                label="Instagram profile"
+                batch="Batch 4"
+                src={zakiAssets.instagramProfile}
+                alt="Zaki Grill Instagram profile showing followers, bio and post grid"
+                ratio="16/10"
+                type="evidence"
+                caption="Captured Instagram profile — audience, bio, link setup and content grid."
+              />
+              <AssetFrame
+                label="Facebook page"
+                batch="Batch 4"
+                src={zakiAssets.facebookPage}
+                alt="Zaki Grill Facebook page showing details, recommendations and truck location posts"
+                ratio="16/10"
+                type="evidence"
+                caption="Captured Facebook page — recommendations, contact details and truck-location posts."
+              />
             </div>
           </Panel>
         </div>
