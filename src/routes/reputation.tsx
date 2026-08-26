@@ -47,13 +47,14 @@ function ReputationPage() {
             <Flow
               vertical
               steps={[
-                "Service / order",
-                "Happy customer",
-                "QR / SMS / email prompt",
-                "Review request",
-                "Google / Yelp",
-                "Response",
-                "Reputation growth",
+                "Customer orders",
+                "Positive experience",
+                "Automated review request",
+                "Google / Yelp review",
+                "Owner / team response",
+                "Stronger reputation",
+                "Better discovery",
+                "More customers",
               ]}
             />
           </div>
