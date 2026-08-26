@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import {
   Bullets,
-  InternalBadge,
   Note,
   PageHeader,
   Panel,
@@ -84,7 +83,7 @@ function PricingPage() {
         eyebrow="Commercial"
         title="Engagement Model & Pricing Calculator"
         intro="Internal commercial architecture for the JARA AI engagement with Zaki Grill. Figures are working scenario inputs for Radwan's own modelling — not a client-issued quote."
-        aside={<InternalBadge />}
+        internal
       />
 
       <Section title="Structure Options" kicker="Model design">
