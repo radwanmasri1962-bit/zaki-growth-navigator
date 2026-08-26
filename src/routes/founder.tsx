@@ -141,7 +141,15 @@ function FounderPage() {
             </p>
           </Panel>
           <div className="grid gap-4">
-            <AssetFrame label="Ahmed / founder portrait" batch="Batch 3" ratio="4/5" type="evidence" caption="Founder portrait for brand story, website and PR use." />
+            <AssetFrame
+              label="Ahmed / founder portrait"
+              batch="Batch 3"
+              src={zakiAssets.ahmedPortrait}
+              alt="Ahmed, founder of Zaki Grill, in branded gear holding a signature bowl in front of a Zaki food truck"
+              ratio="4/5"
+              type="concept"
+              caption={`Ahmed, founder of Zaki Grill — brand and PR portrait. ${JARA_CONCEPT_NOTE}`}
+            />
             <AssetFrame
               label="Team / kitchen image"
               batch="Batch 3"

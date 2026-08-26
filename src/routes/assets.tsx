@@ -54,6 +54,7 @@ const RECEIVED = [
   { src: zakiAssets.instagramProfile, label: "Instagram profile (captured evidence)", batch: "Batch 4", use: "Digital", dark: false },
   { src: zakiAssets.facebookPage, label: "Facebook page (captured evidence)", batch: "Batch 4", use: "Digital", dark: false },
   { src: zakiAssets.truckMap, label: "Columbus truck location map (JARA illustration)", batch: "Batch 3", use: "Trucks", dark: false },
+  { src: zakiAssets.ahmedPortrait, label: "Ahmed founder portrait (JARA concept)", batch: "Batch 3", use: "Founder", dark: false },
 ];
 
 const BATCHES: { batch: string; name: string; items: string[]; status: "Partial" | "Pending" }[] = [
@@ -122,13 +123,14 @@ const REGISTER: RegisterRow[] = [
   { name: "Truck event activation", category: "Operations", page: "Business, Trucks, Catering", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 3", updated: "Latest update" },
   { name: "Team at service counter", category: "People", page: "Business, Operations, People, Founder", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 3", updated: "Latest update" },
   { name: "Direct ordering journey", category: "Concept", page: "Digital", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 6", updated: "Latest update" },
+  { name: "Ahmed founder portrait", category: "People", page: "Founder", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 3", updated: "Latest update" },
   { name: "Professional food photography library", category: "Product", page: "Product, Menu, Digital", status: "Available", source: "Type B — JARA concept", verified: false, batch: "Batch 2", updated: "Awaiting deployment" },
   { name: "Worthington location", category: "Location", page: "Business", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
   { name: "Food truck fleet", category: "Operations", page: "Business, Trucks", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
   { name: "Kitchen / prep operation", category: "Operations", page: "Business, Operations", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
   { name: "Counter / service operation", category: "Operations", page: "Business", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
   { name: "Team at work", category: "People", page: "Business, People, Founder", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
-  { name: "Ahmed / founder portrait", category: "People", page: "Founder", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
+  { name: "Ahmed / founder portrait (real photo)", category: "People", page: "Founder, PR", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
   { name: "Current physical menu / menu board", category: "Menu", page: "Menu", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 5", updated: "—" },
   { name: "Current online menu", category: "Menu", page: "Menu, Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 5", updated: "—" },
   { name: "Modifiers / options / ordering screen", category: "Menu", page: "Menu", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 5", updated: "—" },
