@@ -12,6 +12,7 @@ import {
   StageFlow,
   Table,
 } from "@/components/dash/primitives";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/digital")({
   head: () => ({
@@ -263,6 +264,17 @@ function DigitalPage() {
           <AssetFrame label="Website prototype — homepage" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
           <AssetFrame label="Website prototype — menu" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
           <AssetFrame label="Website prototype — catering" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
+        </div>
+        <div className="mt-4">
+          <AssetFrame
+            label="Direct ordering experience — concept"
+            batch="Batch 6"
+            src={zakiAssets.takeAwayOrder}
+            alt="Branded Zaki bag, bowl and drink beside a phone showing a Zaki ordering screen"
+            ratio="16/9"
+            type="concept"
+            caption={`Illustrates the intended direct-order journey and packaging consistency. ${JARA_CONCEPT_NOTE} It is not a screenshot of a live Zaki platform.`}
+          />
         </div>
       </Section>
     </div>

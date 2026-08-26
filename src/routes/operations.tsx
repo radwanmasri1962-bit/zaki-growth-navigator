@@ -144,6 +144,21 @@ function OperationsPage() {
         </div>
       </Section>
 
+      <Section title="Service & Prep Environment" kicker="Presentation direction" description="Target standard for the service line and prep environment once documentation and training are in place.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <AssetFrame
+            label="Service line & assembly"
+            batch="Batch 3"
+            src={zakiAssets.team}
+            alt="Zaki staff assembling a bowl on the service line"
+            ratio="4/3"
+            type="concept"
+            caption={`Assembly, portioning and counter organisation direction. ${JARA_CONCEPT_NOTE}`}
+          />
+          <AssetPlaceholder label="Kitchen / prep line photography" batch="Batch 3" ratio="4/3" />
+        </div>
+      </Section>
+
       <Section title="Current State vs Future State" kicker="Operating model">
         <CompareColumns
           left={{
