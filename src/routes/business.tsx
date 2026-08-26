@@ -13,6 +13,7 @@ import {
   TreeDiagram,
 } from "@/components/dash/primitives";
 import buddDairy from "@/assets/budd-dairy.webp.asset.json";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/business")({
   head: () => ({
@@ -119,10 +120,11 @@ function BusinessPage() {
           />
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <AssetFrame label="Food truck fleet" batch="Batch 3" type="evidence" caption="Fleet photography — four trucks." />
-          <AssetFrame label="Counter / service operation" batch="Batch 3" type="evidence" caption="Service line and ordering experience." />
+          <AssetFrame label="Food truck fleet" batch="Batch 3" src={zakiAssets.truckFleet} alt="Multiple red Zaki food trucks with a uniformed team" type="concept" caption={`Fleet and crew presentation direction. ${JARA_CONCEPT_NOTE}`} />
+          <AssetFrame label="Counter / service operation" batch="Batch 3" src={zakiAssets.team} alt="Zaki service counter with staff assembling a bowl under menu boards" type="concept" caption={`Service line and ordering experience. ${JARA_CONCEPT_NOTE}`} />
           <AssetFrame label="Kitchen / prep operation" batch="Batch 3" type="evidence" caption="Production and prep environment." />
-          <AssetFrame label="Team" batch="Batch 3" type="evidence" caption="Team at work — used in People and Founder." />
+          <AssetFrame label="Events & truck activation" batch="Batch 3" src={zakiAssets.truckEvent} alt="Zaki food truck serving customers at an indoor event with seating" type="concept" caption={`Event and activation format. ${JARA_CONCEPT_NOTE}`} />
+
         </div>
         <div className="mt-4">
           <Note>

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  AssetFrame,
   AssetPlaceholder,
   Bullets,
   Flow,
@@ -12,6 +13,7 @@ import {
 } from "@/components/dash/primitives";
 import chickenBowl from "@/assets/chicken-bowl.webp.asset.json";
 import shawarma from "@/assets/chicken-shawarma.png.asset.json";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/product")({
   head: () => ({
@@ -70,12 +72,48 @@ function ProductPage() {
             </figcaption>
           </figure>
           <AssetPlaceholder label="Gyro bowl photography" batch="Batch 2" ratio="1/1" />
-          <AssetPlaceholder label="Falafel / hummus / spreads" batch="Batch 2" ratio="1/1" />
+          <AssetFrame
+            label="Falafel bowl"
+            batch="Batch 2"
+            src={zakiAssets.falafelBowl}
+            alt="Falafel bowl with rice, cucumber, tomato, purple cabbage, peppers and tahini"
+            ratio="1/1"
+            type="concept"
+            caption={`Vegetarian bowl category. ${JARA_CONCEPT_NOTE}`}
+          />
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
           <AssetPlaceholder label="Lamb chops" batch="Batch 2" ratio="4/3" />
-          <AssetPlaceholder label="Salads" batch="Batch 2" ratio="4/3" />
-          <AssetPlaceholder label="Mediterranean spread board" batch="Batch 2" ratio="4/3" />
+          <AssetFrame
+            label="Summer salata with chicken"
+            batch="Batch 2"
+            src={zakiAssets.summerSalata}
+            alt="Salad bowl with grilled chicken, cucumber, tomato, feta, olives and peppers"
+            ratio="4/3"
+            type="concept"
+            caption={`Salad category. ${JARA_CONCEPT_NOTE}`}
+          />
+          <AssetFrame
+            label="Hummus & harissa"
+            batch="Batch 2"
+            src={zakiAssets.hummusHarissa}
+            alt="Hummus topped with harissa, herbs and olive oil served with pita"
+            ratio="4/3"
+            type="concept"
+            caption={`Spreads and mezze category. ${JARA_CONCEPT_NOTE}`}
+          />
+        </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <AssetFrame
+            label="Packaging & takeaway presentation"
+            batch="Batch 2"
+            src={zakiAssets.takeAwayContainers}
+            alt="Branded Zaki takeaway containers and a falafel wrap"
+            ratio="16/9"
+            type="concept"
+            caption={`Delivery and takeaway presentation standard. ${JARA_CONCEPT_NOTE}`}
+          />
+          <AssetPlaceholder label="Mediterranean spread board" batch="Batch 2" ratio="16/9" />
         </div>
         <div className="mt-4">
           <Note>

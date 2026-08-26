@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  AssetPlaceholder,
   Bullets,
   Flow,
   HubDiagram,
@@ -14,6 +13,8 @@ import {
   Table,
 } from "@/components/dash/primitives";
 import chickenBowl from "@/assets/chicken-bowl.webp.asset.json";
+import { AssetFrame } from "@/components/dash/primitives";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -308,8 +309,24 @@ function Overview() {
               </p>
             </div>
           </div>
-          <AssetPlaceholder label="Zaki hero food photography" batch="Batch 2" ratio="1/1" />
-          <AssetPlaceholder label="Zaki food truck image" batch="Batch 3" ratio="1/1" />
+          <AssetFrame
+            label="Zaki hero food photography"
+            batch="Batch 2"
+            src={zakiAssets.takeAwayContainers}
+            alt="Branded Zaki takeaway containers and a falafel wrap"
+            ratio="1/1"
+            type="concept"
+            caption={`Branded packaging and product presentation direction. ${JARA_CONCEPT_NOTE}`}
+          />
+          <AssetFrame
+            label="Zaki food truck image"
+            batch="Batch 3"
+            src={zakiAssets.truckFleet}
+            alt="Red Zaki food trucks with a uniformed team"
+            ratio="1/1"
+            type="concept"
+            caption={`Fleet presentation direction. ${JARA_CONCEPT_NOTE}`}
+          />
         </div>
       </Section>
     </div>

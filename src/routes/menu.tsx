@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  AssetFrame,
   AssetPlaceholder,
   Bullets,
   Note,
@@ -10,6 +11,7 @@ import {
   Table,
   Unverified,
 } from "@/components/dash/primitives";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/menu")({
   head: () => ({
@@ -98,6 +100,35 @@ function MenuPage() {
           <AssetPlaceholder label="Current physical menu / menu board" batch="Batch 5" ratio="4/3" />
           <AssetPlaceholder label="Current online menu" batch="Batch 5" ratio="4/3" />
           <AssetPlaceholder label="Modifiers / options / ordering screen" batch="Batch 5" ratio="4/3" />
+        </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          <AssetFrame
+            label="Bowl category reference"
+            batch="Batch 2"
+            src={zakiAssets.falafelBowl}
+            alt="Falafel bowl with rice, vegetables and tahini"
+            ratio="4/3"
+            type="concept"
+            caption={`Menu photography direction for the bowl category. ${JARA_CONCEPT_NOTE}`}
+          />
+          <AssetFrame
+            label="Mezze & sides reference"
+            batch="Batch 2"
+            src={zakiAssets.hummusHarissa}
+            alt="Hummus with harissa and pita"
+            ratio="4/3"
+            type="concept"
+            caption={`Menu photography direction for sides and spreads. ${JARA_CONCEPT_NOTE}`}
+          />
+          <AssetFrame
+            label="Packaging & delivery presentation"
+            batch="Batch 2"
+            src={zakiAssets.takeAwayContainers}
+            alt="Branded Zaki takeaway containers and wrap"
+            ratio="4/3"
+            type="concept"
+            caption={`How menu items should appear in delivery channels. ${JARA_CONCEPT_NOTE}`}
+          />
         </div>
       </Section>
 

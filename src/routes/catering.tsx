@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   AssetFrame,
-  AssetPlaceholder,
   Bullets,
   Flow,
   Note,
@@ -12,6 +11,7 @@ import {
   StageFlow,
   Table,
 } from "@/components/dash/primitives";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/catering")({
   head: () => ({
@@ -131,7 +131,26 @@ function CateringPage() {
               ]}
             />
           </Panel>
-          <AssetPlaceholder label="Catering setup / tray photography" batch="Batch 2" ratio="4/3" />
+          <div className="grid gap-4">
+            <AssetFrame
+              label="Catering setup / buffet presentation"
+              batch="Batch 2"
+              src={zakiAssets.cateringSpread}
+              alt="Zaki catering buffet with hummus, gyro, rice, grilled chicken, falafel and pita"
+              ratio="4/3"
+              type="concept"
+              caption={`Catering table and signage standard. ${JARA_CONCEPT_NOTE}`}
+            />
+            <AssetFrame
+              label="Event & truck catering activation"
+              batch="Batch 3"
+              src={zakiAssets.truckEvent}
+              alt="Zaki food truck serving guests at an indoor event"
+              ratio="4/3"
+              type="concept"
+              caption={`On-site event catering format. ${JARA_CONCEPT_NOTE}`}
+            />
+          </div>
         </div>
       </Section>
 

@@ -5,6 +5,7 @@ import jaraDark from "@/assets/jara-logo-dark.png.asset.json";
 import buddDairy from "@/assets/budd-dairy.webp.asset.json";
 import chickenBowl from "@/assets/chicken-bowl.webp.asset.json";
 import shawarma from "@/assets/chicken-shawarma.png.asset.json";
+import { zakiAssets } from "@/lib/zaki-assets";
 import {
   AssetPlaceholder,
   Note,
@@ -41,6 +42,15 @@ const RECEIVED = [
   { src: buddDairy.url, label: "Budd Dairy stall", batch: "Batch 3", use: "Business footprint, overview", dark: false },
   { src: chickenBowl.url, label: "Chicken bowl", batch: "Batch 2", use: "Product evidence, menu", dark: false },
   { src: shawarma.url, label: "Chicken shawarma", batch: "Batch 2", use: "Product evidence, catering", dark: false },
+  { src: zakiAssets.falafelBowl, label: "Falafel bowl (JARA concept)", batch: "Batch 2", use: "Product, Menu, Client view", dark: false },
+  { src: zakiAssets.summerSalata, label: "Summer salata with chicken (JARA concept)", batch: "Batch 2", use: "Product", dark: false },
+  { src: zakiAssets.hummusHarissa, label: "Hummus & harissa (JARA concept)", batch: "Batch 2", use: "Product, Menu", dark: false },
+  { src: zakiAssets.takeAwayContainers, label: "Takeaway packaging (JARA concept)", batch: "Batch 2", use: "Overview, Product, Menu, Client view", dark: false },
+  { src: zakiAssets.cateringSpread, label: "Catering buffet (JARA concept)", batch: "Batch 2", use: "Catering, Client view", dark: false },
+  { src: zakiAssets.truckFleet, label: "Truck fleet & crew (JARA concept)", batch: "Batch 3", use: "Overview, Business, Trucks, People", dark: false },
+  { src: zakiAssets.truckEvent, label: "Truck event activation (JARA concept)", batch: "Batch 3", use: "Business, Trucks, Catering", dark: false },
+  { src: zakiAssets.team, label: "Team at service counter (JARA concept)", batch: "Batch 3", use: "Business, Operations, People, Founder", dark: false },
+  { src: zakiAssets.takeAwayOrder, label: "Direct ordering journey (JARA concept)", batch: "Batch 6", use: "Digital", dark: false },
 ];
 
 const BATCHES: { batch: string; name: string; items: string[]; status: "Partial" | "Pending" }[] = [
@@ -100,6 +110,15 @@ const REGISTER: RegisterRow[] = [
   { name: "Budd Dairy location", category: "Location", page: "Business, Overview", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 3", updated: "Latest update" },
   { name: "Chicken bowl", category: "Product", page: "Overview, Product, Menu", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 2", updated: "Latest update" },
   { name: "Chicken shawarma", category: "Product", page: "Product, Catering", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 2", updated: "Latest update" },
+  { name: "Falafel bowl", category: "Product", page: "Product, Menu, Client view", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 2", updated: "Latest update" },
+  { name: "Summer salata with chicken", category: "Product", page: "Product", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 2", updated: "Latest update" },
+  { name: "Hummus & harissa", category: "Product", page: "Product, Menu", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 2", updated: "Latest update" },
+  { name: "Takeaway packaging presentation", category: "Product", page: "Overview, Product, Menu, Client view", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 2", updated: "Latest update" },
+  { name: "Catering buffet presentation", category: "Catering", page: "Catering, Client view", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 2", updated: "Latest update" },
+  { name: "Truck fleet & crew", category: "Operations", page: "Overview, Business, Trucks, People", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 3", updated: "Latest update" },
+  { name: "Truck event activation", category: "Operations", page: "Business, Trucks, Catering", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 3", updated: "Latest update" },
+  { name: "Team at service counter", category: "People", page: "Business, Operations, People, Founder", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 3", updated: "Latest update" },
+  { name: "Direct ordering journey", category: "Concept", page: "Digital", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 6", updated: "Latest update" },
   { name: "Professional food photography library", category: "Product", page: "Product, Menu, Digital", status: "Available", source: "Type B — JARA concept", verified: false, batch: "Batch 2", updated: "Awaiting deployment" },
   { name: "Worthington location", category: "Location", page: "Business", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },
   { name: "Food truck fleet", category: "Operations", page: "Business, Trucks", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 3", updated: "—" },

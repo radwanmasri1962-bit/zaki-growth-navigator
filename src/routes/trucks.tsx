@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  AssetFrame,
   AssetPlaceholder,
   Bullets,
   Note,
@@ -10,6 +11,7 @@ import {
   StatCard,
   Table,
 } from "@/components/dash/primitives";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/trucks")({
   head: () => ({
@@ -138,8 +140,24 @@ function TrucksPage() {
 
       <Section title="Fleet & Location Evidence" kicker="Assets">
         <div className="grid gap-4 sm:grid-cols-3">
-          <AssetPlaceholder label="Zaki food truck exterior" batch="Batch 3" ratio="4/3" />
-          <AssetPlaceholder label="Truck service window / crew" batch="Batch 3" ratio="4/3" />
+          <AssetFrame
+            label="Zaki food truck exterior"
+            batch="Batch 3"
+            src={zakiAssets.truckFleet}
+            alt="Red Zaki food trucks lined up with a uniformed team"
+            ratio="4/3"
+            type="concept"
+            caption={`Fleet exterior and crew presentation. ${JARA_CONCEPT_NOTE}`}
+          />
+          <AssetFrame
+            label="Truck service window / crew"
+            batch="Batch 3"
+            src={zakiAssets.truckEvent}
+            alt="Zaki truck service window with menu board and guests at an event"
+            ratio="4/3"
+            type="concept"
+            caption={`Service window, menu board and queue flow. ${JARA_CONCEPT_NOTE}`}
+          />
           <AssetPlaceholder label="Columbus truck location map" batch="Batch 3" ratio="4/3" />
         </div>
       </Section>
