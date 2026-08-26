@@ -176,6 +176,12 @@ function DigitalPage() {
             problem="Duplicate information risk and unclear ordering path."
             recommended="Aligned information, direct ordering link, events and catering promotion."
           />
+          <Evidence
+            label="Other active delivery platform"
+            batch="Batch 4"
+            problem="Any additional active platform carries its own menu, pricing and photography version."
+            recommended="Included in the single source-of-truth channel routine with a named owner."
+          />
         </div>
       </Section>
 
