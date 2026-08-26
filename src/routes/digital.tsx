@@ -82,6 +82,43 @@ function DigitalPage() {
         </div>
       </Section>
 
+      <Section
+        title="CRM & Customer Ownership"
+        kicker="Major opportunity"
+        description="Zaki should build an owned customer database. Marketplace customers alone do not create sufficient customer ownership — the platform keeps the relationship, the data and the ability to market again."
+      >
+        <StageFlow
+          stages={[
+            { label: "Customer" },
+            { label: "Touchpoints", items: ["Website", "Catering", "Orders", "Events", "Reviews"] },
+            { label: "Customer database / CRM" },
+            {
+              label: "Activation",
+              items: [
+                "Email",
+                "SMS",
+                "Follow-up",
+                "Review requests",
+                "Catering follow-up",
+                "Promotions",
+                "Event announcements",
+              ],
+            },
+            {
+              label: "Outcome",
+              items: ["Repeat orders", "Retention", "Reviews", "Catering", "Customer value"],
+            },
+          ]}
+        />
+        <div className="mt-4">
+          <Note>
+            Core strategic message: every channel should end in a Zaki-owned customer record, not a
+            platform-owned one.
+          </Note>
+        </div>
+      </Section>
+
+
       <Section title="Delivery Marketplaces" kicker="Channel dependence" description="Observed platforms: DoorDash, Grubhub, Seamless and Toast / online ordering.">
         <Table
           head={["Platform", "Role today", "Risk", "Customer data", "Audit status"]}
