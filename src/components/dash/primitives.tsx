@@ -489,3 +489,267 @@ export function Note({ children, tone = "gold" }: { children: ReactNode; tone?: 
 export function money(n: number) {
   return `$${n.toLocaleString("en-US")}`;
 }
+
+/* ============================================================
+   Visual diagram + asset primitives (update phase)
+   ============================================================ */
+
+/** Many inputs converging on a single hub — used for owner dependency. */
+export function HubDiagram({
+  eyebrow,
+  inputs,
+  hub,
+  hubNote,
+  roles,
+  tone = "warn",
+}: {
+  eyebrow: string;
+  inputs: string[];
+  hub: string;
+  hubNote?: string;
+  roles?: string[];
+  tone?: "warn" | "green";
+}) {
+  const chip =
+    tone === "warn"
+      ? "border-warn/35 bg-warn-soft/60 text-warn"
+      : "border-primary/25 bg-accent/60 text-accent-foreground";
+  const hubBox =
+    tone === "warn"
+      ? "border-warn/50 bg-warn-soft text-warn"
+      : "border-primary/30 bg-primary text-primary-foreground";
+  return (
+    <div className="rounded-lg border border-border bg-card p-6 shadow-card sm:p-8">
+      <p className="eyebrow text-center">{eyebrow}</p>
+      <div className="mt-5 grid gap-2 sm:grid-cols-3 lg:grid-cols-4">
+        {inputs.map((i) => (
+          <div
+            key={i}
+            className={cn(
+              "rounded-md border px-3 py-2 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em]",
+              chip,
+            )}
+          >
+            {i}
+          </div>
+        ))}
+      </div>
+      <div className="mt-5 flex justify-center gap-3 text-sm text-gold" aria-hidden>
+        <span>↓</span>
+        <span>↓</span>
+        <span>↓</span>
+      </div>
+      <div className="mt-4 flex justify-center">
+        <div
+          className={cn(
+            "rounded-md border px-8 py-3 text-center font-display text-xl font-bold uppercase tracking-[0.14em]",
+            hubBox,
+          )}
+        >
+          {hub}
+        </div>
+      </div>
+      {hubNote ? (
+        <p className="mt-3 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+          {hubNote}
+        </p>
+      ) : null}
+      {roles?.length ? (
+        <>
+          <div className="mx-auto mt-4 h-5 w-px bg-border-strong" />
+          <div className="mt-1 flex flex-wrap justify-center gap-2">
+            {roles.map((r) => (
+              <span
+                key={r}
+                className="rounded-full border border-gold/30 bg-gold-soft/60 px-3.5 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-gold"
+              >
+                {r}
+              </span>
+            ))}
+          </div>
+        </>
+      ) : null}
+    </div>
+  );
+}
+
+/** Vertical staged funnel: each stage can hold several parallel items. */
+export function StageFlow({
+  stages,
+  tone = "green",
+}: {
+  stages: { label: string; items?: string[] }[];
+  tone?: "green" | "gold";
+}) {
+  const accentText = tone === "gold" ? "text-gold" : "text-primary";
+  return (
+    <div className="rounded-lg border border-border bg-card p-6 shadow-card sm:p-8">
+      {stages.map((s, i) => (
+        <div key={s.label}>
+          <p
+            className={cn(
+              "text-center font-display text-base font-bold uppercase tracking-[0.12em]",
+              accentText,
+            )}
+          >
+            {s.label}
+          </p>
+          {s.items?.length ? (
+            <div className="mt-3 flex flex-wrap justify-center gap-2">
+              {s.items.map((it) => (
+                <span
+                  key={it}
+                  className="rounded-md border border-border bg-secondary px-3 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.08em] text-secondary-foreground"
+                >
+                  {it}
+                </span>
+              ))}
+            </div>
+          ) : null}
+          {i < stages.length - 1 ? (
+            <p className="mt-4 mb-4 text-center text-sm text-gold" aria-hidden>
+              ↓
+            </p>
+          ) : null}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export type TimelineRow = {
+  label: string;
+  /** 1-indexed inclusive start column */
+  start: number;
+  /** number of columns spanned */
+  span: number;
+  tone?: "green" | "gold" | "warn";
+  note?: string;
+};
+
+/** Horizontal Gantt-style timeline on a cream field. */
+export function Timeline({
+  columns,
+  rows,
+}: {
+  columns: string[];
+  rows: TimelineRow[];
+}) {
+  const bar = {
+    green: "bg-primary text-primary-foreground",
+    gold: "bg-gold text-background",
+    warn: "bg-warn text-background",
+  } as const;
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border bg-card p-5 shadow-card sm:p-7">
+      <div className="min-w-[46rem]">
+        <div
+          className="grid items-end gap-x-2 border-b border-border pb-3"
+          style={{ gridTemplateColumns: `14rem repeat(${columns.length}, minmax(0,1fr))` }}
+        >
+          <span className="eyebrow">Workstream</span>
+          {columns.map((c) => (
+            <span key={c} className="eyebrow text-center">
+              {c}
+            </span>
+          ))}
+        </div>
+        {rows.map((r) => (
+          <div
+            key={r.label}
+            className="grid items-center gap-x-2 border-b border-border py-2.5 last:border-0"
+            style={{ gridTemplateColumns: `14rem repeat(${columns.length}, minmax(0,1fr))` }}
+          >
+            <div className="pr-3">
+              <p className="truncate text-sm font-medium">{r.label}</p>
+              {r.note ? (
+                <p className="mt-0.5 text-[0.6875rem] uppercase tracking-[0.1em] text-gold">
+                  {r.note}
+                </p>
+              ) : null}
+            </div>
+            {columns.map((c, ci) => {
+              const idx = ci + 1;
+              if (idx !== r.start) {
+                return idx > r.start && idx < r.start + r.span ? null : (
+                  <div key={c} className="h-6 rounded bg-secondary/50" />
+                );
+              }
+              return (
+                <div
+                  key={c}
+                  style={{ gridColumn: `span ${r.span} / span ${r.span}` }}
+                  className={cn(
+                    "flex h-6 items-center justify-center rounded px-2 text-[0.625rem] font-bold uppercase tracking-[0.1em]",
+                    bar[r.tone ?? "green"],
+                  )}
+                >
+                  {r.span > 1 ? `${r.span} weeks` : ""}
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * One asset position. Renders the real image when supplied, otherwise a clean
+ * labelled placeholder that can be replaced later without layout change.
+ */
+export function AssetFrame({
+  label,
+  batch,
+  src,
+  alt,
+  ratio = "4/3",
+  caption,
+  type,
+  className,
+}: {
+  label: string;
+  batch: string;
+  src?: string;
+  alt?: string;
+  ratio?: string;
+  caption?: string;
+  /** Type A real Zaki evidence, Type B JARA-created concept asset. */
+  type?: "evidence" | "concept";
+  className?: string;
+}) {
+  return (
+    <figure
+      className={cn(
+        "overflow-hidden rounded-lg border border-border bg-card shadow-card",
+        className,
+      )}
+    >
+      {src ? (
+        <img
+          src={src}
+          alt={alt ?? label}
+          style={{ aspectRatio: ratio }}
+          className="w-full object-cover"
+          loading="lazy"
+        />
+      ) : (
+        <AssetPlaceholder label={label} batch={batch} ratio={ratio} className="rounded-none border-0 border-b" />
+      )}
+      <figcaption className="space-y-2 p-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-sm font-semibold">{label}</span>
+          {type ? (
+            <Pill tone={type === "evidence" ? "green" : "gold"}>
+              {type === "evidence" ? "Zaki evidence" : "JARA concept"}
+            </Pill>
+          ) : null}
+        </div>
+        {caption ? (
+          <p className="text-xs leading-relaxed text-muted-foreground">{caption}</p>
+        ) : null}
+      </figcaption>
+    </figure>
+  );
+}
