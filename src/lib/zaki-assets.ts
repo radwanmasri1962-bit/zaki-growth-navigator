@@ -35,6 +35,9 @@ export const zakiAssets = {
   truckEvent: truckEvent.url,
   takeAwayOrder: takeAwayOrder.url,
   team: team.url,
+  instagramProfile: instagramProfile.url,
+  facebookPage: facebookPage.url,
+  truckMap: truckMap.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */
