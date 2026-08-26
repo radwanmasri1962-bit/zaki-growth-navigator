@@ -120,13 +120,14 @@ function ClientViewPage() {
 
       <Section title="How We Work" kicker="Engagement approach">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
+          {([
             ["Discover", "Sessions with Ahmed and on-site observation to record how Zaki actually runs."],
             ["Document", "Recipes, procedures and roles written down in usable form."],
             ["Standardize", "Training, checklists and channel alignment put into daily practice."],
             ["Delegate", "A management layer and owner reporting that returns time to Ahmed."],
-          ].map(([t, d], i) => (
+          ] as const).map(([t, d], i) => (
             <Panel key={t} eyebrow={`Step ${i + 1}`} title={t}>
+
               <p className="text-sm leading-relaxed text-muted-foreground">{d}</p>
             </Panel>
           ))}
