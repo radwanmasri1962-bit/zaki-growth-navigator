@@ -21,6 +21,7 @@ import team from "@/assets/Zaki_Team_ChatGPT_1.webp.asset.json";
 import instagramProfile from "@/assets/zaki-instagram-profile.png.asset.json";
 import facebookPage from "@/assets/zaki-facebook-page.png.asset.json";
 import truckMap from "@/assets/zaki-truck-map-illustration.jpg.asset.json";
+import ahmedPortrait from "@/assets/ahmed-hero.png.asset.json";
 
 export const zakiAssets = {
   buddDairy: buddDairy.url,
@@ -38,6 +39,7 @@ export const zakiAssets = {
   instagramProfile: instagramProfile.url,
   facebookPage: facebookPage.url,
   truckMap: truckMap.url,
+  ahmedPortrait: ahmedPortrait.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */
