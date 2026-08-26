@@ -137,7 +137,9 @@ function BusinessPage() {
           head={["Channel", "Status", "Customer ownership", "Margin exposure", "Data status"]}
           rows={[
             ["Budd Dairy walk-up", "Permanent", "Zaki (anonymous)", "Best", "Not yet verified"],
-            ["Food trucks", "Active, ≈4 units", "Zaki (anonymous)", "Best", "Not yet verified"],
+            ["Worthington location", "Permanent", "Zaki (anonymous)", "Best", "Not yet verified"],
+            ["Food trucks", "Active, 4 units", "Zaki (anonymous)", "Best", "Not yet verified"],
+            ["Events", "Active", "Zaki (anonymous)", "Strong", "Not yet verified"],
             ["Catering / B2B", "Active, informal", "Zaki (known customer)", "Strong", "Not yet verified"],
             ["Toast / direct online", "Active", "Zaki", "Good", "Not yet verified"],
             ["DoorDash", "Active", "Platform", "Commission-heavy", "Not yet verified"],
