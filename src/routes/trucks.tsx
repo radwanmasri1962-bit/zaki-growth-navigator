@@ -158,7 +158,15 @@ function TrucksPage() {
             type="concept"
             caption={`Service window, menu board and queue flow. ${JARA_CONCEPT_NOTE}`}
           />
-          <AssetPlaceholder label="Columbus truck location map" batch="Batch 3" ratio="4/3" />
+          <AssetFrame
+            label="Columbus truck location map"
+            batch="Batch 3"
+            src={zakiAssets.truckMap}
+            alt="Illustrated map of Columbus showing Zaki trucks at stadium, downtown, weddings, markets and breweries"
+            ratio="4/3"
+            type="concept"
+            caption={`Illustrated coverage map — stadium, downtown, private events, markets and brewery locations. ${JARA_CONCEPT_NOTE}`}
+          />
         </div>
       </Section>
     </div>
