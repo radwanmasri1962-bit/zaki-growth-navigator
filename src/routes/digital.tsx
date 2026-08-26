@@ -33,10 +33,14 @@ export const Route = createFileRoute("/digital")({
   component: DigitalPage,
 });
 
-function Evidence({ label, batch, problem, recommended }: { label: string; batch: string; problem: string; recommended: string }) {
+function Evidence({ label, batch, problem, recommended, src, alt }: { label: string; batch: string; problem: string; recommended: string; src?: string; alt?: string }) {
   return (
     <div className="rounded-lg border border-border bg-card p-5 shadow-card">
-      <AssetPlaceholder label={label} batch={batch} ratio="16/10" />
+      {src ? (
+        <AssetFrame label={label} batch={batch} src={src} alt={alt ?? label} ratio="16/10" type="evidence" />
+      ) : (
+        <AssetPlaceholder label={label} batch={batch} ratio="16/10" />
+      )}
       <div className="mt-4 space-y-3">
         <div>
           <p className="eyebrow">Problem / opportunity</p>
@@ -168,12 +172,16 @@ function DigitalPage() {
           <Evidence
             label="Instagram profile & grid"
             batch="Batch 4"
+            src={zakiAssets.instagramProfile}
+            alt="Zaki Grill Instagram profile with bio, follower count and post grid"
             problem="Inconsistent visual presentation and unclear calls to action; truck locations not reliably communicated."
             recommended="Content calendar, consistent grid, truck-location posts, catering call to action."
           />
           <Evidence
             label="Facebook page"
             batch="Batch 4"
+            src={zakiAssets.facebookPage}
+            alt="Zaki Grill Facebook page with details, recommendations and location posts"
             problem="Duplicate information risk and unclear ordering path."
             recommended="Aligned information, direct ordering link, events and catering promotion."
           />
@@ -211,8 +219,24 @@ function DigitalPage() {
               channels.
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <AssetPlaceholder label="Instagram evidence" batch="Batch 4" ratio="4/5" />
-              <AssetPlaceholder label="Facebook evidence" batch="Batch 4" ratio="4/5" />
+              <AssetFrame
+                label="Instagram profile"
+                batch="Batch 4"
+                src={zakiAssets.instagramProfile}
+                alt="Zaki Grill Instagram profile showing followers, bio and post grid"
+                ratio="16/10"
+                type="evidence"
+                caption="Captured Instagram profile — audience, bio, link setup and content grid."
+              />
+              <AssetFrame
+                label="Facebook page"
+                batch="Batch 4"
+                src={zakiAssets.facebookPage}
+                alt="Zaki Grill Facebook page showing details, recommendations and truck location posts"
+                ratio="16/10"
+                type="evidence"
+                caption="Captured Facebook page — recommendations, contact details and truck-location posts."
+              />
             </div>
           </Panel>
         </div>

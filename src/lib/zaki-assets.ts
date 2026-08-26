@@ -18,6 +18,9 @@ import cateringSpread from "@/assets/Zaki_Catering_ChatGPT_1.webp.asset.json";
 import truckEvent from "@/assets/Zaki_Food_Truck_Event_ChatGPT_1.webp.asset.json";
 import takeAwayOrder from "@/assets/Zaki_Take_Away_Order_ChatGPT_1.webp.asset.json";
 import team from "@/assets/Zaki_Team_ChatGPT_1.webp.asset.json";
+import instagramProfile from "@/assets/zaki-instagram-profile.png.asset.json";
+import facebookPage from "@/assets/zaki-facebook-page.png.asset.json";
+import truckMap from "@/assets/zaki-truck-map-illustration.jpg.asset.json";
 
 export const zakiAssets = {
   buddDairy: buddDairy.url,
@@ -32,6 +35,9 @@ export const zakiAssets = {
   truckEvent: truckEvent.url,
   takeAwayOrder: takeAwayOrder.url,
   team: team.url,
+  instagramProfile: instagramProfile.url,
+  facebookPage: facebookPage.url,
+  truckMap: truckMap.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */

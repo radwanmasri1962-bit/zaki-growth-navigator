@@ -51,6 +51,9 @@ const RECEIVED = [
   { src: zakiAssets.truckEvent, label: "Truck event activation (JARA concept)", batch: "Batch 3", use: "Business, Trucks, Catering", dark: false },
   { src: zakiAssets.team, label: "Team at service counter (JARA concept)", batch: "Batch 3", use: "Business, Operations, People, Founder", dark: false },
   { src: zakiAssets.takeAwayOrder, label: "Direct ordering journey (JARA concept)", batch: "Batch 6", use: "Digital", dark: false },
+  { src: zakiAssets.instagramProfile, label: "Instagram profile (captured evidence)", batch: "Batch 4", use: "Digital", dark: false },
+  { src: zakiAssets.facebookPage, label: "Facebook page (captured evidence)", batch: "Batch 4", use: "Digital", dark: false },
+  { src: zakiAssets.truckMap, label: "Columbus truck location map (JARA illustration)", batch: "Batch 3", use: "Trucks", dark: false },
 ];
 
 const BATCHES: { batch: string; name: string; items: string[]; status: "Partial" | "Pending" }[] = [
@@ -133,8 +136,9 @@ const REGISTER: RegisterRow[] = [
   { name: "DoorDash listing", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
   { name: "Grubhub / Seamless listing", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
   { name: "Yelp profile", category: "Digital", page: "Digital, Reputation", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
-  { name: "Instagram profile", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
-  { name: "Facebook page", category: "Digital", page: "Digital", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 4", updated: "—" },
+  { name: "Instagram profile", category: "Digital", page: "Digital", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 4", updated: "Latest update" },
+  { name: "Facebook page", category: "Digital", page: "Digital", status: "Deployed", source: "Type A — Zaki evidence", verified: true, batch: "Batch 4", updated: "Latest update" },
+  { name: "Columbus truck location map (illustration)", category: "Operations", page: "Trucks", status: "Deployed", source: "Type B — JARA concept", verified: false, batch: "Batch 3", updated: "Latest update" },
   { name: "Catering setup / tray", category: "Catering", page: "Catering", status: "Pending upload", source: "Type A — Zaki evidence", verified: false, batch: "Batch 2", updated: "—" },
   { name: "Website prototype screens", category: "Concept", page: "Digital", status: "Pending upload", source: "Type B — JARA concept", verified: false, batch: "Batch 6", updated: "—" },
 ];
