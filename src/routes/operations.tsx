@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  AssetFrame,
+  AssetPlaceholder,
   Bullets,
   CompareColumns,
   Flow,
@@ -10,6 +12,7 @@ import {
   Section,
   Table,
 } from "@/components/dash/primitives";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/operations")({
   head: () => ({

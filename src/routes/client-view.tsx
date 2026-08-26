@@ -11,6 +11,7 @@ import {
   Section,
   Table,
 } from "@/components/dash/primitives";
+import { zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/client-view")({
   head: () => ({
@@ -91,6 +92,20 @@ function ClientViewPage() {
           <div className="overflow-hidden rounded-lg border border-border shadow-card">
             <img src={chickenBowl.url} alt="Zaki Grill chicken bowl" className="h-full w-full object-cover" loading="lazy" />
           </div>
+        </div>
+      </Section>
+
+      <Section title="How Zaki Can Look" kicker="Presentation direction" description="Concept imagery prepared by JARA AI showing the standard of product, packaging and catering presentation the brand can hold consistently.">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <img src={zakiAssets.falafelBowl} alt="Falafel bowl with rice, vegetables and tahini" className="aspect-[4/3] w-full rounded-lg border border-border object-cover shadow-card" loading="lazy" />
+          <img src={zakiAssets.takeAwayContainers} alt="Branded Zaki takeaway containers and wrap" className="aspect-[4/3] w-full rounded-lg border border-border object-cover shadow-card" loading="lazy" />
+          <img src={zakiAssets.cateringSpread} alt="Zaki catering buffet spread with sign" className="aspect-[4/3] w-full rounded-lg border border-border object-cover shadow-card" loading="lazy" />
+        </div>
+        <div className="mt-4">
+          <Note>
+            These are JARA-created concept visuals illustrating presentation direction — not
+            photographs of current operations.
+          </Note>
         </div>
       </Section>
 
