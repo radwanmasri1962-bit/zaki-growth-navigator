@@ -9,6 +9,7 @@ import {
   Panel,
   Section,
 } from "@/components/dash/primitives";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 
 export const Route = createFileRoute("/founder")({
   head: () => ({
@@ -141,7 +142,15 @@ function FounderPage() {
           </Panel>
           <div className="grid gap-4">
             <AssetFrame label="Ahmed / founder portrait" batch="Batch 3" ratio="4/5" type="evidence" caption="Founder portrait for brand story, website and PR use." />
-            <AssetFrame label="Team / kitchen image" batch="Batch 3" ratio="4/3" type="evidence" caption="Team at work — supports the people and training narrative." />
+            <AssetFrame
+              label="Team / kitchen image"
+              batch="Batch 3"
+              src={zakiAssets.team}
+              alt="Zaki staff assembling a bowl at the service counter"
+              ratio="4/3"
+              type="concept"
+              caption={`Team and service-counter direction. ${JARA_CONCEPT_NOTE}`}
+            />
           </div>
         </div>
       </Section>
