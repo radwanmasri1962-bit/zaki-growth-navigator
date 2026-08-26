@@ -61,6 +61,52 @@ function CateringPage() {
         </div>
       </Section>
 
+      <Section
+        title="Catering Channels"
+        kicker="Two distinct engines"
+        description="Direct Zaki catering and marketplace / corporate catering are different businesses with different economics and different customer ownership."
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          <Panel eyebrow="Channel A" title="Direct Zaki catering" tone="green">
+            <Bullets
+              tone="green"
+              items={[
+                "Zaki owns the customer relationship and the data",
+                "Best margin position",
+                "Requires packages, quote process and follow-up discipline",
+                "Currently informal — the largest catering opportunity",
+              ]}
+            />
+          </Panel>
+          <Panel eyebrow="Channel B" title="Marketplace / corporate catering" tone="gold">
+            <Bullets
+              items={[
+                "Access to existing corporate demand",
+                "Platform holds the customer relationship",
+                "Commission exposure on every order",
+                "ezCater — channel opportunity, to be validated",
+              ]}
+            />
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Pill tone="gold">ezCater</Pill>
+              <Pill tone="warn">Channel opportunity / to validate</Pill>
+            </div>
+          </Panel>
+        </div>
+      </Section>
+
+      <Section title="Future Catering State" kicker="Target funnel">
+        <StageFlow
+          stages={[
+            { label: "Demand", items: ["Corporate", "University", "Events", "Private", "Recurring"] },
+            { label: "Entry", items: ["Website inquiry", "Direct contact", "Marketplace / ezCater"] },
+            { label: "Process", items: ["Qualification", "Package", "Quote", "Follow-up"] },
+            { label: "Delivery", items: ["Production standard", "Setup standard", "Presentation standard"] },
+            { label: "Retention", items: ["Review request", "CRM record", "Repeat account"] },
+          ]}
+        />
+      </Section>
+
       <Section title="B2B Opportunity Areas" kicker="Demand segments" description="Segments to be validated during discovery — no volume or revenue assumptions are stated.">
         <Table
           head={["Segment", "Fit", "Entry point", "Repeat potential", "Status"]}
