@@ -18,6 +18,7 @@ import { Route as MenuRouteImport } from './routes/menu'
 import { Route as OperationsRouteImport } from './routes/operations'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PeopleRouteImport } from './routes/people'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductRouteImport } from './routes/product'
 import { Route as ReputationRouteImport } from './routes/reputation'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
@@ -69,6 +70,11 @@ const PeopleRoute = PeopleRouteImport.update({
   path: '/people',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductRoute = ProductRouteImport.update({
   id: '/product',
   path: '/product',
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/operations': typeof OperationsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
+  '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
   '/roadmap': typeof RoadmapRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByTo {
   '/operations': typeof OperationsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
+  '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
   '/roadmap': typeof RoadmapRoute
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   '/operations': typeof OperationsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/people': typeof PeopleRoute
+  '/pricing': typeof PricingRoute
   '/product': typeof ProductRoute
   '/reputation': typeof ReputationRoute
   '/roadmap': typeof RoadmapRoute
@@ -156,6 +165,7 @@ export interface FileRouteTypes {
     | '/operations'
     | '/opportunities'
     | '/people'
+    | '/pricing'
     | '/product'
     | '/reputation'
     | '/roadmap'
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | '/operations'
     | '/opportunities'
     | '/people'
+    | '/pricing'
     | '/product'
     | '/reputation'
     | '/roadmap'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/operations'
     | '/opportunities'
     | '/people'
+    | '/pricing'
     | '/product'
     | '/reputation'
     | '/roadmap'
@@ -205,6 +217,7 @@ export interface RootRouteChildren {
   OperationsRoute: typeof OperationsRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
   PeopleRoute: typeof PeopleRoute
+  PricingRoute: typeof PricingRoute
   ProductRoute: typeof ProductRoute
   ReputationRoute: typeof ReputationRoute
   RoadmapRoute: typeof RoadmapRoute
@@ -277,6 +290,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PeopleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/product': {
       id: '/product'
       path: '/product'
@@ -325,6 +345,7 @@ const rootRouteChildren: RootRouteChildren = {
   OperationsRoute: OperationsRoute,
   OpportunitiesRoute: OpportunitiesRoute,
   PeopleRoute: PeopleRoute,
+  PricingRoute: PricingRoute,
   ProductRoute: ProductRoute,
   ReputationRoute: ReputationRoute,
   RoadmapRoute: RoadmapRoute,
