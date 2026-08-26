@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  AssetFrame,
   AssetPlaceholder,
   Bullets,
   Flow,
@@ -8,6 +9,7 @@ import {
   Panel,
   Pill,
   Section,
+  StageFlow,
   Table,
 } from "@/components/dash/primitives";
 
