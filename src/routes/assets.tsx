@@ -51,6 +51,9 @@ const RECEIVED = [
   { src: zakiAssets.truckEvent, label: "Truck event activation (JARA concept)", batch: "Batch 3", use: "Business, Trucks, Catering", dark: false },
   { src: zakiAssets.team, label: "Team at service counter (JARA concept)", batch: "Batch 3", use: "Business, Operations, People, Founder", dark: false },
   { src: zakiAssets.takeAwayOrder, label: "Direct ordering journey (JARA concept)", batch: "Batch 6", use: "Digital", dark: false },
+  { src: zakiAssets.instagramProfile, label: "Instagram profile (captured evidence)", batch: "Batch 4", use: "Digital", dark: false },
+  { src: zakiAssets.facebookPage, label: "Facebook page (captured evidence)", batch: "Batch 4", use: "Digital", dark: false },
+  { src: zakiAssets.truckMap, label: "Columbus truck location map (JARA illustration)", batch: "Batch 3", use: "Trucks", dark: false },
 ];
 
 const BATCHES: { batch: string; name: string; items: string[]; status: "Partial" | "Pending" }[] = [
