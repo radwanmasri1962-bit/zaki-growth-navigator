@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import zakiLogo from "@/assets/zaki-logo.png.asset.json";
+import zakiLogo from "@/assets/zaki-wordmark.png.asset.json";
 import jaraLogo from "@/assets/jara-logo-light.png.asset.json";
 
 export const NAV: { to: string; label: string; internal?: boolean }[] = [

@@ -95,9 +95,9 @@ function MenuPage() {
           caption="Blank cells mean the channel has not yet been captured — they do not mean the item is unavailable."
         />
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          <AssetPlaceholder label="Current menu" batch="Batch 5" ratio="4/3" />
-          <AssetPlaceholder label="Online menu screenshots" batch="Batch 5" ratio="4/3" />
-          <AssetPlaceholder label="Modifier / options screens" batch="Batch 5" ratio="4/3" />
+          <AssetPlaceholder label="Current physical menu / menu board" batch="Batch 5" ratio="4/3" />
+          <AssetPlaceholder label="Current online menu" batch="Batch 5" ratio="4/3" />
+          <AssetPlaceholder label="Modifiers / options / ordering screen" batch="Batch 5" ratio="4/3" />
         </div>
       </Section>
 

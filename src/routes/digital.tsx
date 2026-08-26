@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  AssetFrame,
   AssetPlaceholder,
   Bullets,
   Flow,
@@ -8,6 +9,7 @@ import {
   Panel,
   Pill,
   Section,
+  StageFlow,
   Table,
 } from "@/components/dash/primitives";
 
@@ -80,6 +82,43 @@ function DigitalPage() {
         </div>
       </Section>
 
+      <Section
+        title="CRM & Customer Ownership"
+        kicker="Major opportunity"
+        description="Zaki should build an owned customer database. Marketplace customers alone do not create sufficient customer ownership — the platform keeps the relationship, the data and the ability to market again."
+      >
+        <StageFlow
+          stages={[
+            { label: "Customer" },
+            { label: "Touchpoints", items: ["Website", "Catering", "Orders", "Events", "Reviews"] },
+            { label: "Customer database / CRM" },
+            {
+              label: "Activation",
+              items: [
+                "Email",
+                "SMS",
+                "Follow-up",
+                "Review requests",
+                "Catering follow-up",
+                "Promotions",
+                "Event announcements",
+              ],
+            },
+            {
+              label: "Outcome",
+              items: ["Repeat orders", "Retention", "Reviews", "Catering", "Customer value"],
+            },
+          ]}
+        />
+        <div className="mt-4">
+          <Note>
+            Core strategic message: every channel should end in a Zaki-owned customer record, not a
+            platform-owned one.
+          </Note>
+        </div>
+      </Section>
+
+
       <Section title="Delivery Marketplaces" kicker="Channel dependence" description="Observed platforms: DoorDash, Grubhub, Seamless and Toast / online ordering.">
         <Table
           head={["Platform", "Role today", "Risk", "Customer data", "Audit status"]}
@@ -136,6 +175,12 @@ function DigitalPage() {
             batch="Batch 4"
             problem="Duplicate information risk and unclear ordering path."
             recommended="Aligned information, direct ordering link, events and catering promotion."
+          />
+          <Evidence
+            label="Other active delivery platform"
+            batch="Batch 4"
+            problem="Any additional active platform carries its own menu, pricing and photography version."
+            recommended="Included in the single source-of-truth channel routine with a named owner."
           />
         </div>
       </Section>
@@ -209,13 +254,15 @@ function DigitalPage() {
             >
               zaki-hub-fresh-fast.lovable.app
             </a>
-            <div className="mt-4">
-              <AssetPlaceholder label="Proposed website mockup" batch="Batch 6" ratio="4/3" />
-            </div>
             <div className="mt-3">
               <Pill tone="gold">Conceptual future state — not live Zaki property</Pill>
             </div>
           </Panel>
+        </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          <AssetFrame label="Website prototype — homepage" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
+          <AssetFrame label="Website prototype — menu" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
+          <AssetFrame label="Website prototype — catering" batch="Batch 6" ratio="4/3" type="concept" caption="JARA AI concept — proposed future website." />
         </div>
       </Section>
     </div>

@@ -8,6 +8,7 @@ import {
   Pill,
   Section,
   Table,
+  Timeline,
 } from "@/components/dash/primitives";
 
 export const Route = createFileRoute("/roadmap")({
@@ -113,6 +114,56 @@ function RoadmapPage() {
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-muted-foreground">
             Ahmed built demand. The next phase builds the infrastructure that demand now requires.
           </p>
+        </div>
+      </Section>
+
+      <Section
+        title="90-Day Implementation Timeline"
+        kicker="Days 1–90"
+        description="Foundation (Days 1–30), Build (Days 31–60), Implement and Transfer (Days 61–90). Discovery and validation is delivered as a complimentary strategic diagnostic."
+      >
+        <div className="mb-4 grid gap-4 sm:grid-cols-3">
+          <Panel eyebrow="Days 1–30" title="Foundation" tone="gold">
+            <p className="text-sm leading-relaxed">
+              Diagnose, validate and document the real business — no assumptions carried forward.
+            </p>
+          </Panel>
+          <Panel eyebrow="Days 31–60" title="Build">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Construct recipes, SOPs, systems, digital assets and the catering engine.
+            </p>
+          </Panel>
+          <Panel eyebrow="Days 61–90" title="Implement + Transfer" tone="green">
+            <p className="text-sm leading-relaxed">
+              Train the team, activate the systems and transfer control back to Zaki.
+            </p>
+          </Panel>
+        </div>
+        <Timeline
+          columns={["W1", "W2", "W3", "W4", "W5", "W6", "W7", "W8", "W9", "W10", "W11", "W12"]}
+          rows={[
+            { label: "Discovery & validation", start: 1, span: 2, tone: "gold", note: "Complimentary · $0" },
+            { label: "Business diagnostic", start: 1, span: 3, tone: "gold" },
+            { label: "Recipe documentation", start: 3, span: 5 },
+            { label: "SOP architecture", start: 4, span: 5 },
+            { label: "People & role structure", start: 5, span: 4 },
+            { label: "Training program", start: 7, span: 4 },
+            { label: "Food truck operating system", start: 6, span: 4 },
+            { label: "Menu & channel alignment", start: 4, span: 3 },
+            { label: "Website & digital build", start: 4, span: 6 },
+            { label: "CRM & customer capture", start: 6, span: 4 },
+            { label: "Reputation engine", start: 5, span: 3 },
+            { label: "Catering engine", start: 7, span: 4 },
+            { label: "Communication support", start: 2, span: 11, tone: "gold" },
+            { label: "Management reporting", start: 9, span: 4 },
+            { label: "Owner relief & handover", start: 10, span: 3, tone: "green" },
+          ]}
+        />
+        <div className="mt-4">
+          <Note>
+            Discovery and validation is provided at no charge to the client — a JARA AI goodwill
+            investment in the relationship.
+          </Note>
         </div>
       </Section>
 

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import zakiLogo from "@/assets/zaki-logo.png.asset.json";
+import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraDark from "@/assets/jara-logo-dark.png.asset.json";
 import chickenBowl from "@/assets/chicken-bowl.webp.asset.json";
 import {
@@ -42,20 +42,28 @@ function ClientViewPage() {
 
       <Section title="Cover" kicker="Opening slide">
         <div className="overflow-hidden rounded-lg border border-border shadow-card">
-          <div className="relative bg-foreground px-6 py-16 text-center sm:px-12 sm:py-20">
-            <img src={zakiLogo.url} alt="Zaki Grill" className="mx-auto h-16 w-auto" />
-            <h2 className="mt-8 font-display text-2xl font-bold text-background sm:text-3xl">
-              Business Transformation &amp; Opportunity Map
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-background/70">
-              A structured view of what Zaki Grill has built, and the infrastructure that turns that
-              success into a system the owner controls.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-2">
-              <span className="text-[0.6875rem] uppercase tracking-[0.2em] text-background/50">
-                Prepared by
-              </span>
-              <img src={jaraDark.url} alt="JARA AI" className="h-6 w-auto" />
+          <div className="relative overflow-hidden bg-foreground px-6 py-20 text-center sm:px-12 sm:py-24">
+            <img
+              src={chickenBowl.url}
+              alt=""
+              aria-hidden
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.12]"
+            />
+            <div className="relative">
+              <img src={zakiWordmark.url} alt="Zaki Grill" className="mx-auto h-20 w-auto" />
+              <h2 className="mt-10 font-display text-3xl font-bold text-background sm:text-4xl">
+                Business Transformation &amp; Opportunity Map
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-background/70">
+                A structured view of what Zaki Grill has built, and the infrastructure that turns
+                that success into a system the owner controls.
+              </p>
+              <div className="mt-12 flex flex-col items-center gap-3">
+                <span className="text-[0.6875rem] uppercase tracking-[0.2em] text-background/50">
+                  Prepared by
+                </span>
+                <img src={jaraDark.url} alt="JARA AI" className="h-7 w-auto" />
+              </div>
             </div>
           </div>
         </div>
