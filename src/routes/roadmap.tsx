@@ -8,6 +8,7 @@ import {
   Pill,
   Section,
   Table,
+  Timeline,
 } from "@/components/dash/primitives";
 
 export const Route = createFileRoute("/roadmap")({
