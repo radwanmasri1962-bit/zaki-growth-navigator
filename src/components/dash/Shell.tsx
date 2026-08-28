@@ -22,6 +22,7 @@ export const NAV: { to: string; label: string; internal?: boolean }[] = [
   { to: "/risks", label: "Risks" },
   { to: "/assets", label: "Assets" },
   { to: "/client-view", label: "Client View" },
+  { to: "/presentation", label: "Presentation" },
 ];
 
 export function Shell({ children }: { children: ReactNode }) {
