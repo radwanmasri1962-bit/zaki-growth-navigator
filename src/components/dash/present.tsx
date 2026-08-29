@@ -254,3 +254,130 @@ export function GroupCard({
     </div>
   );
 }
+
+/**
+ * Elegant labeled slot for an operational deliverable (recipe, SOP, assembly
+ * guide, mockup) that will be uploaded later. Renders the asset when `src` is
+ * provided, otherwise a premium document-style placeholder.
+ */
+export function DocSlot({
+  label,
+  ratio = "3/4",
+  src,
+  alt,
+  note,
+  kind = "document",
+  className,
+  dominant,
+}: {
+  /** Placeholder name, e.g. "PALESTINIAN HUMMUS MASTER RECIPE". */
+  label: string;
+  ratio?: string;
+  src?: string;
+  alt?: string;
+  /** Small caption, e.g. "JARA concept / proposed Zaki operations system". */
+  note?: string;
+  kind?: "document" | "screen" | "photo";
+  className?: string;
+  dominant?: boolean;
+}) {
+  return (
+    <figure
+      className={cn(
+        "group overflow-hidden rounded-lg border bg-card shadow-card",
+        dominant ? "border-border-strong shadow-lift" : "border-border",
+        className,
+      )}
+    >
+      {src ? (
+        <img
+          src={src}
+          alt={alt ?? label}
+          style={{ aspectRatio: ratio }}
+          className="w-full object-contain"
+          loading="lazy"
+        />
+      ) : (
+        <div
+          style={{ aspectRatio: ratio }}
+          className="relative flex w-full flex-col items-center justify-center gap-3 border-b border-border bg-secondary/70 px-5 text-center"
+        >
+          <span
+            className="pointer-events-none absolute inset-3 rounded-md border border-dashed border-border-strong/70"
+            aria-hidden
+          />
+          <span className="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-gold">
+            {kind === "screen" ? "Screen" : kind === "photo" ? "Photo" : "Document"}
+          </span>
+          <span
+            className={cn(
+              "font-display font-bold uppercase leading-tight tracking-[0.04em] text-espresso",
+              dominant ? "text-lg sm:text-2xl" : "text-sm sm:text-base",
+            )}
+          >
+            {label}
+          </span>
+          <span className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            Asset pending upload
+          </span>
+        </div>
+      )}
+      <figcaption className="px-4 py-3">
+        <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-foreground">
+          {label}
+        </p>
+        {note ? (
+          <p className="mt-1 text-[0.6875rem] leading-relaxed text-muted-foreground">{note}</p>
+        ) : null}
+      </figcaption>
+    </figure>
+  );
+}
+
+/** Horizontal process ribbon: PORTION → POSITION → BUILD → FINISH → SERVE. */
+export function Flow({
+  steps,
+  tone = "green",
+  className,
+}: {
+  steps: string[];
+  tone?: "green" | "gold" | "neutral" | "light";
+  className?: string;
+}) {
+  const box = {
+    green: "border-primary/30 bg-sage-soft/65 text-espresso",
+    gold: "border-sand bg-gold-soft/70 text-espresso",
+    neutral: "border-border bg-card text-foreground",
+    light: "border-background/30 bg-background/14 text-background",
+  } as const;
+  return (
+    <div className={cn("flex flex-wrap items-center justify-center gap-2", className)}>
+      {steps.map((s, i) => (
+        <div key={s} className="flex items-center gap-2">
+          <span
+            className={cn(
+              "rounded-md border px-4 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] sm:text-xs",
+              box[tone],
+            )}
+          >
+            {s}
+          </span>
+          {i < steps.length - 1 ? (
+            <span className={cn("text-sm", tone === "light" ? "text-sage" : "text-gold")} aria-hidden>
+              →
+            </span>
+          ) : null}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Restrained keyword row used under headlines. */
+export function KeyLine({ items }: { items: string[] }) {
+  return (
+    <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
+      {items.join(" · ")}
+    </p>
+  );
+}
