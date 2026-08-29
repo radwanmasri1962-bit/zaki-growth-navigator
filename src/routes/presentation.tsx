@@ -12,7 +12,7 @@ import {
 } from "@/components/dash/present";
 
 import { AssetFrame, Timeline } from "@/components/dash/primitives";
-import { zakiAssets } from "@/lib/zaki-assets";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
