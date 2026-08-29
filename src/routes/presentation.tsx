@@ -593,13 +593,29 @@ function PresentationPage() {
           <DocSlot
             label="PALESTINIAN HUMMUS MASTER RECIPE"
             kind="document"
-            ratio="4/3"
+            ratio="1149/1369"
+            src={zakiAssets.recipeHummus}
+            alt="Zaki Palestinian hummus master production recipe card"
+            note="Presentation example of the proposed Zaki recipe system."
             dominant
           />
           <div className="grid gap-5">
-            <DocSlot label="CHICKEN SHAWARMA 10 LB BATCH RECIPE" kind="document" ratio="16/10" />
-            <DocSlot label="FALAFEL BATCH RECIPE" kind="document" ratio="16/10" />
+            <DocSlot
+              label="CHICKEN SHAWARMA 10 LB BATCH RECIPE"
+              kind="document"
+              ratio="1149/1369"
+              src={zakiAssets.recipeChickenShawarma}
+              alt="Zaki chicken shawarma 10 lb batch marinade recipe card"
+            />
+            <DocSlot
+              label="MEXICAN RICE BATCH RECIPE"
+              kind="document"
+              ratio="1149/1369"
+              src={zakiAssets.recipeMexicanRice}
+              alt="Zaki Mexican rice 5 lb batch recipe card"
+            />
           </div>
+
         </div>
         <div className="mt-6">
           <KeyLine
