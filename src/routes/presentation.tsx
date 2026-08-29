@@ -1115,8 +1115,78 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 18 — PARTNERSHIP */}
+      {/* 23 — RELEVANT EXPERIENCE */}
+      <Scene
+        id="s23"
+        number="23"
+        kicker="Experience"
+        title="Built in this category."
+        lead="Mediterranean restaurant experience across operations, fast casual, multi-location growth and international markets."
+        tone="cream"
+      >
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              name: "Falafill",
+              place: "Chicago · Detroit · Panama",
+              role: "Opening · Management · Operations",
+            },
+            {
+              name: "Olive Mediterranean Grill",
+              place: "Chicago",
+              role: "Restaurant Consulting · Operations",
+            },
+            {
+              name: "Ayy Karamba",
+              place: "Dubai",
+              role: "Restaurant Operations · Development",
+            },
+            {
+              name: "Sajj Mediterranean",
+              place: "California",
+              role: "Consulting · Multi-Location Operations",
+            },
+          ].map((x) => (
+            <div
+              key={x.name}
+              className="flex flex-col rounded-lg border border-border bg-card p-6 shadow-card"
+            >
+              <p className="font-display text-xl font-bold uppercase leading-tight tracking-[0.02em]">
+                {x.name}
+              </p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                {x.place}
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{x.role}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6">
+          <KeyLine
+            items={[
+              "Recipes",
+              "Production",
+              "Fast casual",
+              "Training",
+              "Multi-location",
+              "Catering",
+              "Food trucks",
+              "Systems",
+            ]}
+          />
+        </div>
+        <div className="mt-10">
+          <Statement tone="dark" align="center">
+            Zaki is not my introduction to Mediterranean restaurant operations.
+            <br />
+            It is a category I already understand.
+          </Statement>
+        </div>
+      </Scene>
+
+      {/* 24 — PARTNERSHIP */}
       <Scene id="s24" number="24" kicker="Working together" title="JARA + Zaki" tone="white">
+
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-primary/25 bg-sage-soft/35 p-6 shadow-card sm:p-8">
             <div className="flex items-center gap-3">
