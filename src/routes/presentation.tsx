@@ -943,78 +943,84 @@ function PresentationPage() {
       </Scene>
 
       {/* 15 — WHAT JARA WILL BUILD */}
-      <Scene id="s20" number="20" kicker="Deliverables" title="What JARA will build" tone="cream">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <GroupCard
-            index="Group 1"
-            title="Operations"
-            items={[
-              "Recipes",
-              "SOPs",
-              "Kitchen controls",
-              "Food truck standards",
-              "Checklists",
-              "Management controls",
-            ]}
-          />
-          <GroupCard
-            index="Group 2"
-            title="People"
-            items={[
-              "Staffing structure",
-              "Job descriptions",
-              "Onboarding",
-              "Training",
-              "Employee manual",
-              "Performance standards",
-            ]}
-          />
-          <GroupCard
-            index="Group 3"
-            title="Customer"
-            items={[
-              "Communication workflow",
-              "CRM structure",
-              "Customer capture",
-              "Review system",
-              "Follow-up",
-            ]}
-          />
-          <GroupCard
-            index="Group 4"
-            title="Digital"
-            items={[
-              "Website ecosystem",
-              "Digital channel alignment",
-              "Menu consistency",
-              "Location information",
-              "Ordering pathways",
-            ]}
-          />
-          <GroupCard
-            index="Group 5"
-            title="Growth"
-            items={[
-              "Catering system",
-              "ezCater opportunity",
-              "Corporate accounts",
-              "Lead pipeline",
-              "Repeat business",
-            ]}
-          />
-          <GroupCard
-            index="Group 6"
-            title="Management"
-            items={[
-              "Reporting",
-              "Responsibilities",
-              "Accountability",
-              "Owner escalation rules",
-              "Operating dashboard",
-            ]}
-          />
+      <Scene
+        id="s20"
+        number="20"
+        kicker="Deliverables"
+        title="What JARA will build with Zaki"
+        tone="cream"
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              n: "01",
+              t: "Operations",
+              s: "Recipes + SOPs + Assembly standards",
+              label: "OPERATIONS DELIVERABLE PREVIEW",
+              kind: "document" as const,
+            },
+            {
+              n: "02",
+              t: "People",
+              s: "Training + Certification",
+              label: "TRAINING DELIVERABLE PREVIEW",
+              kind: "document" as const,
+            },
+            {
+              n: "03",
+              t: "Customer",
+              s: "Communication + Customer journey",
+              label: "CUSTOMER JOURNEY PREVIEW",
+              kind: "screen" as const,
+              src: zakiAssets.takeAwayOrder,
+              note: JARA_CONCEPT_NOTE,
+            },
+            {
+              n: "04",
+              t: "Digital",
+              s: "Website + Digital menu + CRM",
+              label: "DIGITAL DELIVERABLE PREVIEW",
+              kind: "screen" as const,
+            },
+            {
+              n: "05",
+              t: "Growth",
+              s: "Catering + Events + Reputation",
+              label: "GROWTH DELIVERABLE PREVIEW",
+              kind: "photo" as const,
+              src: zakiAssets.cateringSpread,
+              note: JARA_CONCEPT_NOTE,
+            },
+            {
+              n: "06",
+              t: "Management",
+              s: "Controls + Reporting + Accountability",
+              label: "MANAGEMENT REPORTING PREVIEW",
+              kind: "screen" as const,
+            },
+          ].map((d) => (
+            <div
+              key={d.n}
+              className="overflow-hidden rounded-lg border border-border bg-card shadow-card"
+            >
+              <DocSlot
+                label={d.label}
+                kind={d.kind}
+                ratio="16/10"
+                src={d.src}
+                note={d.note}
+                className="rounded-none border-0 border-b shadow-none"
+              />
+              <div className="p-5">
+                <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-gold">{d.n}</p>
+                <p className="mt-1.5 font-display text-xl font-bold">{d.t}</p>
+                <p className="mt-1.5 text-sm text-muted-foreground">{d.s}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </Scene>
+
 
       {/* 16 — ROADMAP */}
       <Scene
