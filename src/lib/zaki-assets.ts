@@ -23,6 +23,12 @@ import facebookPage from "@/assets/zaki-facebook-page.png.asset.json";
 import truckMap from "@/assets/zaki-truck-map-illustration.jpg.asset.json";
 import ahmedPortrait from "@/assets/ahmed-hero.png.asset.json";
 import ahmedTruckHero from "@/assets/ahmed-truck-hero.png.asset.json";
+import recipeHummus from "@/assets/recipe-hummus.png.asset.json";
+import recipeChickenShawarma from "@/assets/recipe-chicken-shawarma.png.asset.json";
+import recipeMexicanRice from "@/assets/recipe-mexican-rice.png.asset.json";
+import assemblyChickenBowl from "@/assets/assembly-chicken-bowl.png.asset.json";
+import assemblyChickenShawarma from "@/assets/assembly-chicken-shawarma.png.asset.json";
+import assemblySummerSalata from "@/assets/assembly-summer-salata.png.asset.json";
 
 export const zakiAssets = {
   buddDairy: buddDairy.url,
@@ -42,6 +48,12 @@ export const zakiAssets = {
   truckMap: truckMap.url,
   ahmedPortrait: ahmedPortrait.url,
   ahmedTruckHero: ahmedTruckHero.url,
+  recipeHummus: recipeHummus.url,
+  recipeChickenShawarma: recipeChickenShawarma.url,
+  recipeMexicanRice: recipeMexicanRice.url,
+  assemblyChickenBowl: assemblyChickenBowl.url,
+  assemblyChickenShawarma: assemblyChickenShawarma.url,
+  assemblySummerSalata: assemblySummerSalata.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */
