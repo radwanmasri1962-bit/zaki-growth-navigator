@@ -1,8 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Chain, Chip, GroupCard, RouteRow, Scene, Statement } from "@/components/dash/present";
+import {
+  Chain,
+  Chip,
+  DocSlot,
+  Flow,
+  KeyLine,
+  RouteRow,
+  Scene,
+  Statement,
+} from "@/components/dash/present";
+
 import { AssetFrame, Timeline } from "@/components/dash/primitives";
-import { zakiAssets } from "@/lib/zaki-assets";
+import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
@@ -38,19 +48,26 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s06", label: "What it costs", chapter: 1 },
   { id: "s07", label: "The transformation", chapter: 2 },
   { id: "s08", label: "Operations", chapter: 2 },
-  { id: "s09", label: "Staffing & training", chapter: 2 },
-  { id: "s10", label: "Customer communication", chapter: 2 },
-  { id: "s11", label: "The digital Zaki", chapter: 3 },
-  { id: "s12", label: "Reputation engine", chapter: 3 },
-  { id: "s13", label: "Catering engine", chapter: 3 },
-  { id: "s14", label: "Command center", chapter: 4 },
-  { id: "s15", label: "What JARA builds", chapter: 4 },
-  { id: "s16", label: "90-day roadmap", chapter: 4 },
-  { id: "s17", label: "What changes for Ahmed", chapter: 4 },
-  { id: "s18", label: "The partnership", chapter: 5 },
-  { id: "s19", label: "Investment", chapter: 5 },
-  { id: "s20", label: "Closing", chapter: 5 },
+  { id: "s09", label: "Recipe system", chapter: 2 },
+  { id: "s10", label: "Assembly standards", chapter: 2 },
+  { id: "s11", label: "SOP system", chapter: 2 },
+  { id: "s12", label: "Training & certification", chapter: 2 },
+  { id: "s13", label: "Physical + digital", chapter: 2 },
+  { id: "s14", label: "Customer communication", chapter: 2 },
+  { id: "s15", label: "The digital Zaki", chapter: 3 },
+  { id: "s16", label: "Digital menu", chapter: 3 },
+  { id: "s17", label: "Reputation engine", chapter: 3 },
+  { id: "s18", label: "Catering & events", chapter: 3 },
+  { id: "s19", label: "Command center", chapter: 4 },
+  { id: "s20", label: "What JARA builds", chapter: 4 },
+  { id: "s21", label: "90-day roadmap", chapter: 4 },
+  { id: "s22", label: "What changes for Ahmed", chapter: 4 },
+  { id: "s23", label: "Relevant experience", chapter: 5 },
+  { id: "s24", label: "The partnership", chapter: 5 },
+  { id: "s25", label: "Investment", chapter: 5 },
+  { id: "s26", label: "Closing", chapter: 5 },
 ];
+
 
 const CHAPTERS = [
   "01 Story",
@@ -563,55 +580,154 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 09 — STAFFING + TRAINING */}
+      {/* 09 — OPERATIONS A: RECIPE SYSTEM */}
       <Scene
         id="s09"
         number="09"
-        kicker="People"
-        title="The system trains the team."
+        kicker="Operations A"
+        title="Your recipes become Zaki's recipes."
+        lead="Turn kitchen knowledge into documented, repeatable company standards."
         tone="cream"
       >
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <Chain
-            steps={[
-              "Recruit",
-              "Onboard",
-              "Train",
-              "Test",
-              "Certify",
-              "Schedule",
-              "Review",
-              "Develop",
+        <div className="grid gap-5 lg:grid-cols-[1.5fr_1fr]">
+          <DocSlot
+            label="PALESTINIAN HUMMUS MASTER RECIPE"
+            kind="document"
+            ratio="4/3"
+            dominant
+          />
+          <div className="grid gap-5">
+            <DocSlot label="CHICKEN SHAWARMA 10 LB BATCH RECIPE" kind="document" ratio="16/10" />
+            <DocSlot label="FALAFEL BATCH RECIPE" kind="document" ratio="16/10" />
+          </div>
+        </div>
+        <div className="mt-6">
+          <KeyLine
+            items={[
+              "Ingredients",
+              "Batch quantities",
+              "Equipment",
+              "Method",
+              "Control points",
+              "Quality",
             ]}
           />
-          <div>
-            <p className="eyebrow">Supporting deliverables</p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              {[
-                "Employee handbook",
-                "Training manual",
-                "Position descriptions",
-                "Station training",
-                "Kitchen standards",
-                "Manager expectations",
-                "Checklists",
-                "Training sign-offs",
-                "Performance standards",
-              ].map((c) => (
-                <Chip key={c}>{c}</Chip>
-              ))}
-            </div>
-            <div className="mt-8">
-              <AssetFrame
-                label="Team at the counter"
-                batch="Batch 5"
-                src={zakiAssets.team}
-                alt="Zaki team serving at the counter"
-                ratio="16/9"
-                type="concept"
-              />
-            </div>
+        </div>
+        <div className="mt-10">
+          <Statement tone="gold">Same recipe. Same result. Every location.</Statement>
+        </div>
+      </Scene>
+
+      {/* 10 — OPERATIONS B: ASSEMBLY STANDARDS */}
+      <Scene
+        id="s10"
+        number="10"
+        kicker="Operations B"
+        title={
+          <>
+            Employees don't guess.
+            <br />
+            They follow the Zaki standard.
+          </>
+        }
+        tone="white"
+      >
+        <div className="grid gap-5 lg:grid-cols-3">
+          <DocSlot label="CHICKEN BOWL ASSEMBLY GUIDE" kind="document" ratio="4/5" dominant />
+          <DocSlot label="CHICKEN SHAWARMA ASSEMBLY GUIDE" kind="document" ratio="4/5" dominant />
+          <DocSlot
+            label="SUMMER SALATA / PRODUCT ASSEMBLY GUIDE"
+            kind="document"
+            ratio="4/5"
+            dominant
+          />
+        </div>
+        <div className="mt-8">
+          <Flow steps={["Portion", "Position", "Build", "Finish", "Serve"]} />
+        </div>
+        <p className="mt-6 text-center text-base text-muted-foreground">
+          Visual station guides standardize portion, sequence and presentation.
+        </p>
+      </Scene>
+
+      {/* 11 — OPERATIONS C: SOP SYSTEM */}
+      <Scene
+        id="s11"
+        number="11"
+        kicker="Operations C"
+        title="Every location opens, operates and closes the Zaki way."
+        tone="cream"
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <DocSlot label="FOOD TRUCK OPENING SOP" kind="document" ratio="3/4" dominant />
+          <DocSlot label="FOOD TRUCK CLOSING SOP" kind="document" ratio="3/4" dominant />
+          <DocSlot label="BUDD DAIRY OPENING SOP" kind="document" ratio="3/4" dominant />
+          <DocSlot label="BUDD DAIRY CLOSING SOP" kind="document" ratio="3/4" dominant />
+        </div>
+        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:max-w-2xl">
+          <DocSlot label="FOOD SAFETY & TEMPERATURE CONTROL SOP" kind="document" ratio="16/10" />
+          <DocSlot label="RECEIVING & INVENTORY SOP" kind="document" ratio="16/10" />
+        </div>
+        <div className="mt-8">
+          <Flow steps={["Open", "Operate", "Verify", "Close", "Report"]} />
+        </div>
+        <div className="mt-10">
+          <Statement tone="gold">
+            Systems replace memory.
+            <br />
+            Managers verify execution.
+          </Statement>
+        </div>
+      </Scene>
+
+
+      {/* 12 — TRAINING & CERTIFICATION */}
+      <Scene
+        id="s12"
+        number="12"
+        kicker="People"
+        title="Train the team without making Ahmed the training department."
+        tone="cream"
+      >
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <Chain
+            highlightLast
+            steps={[
+              "New hire",
+              "Learn",
+              "Watch",
+              "Practice",
+              "Demonstrate",
+              "Certify",
+              "Work independently",
+            ]}
+          />
+          <div className="space-y-5">
+            <DocSlot
+              label="ZAKI EMPLOYEE TRAINING & CERTIFICATION SYSTEM"
+              kind="document"
+              ratio="16/10"
+              dominant
+            />
+            <DocSlot
+              label="DIGITAL EMPLOYEE TRAINING / MOBILE SYSTEM"
+              kind="screen"
+              ratio="16/10"
+              note="JARA concept / proposed Zaki operations system."
+            />
           </div>
+        </div>
+        <div className="mt-8">
+          <Flow
+            tone="gold"
+            steps={[
+              "Training assigned",
+              "Completed",
+              "Skill demonstrated",
+              "Manager verified",
+              "Employee certified",
+            ]}
+          />
         </div>
         <div className="mt-10">
           <Statement tone="gold">
@@ -620,10 +736,72 @@ function PresentationPage() {
         </div>
       </Scene>
 
+      {/* 13 — PHYSICAL + DIGITAL OPERATING SYSTEM */}
+      <Scene
+        id="s13"
+        number="13"
+        kicker="Operating system"
+        title={
+          <>
+            One standard.
+            <br />
+            Available where the team needs it.
+          </>
+        }
+        tone="white"
+      >
+        <div className="grid items-start gap-6 lg:grid-cols-[1fr_auto_1fr]">
+          <div>
+            <p className="eyebrow mb-3">On the line</p>
+            <DocSlot
+              label="PHYSICAL RECIPE / SOP / CHEAT SHEET"
+              kind="document"
+              ratio="4/3"
+              dominant
+            />
+          </div>
+          <div className="flex h-full flex-col items-center justify-center gap-3 lg:px-4">
+            <span className="rounded-md border border-primary/30 bg-sage-soft/65 px-5 py-3 text-center font-display text-sm font-bold uppercase leading-tight tracking-[0.1em] text-espresso">
+              One Zaki standard
+              <br />↓<br />
+              Every location
+            </span>
+          </div>
+          <div>
+            <p className="eyebrow mb-3">On phone &amp; tablet</p>
+            <DocSlot
+              label="ZAKI DIGITAL OPERATIONS TABLET / MOBILE MOCKUP"
+              kind="screen"
+              ratio="4/3"
+              dominant
+              note="JARA concept / proposed Zaki operations system — not a live software product."
+            />
+          </div>
+        </div>
+        <div className="mt-8 grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
+          {[
+            "Recipes",
+            "Assembly",
+            "Opening",
+            "Closing",
+            "Food safety",
+            "Training",
+            "Inventory",
+            "Food trucks",
+            "Catering",
+          ].map((c) => (
+            <Chip key={c} tone="green">
+              {c}
+            </Chip>
+          ))}
+        </div>
+      </Scene>
+
+
       {/* 10 — CUSTOMER COMMUNICATION */}
       <Scene
-        id="s10"
-        number="10"
+        id="s14"
+        number="14"
         kicker="Target operating model"
         title="Not every call needs Ahmed."
         lead="Proposed future state — this routing layer is what the engagement builds."
@@ -648,8 +826,8 @@ function PresentationPage() {
 
       {/* 11 — DIGITAL ZAKI */}
       <Scene
-        id="s11"
-        number="11"
+        id="s15"
+        number="15"
         kicker="Digital"
         title={
           <>
@@ -714,35 +892,65 @@ function PresentationPage() {
             </div>
           </div>
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <AssetFrame
-            label="Website prototype — homepage"
-            batch="Batch 6"
-            ratio="4/3"
-            type="concept"
-            caption="JARA concept prototype — proposed future website."
+        <div className="mt-8 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+          <DocSlot
+            label="JARA ZAKI WEBSITE PROTOTYPE"
+            kind="screen"
+            ratio="16/10"
+            dominant
+            note="JARA concept prototype — not Zaki's current live website."
           />
-          <AssetFrame
-            label="Website prototype — menu"
-            batch="Batch 6"
-            ratio="4/3"
-            type="concept"
-            caption="JARA concept prototype — proposed future website."
-          />
-          <AssetFrame
-            label="Website prototype — catering"
-            batch="Batch 6"
-            ratio="4/3"
-            type="concept"
-            caption="JARA concept prototype — proposed future website."
+          <DocSlot
+            label="WEBSITE / CUSTOMER EXPERIENCE SCREEN"
+            kind="screen"
+            ratio="16/10"
+            note="JARA concept prototype — not Zaki's current live website."
           />
         </div>
       </Scene>
 
+      {/* 16 — DIGITAL MENU */}
+      <Scene
+        id="s16"
+        number="16"
+        kicker="Ahmed's idea"
+        title={
+          <>
+            Your digital menu idea.
+            <br />
+            Brought to life.
+          </>
+        }
+        tone="white"
+      >
+        <p className="-mt-6 mb-10 font-display text-xl font-bold uppercase tracking-[0.06em] text-espresso sm:text-2xl">
+          Let customers see the food before they order it.
+        </p>
+        <DocSlot
+          label="THREE-PRODUCT DIGITAL MENU TV MOCKUP"
+          kind="screen"
+          ratio="16/9"
+          dominant
+          note="JARA concept / proposed Zaki digital menu."
+        />
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <DocSlot label="CHICKEN BOWL LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
+          <DocSlot label="LOADED GYRO FRIES LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
+          <DocSlot label="REVENGE OF THE FALAFEL LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
+        </div>
+        <div className="mt-8">
+          <Flow steps={["See the food", "Understand the build", "Order with confidence"]} tone="gold" />
+        </div>
+        <div className="mt-8">
+          <Statement tone="green">Made fresh. Layer by layer.</Statement>
+        </div>
+      </Scene>
+
+
       {/* 12 — REPUTATION */}
       <Scene
-        id="s12"
-        number="12"
+        id="s17"
+        number="17"
         kicker="Reputation"
         title="Good reviews should create more good reviews."
         tone="white"
@@ -777,12 +985,18 @@ function PresentationPage() {
             </p>
           </div>
         </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <DocSlot label="GOOGLE REVIEWS" kind="screen" ratio="4/3" />
+          <DocSlot label="YELP REVIEWS" kind="screen" ratio="4/3" />
+          <DocSlot label="DELIVERY MARKETPLACE RATINGS" kind="screen" ratio="4/3" />
+        </div>
       </Scene>
+
 
       {/* 13 — CATERING */}
       <Scene
-        id="s13"
-        number="13"
+        id="s18"
+        number="18"
         kicker="Growth"
         title={
           <>
@@ -847,12 +1061,35 @@ function PresentationPage() {
             </div>
           </div>
         </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <DocSlot label="EZCATER PRESENCE / LOGO" kind="screen" ratio="4/3" />
+        </div>
+
+        <div className="mt-6">
+          <Flow steps={["Direct catering", "ezCater", "Events"]} tone="gold" />
+        </div>
+        <div className="mt-4">
+          <Flow
+            steps={[
+              "Inquiry",
+              "Capture",
+              "Qualify",
+              "Quote",
+              "Follow-up",
+              "Order",
+              "Production",
+              "Review",
+              "Repeat business",
+            ]}
+          />
+        </div>
       </Scene>
+
 
       {/* 14 — COMMAND CENTER */}
       <Scene
-        id="s14"
-        number="14"
+        id="s19"
+        number="19"
         kicker="Architecture"
         title={
           <>
@@ -926,83 +1163,89 @@ function PresentationPage() {
       </Scene>
 
       {/* 15 — WHAT JARA WILL BUILD */}
-      <Scene id="s15" number="15" kicker="Deliverables" title="What JARA will build" tone="cream">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <GroupCard
-            index="Group 1"
-            title="Operations"
-            items={[
-              "Recipes",
-              "SOPs",
-              "Kitchen controls",
-              "Food truck standards",
-              "Checklists",
-              "Management controls",
-            ]}
-          />
-          <GroupCard
-            index="Group 2"
-            title="People"
-            items={[
-              "Staffing structure",
-              "Job descriptions",
-              "Onboarding",
-              "Training",
-              "Employee manual",
-              "Performance standards",
-            ]}
-          />
-          <GroupCard
-            index="Group 3"
-            title="Customer"
-            items={[
-              "Communication workflow",
-              "CRM structure",
-              "Customer capture",
-              "Review system",
-              "Follow-up",
-            ]}
-          />
-          <GroupCard
-            index="Group 4"
-            title="Digital"
-            items={[
-              "Website ecosystem",
-              "Digital channel alignment",
-              "Menu consistency",
-              "Location information",
-              "Ordering pathways",
-            ]}
-          />
-          <GroupCard
-            index="Group 5"
-            title="Growth"
-            items={[
-              "Catering system",
-              "ezCater opportunity",
-              "Corporate accounts",
-              "Lead pipeline",
-              "Repeat business",
-            ]}
-          />
-          <GroupCard
-            index="Group 6"
-            title="Management"
-            items={[
-              "Reporting",
-              "Responsibilities",
-              "Accountability",
-              "Owner escalation rules",
-              "Operating dashboard",
-            ]}
-          />
+      <Scene
+        id="s20"
+        number="20"
+        kicker="Deliverables"
+        title="What JARA will build with Zaki"
+        tone="cream"
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              n: "01",
+              t: "Operations",
+              s: "Recipes + SOPs + Assembly standards",
+              label: "OPERATIONS DELIVERABLE PREVIEW",
+              kind: "document" as const,
+            },
+            {
+              n: "02",
+              t: "People",
+              s: "Training + Certification",
+              label: "TRAINING DELIVERABLE PREVIEW",
+              kind: "document" as const,
+            },
+            {
+              n: "03",
+              t: "Customer",
+              s: "Communication + Customer journey",
+              label: "CUSTOMER JOURNEY PREVIEW",
+              kind: "screen" as const,
+              src: zakiAssets.takeAwayOrder,
+              note: JARA_CONCEPT_NOTE,
+            },
+            {
+              n: "04",
+              t: "Digital",
+              s: "Website + Digital menu + CRM",
+              label: "DIGITAL DELIVERABLE PREVIEW",
+              kind: "screen" as const,
+            },
+            {
+              n: "05",
+              t: "Growth",
+              s: "Catering + Events + Reputation",
+              label: "GROWTH DELIVERABLE PREVIEW",
+              kind: "photo" as const,
+              src: zakiAssets.cateringSpread,
+              note: JARA_CONCEPT_NOTE,
+            },
+            {
+              n: "06",
+              t: "Management",
+              s: "Controls + Reporting + Accountability",
+              label: "MANAGEMENT REPORTING PREVIEW",
+              kind: "screen" as const,
+            },
+          ].map((d) => (
+            <div
+              key={d.n}
+              className="overflow-hidden rounded-lg border border-border bg-card shadow-card"
+            >
+              <DocSlot
+                label={d.label}
+                kind={d.kind}
+                ratio="16/10"
+                src={d.src}
+                note={d.note}
+                className="rounded-none border-0 border-b shadow-none"
+              />
+              <div className="p-5">
+                <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-gold">{d.n}</p>
+                <p className="mt-1.5 font-display text-xl font-bold">{d.t}</p>
+                <p className="mt-1.5 text-sm text-muted-foreground">{d.s}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </Scene>
 
+
       {/* 16 — ROADMAP */}
       <Scene
-        id="s16"
-        number="16"
+        id="s21"
+        number="21"
         kicker="90 days"
         title="90-day transformation roadmap"
         lead="Multiple workstreams move together — foundation, build and implementation overlap by design."
@@ -1046,7 +1289,7 @@ function PresentationPage() {
       </Scene>
 
       {/* 17 — WHAT CHANGES FOR AHMED */}
-      <Scene id="s17" number="17" kicker="Personal" title="90 days later" tone="cream">
+      <Scene id="s22" number="22" kicker="Personal" title="90 days later" tone="cream">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-warn/30 bg-warn-soft/30 p-6 sm:p-8">
             <p className="font-display text-2xl font-bold uppercase tracking-[0.1em] text-warn">
@@ -1098,8 +1341,78 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 18 — PARTNERSHIP */}
-      <Scene id="s18" number="18" kicker="Working together" title="JARA + Zaki" tone="white">
+      {/* 23 — RELEVANT EXPERIENCE */}
+      <Scene
+        id="s23"
+        number="23"
+        kicker="Experience"
+        title="Built in this category."
+        lead="Mediterranean restaurant experience across operations, fast casual, multi-location growth and international markets."
+        tone="cream"
+      >
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              name: "Falafill",
+              place: "Chicago · Detroit · Panama",
+              role: "Opening · Management · Operations",
+            },
+            {
+              name: "Olive Mediterranean Grill",
+              place: "Chicago",
+              role: "Restaurant Consulting · Operations",
+            },
+            {
+              name: "Ayy Karamba",
+              place: "Dubai",
+              role: "Restaurant Operations · Development",
+            },
+            {
+              name: "Sajj Mediterranean",
+              place: "California",
+              role: "Consulting · Multi-Location Operations",
+            },
+          ].map((x) => (
+            <div
+              key={x.name}
+              className="flex flex-col rounded-lg border border-border bg-card p-6 shadow-card"
+            >
+              <p className="font-display text-xl font-bold uppercase leading-tight tracking-[0.02em]">
+                {x.name}
+              </p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                {x.place}
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{x.role}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6">
+          <KeyLine
+            items={[
+              "Recipes",
+              "Production",
+              "Fast casual",
+              "Training",
+              "Multi-location",
+              "Catering",
+              "Food trucks",
+              "Systems",
+            ]}
+          />
+        </div>
+        <div className="mt-10">
+          <Statement tone="dark" align="center">
+            Zaki is not my introduction to Mediterranean restaurant operations.
+            <br />
+            It is a category I already understand.
+          </Statement>
+        </div>
+      </Scene>
+
+      {/* 24 — PARTNERSHIP */}
+      <Scene id="s24" number="24" kicker="Working together" title="JARA + Zaki" tone="white">
+
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-primary/25 bg-sage-soft/35 p-6 shadow-card sm:p-8">
             <div className="flex items-center gap-3">
@@ -1161,8 +1474,8 @@ function PresentationPage() {
 
       {/* 20 — CLOSING */}
       <section
-        id="s20"
-        data-scene="s20"
+        id="s26"
+        data-scene="s26"
         className="scroll-mt-32 bg-foreground px-5 py-20 sm:px-10 sm:py-28"
       >
         <div className="mx-auto grid max-w-[76rem] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -1240,8 +1553,8 @@ function InvestmentScene() {
 
   return (
     <Scene
-      id="s19"
-      number="19"
+      id="s25"
+      number="25"
       kicker="Investment"
       title="90-day Zaki business transformation"
       lead="One engagement. Defined scope. Defined deliverables. Defined implementation period."
