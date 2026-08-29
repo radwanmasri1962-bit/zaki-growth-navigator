@@ -565,8 +565,8 @@ function PresentationPage() {
 
       {/* 09 — STAFFING + TRAINING */}
       <Scene
-        id="s09"
-        number="09"
+        id="s12"
+        number="12"
         kicker="People"
         title="The system trains the team."
         tone="cream"
@@ -622,8 +622,8 @@ function PresentationPage() {
 
       {/* 10 — CUSTOMER COMMUNICATION */}
       <Scene
-        id="s10"
-        number="10"
+        id="s14"
+        number="14"
         kicker="Target operating model"
         title="Not every call needs Ahmed."
         lead="Proposed future state — this routing layer is what the engagement builds."
@@ -648,8 +648,8 @@ function PresentationPage() {
 
       {/* 11 — DIGITAL ZAKI */}
       <Scene
-        id="s11"
-        number="11"
+        id="s15"
+        number="15"
         kicker="Digital"
         title={
           <>
@@ -741,8 +741,8 @@ function PresentationPage() {
 
       {/* 12 — REPUTATION */}
       <Scene
-        id="s12"
-        number="12"
+        id="s17"
+        number="17"
         kicker="Reputation"
         title="Good reviews should create more good reviews."
         tone="white"
@@ -781,8 +781,8 @@ function PresentationPage() {
 
       {/* 13 — CATERING */}
       <Scene
-        id="s13"
-        number="13"
+        id="s18"
+        number="18"
         kicker="Growth"
         title={
           <>
@@ -851,8 +851,8 @@ function PresentationPage() {
 
       {/* 14 — COMMAND CENTER */}
       <Scene
-        id="s14"
-        number="14"
+        id="s19"
+        number="19"
         kicker="Architecture"
         title={
           <>
@@ -926,7 +926,7 @@ function PresentationPage() {
       </Scene>
 
       {/* 15 — WHAT JARA WILL BUILD */}
-      <Scene id="s15" number="15" kicker="Deliverables" title="What JARA will build" tone="cream">
+      <Scene id="s20" number="20" kicker="Deliverables" title="What JARA will build" tone="cream">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <GroupCard
             index="Group 1"
@@ -1001,8 +1001,8 @@ function PresentationPage() {
 
       {/* 16 — ROADMAP */}
       <Scene
-        id="s16"
-        number="16"
+        id="s21"
+        number="21"
         kicker="90 days"
         title="90-day transformation roadmap"
         lead="Multiple workstreams move together — foundation, build and implementation overlap by design."
@@ -1046,7 +1046,7 @@ function PresentationPage() {
       </Scene>
 
       {/* 17 — WHAT CHANGES FOR AHMED */}
-      <Scene id="s17" number="17" kicker="Personal" title="90 days later" tone="cream">
+      <Scene id="s22" number="22" kicker="Personal" title="90 days later" tone="cream">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-warn/30 bg-warn-soft/30 p-6 sm:p-8">
             <p className="font-display text-2xl font-bold uppercase tracking-[0.1em] text-warn">
@@ -1099,7 +1099,7 @@ function PresentationPage() {
       </Scene>
 
       {/* 18 — PARTNERSHIP */}
-      <Scene id="s18" number="18" kicker="Working together" title="JARA + Zaki" tone="white">
+      <Scene id="s24" number="24" kicker="Working together" title="JARA + Zaki" tone="white">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-primary/25 bg-sage-soft/35 p-6 shadow-card sm:p-8">
             <div className="flex items-center gap-3">
@@ -1161,8 +1161,8 @@ function PresentationPage() {
 
       {/* 20 — CLOSING */}
       <section
-        id="s20"
-        data-scene="s20"
+        id="s26"
+        data-scene="s26"
         className="scroll-mt-32 bg-foreground px-5 py-20 sm:px-10 sm:py-28"
       >
         <div className="mx-auto grid max-w-[76rem] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -1240,8 +1240,8 @@ function InvestmentScene() {
 
   return (
     <Scene
-      id="s19"
-      number="19"
+      id="s25"
+      number="25"
       kicker="Investment"
       title="90-day Zaki business transformation"
       lead="One engagement. Defined scope. Defined deliverables. Defined implementation period."
