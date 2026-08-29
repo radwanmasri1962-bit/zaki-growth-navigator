@@ -273,10 +273,10 @@ export function DocSlot({
   /** Placeholder name, e.g. "PALESTINIAN HUMMUS MASTER RECIPE". */
   label: string;
   ratio?: string;
-  src?: string;
-  alt?: string;
+  src?: string | undefined;
+  alt?: string | undefined;
   /** Small caption, e.g. "JARA concept / proposed Zaki operations system". */
-  note?: string;
+  note?: string | undefined;
   kind?: "document" | "screen" | "photo";
   className?: string;
   dominant?: boolean;
