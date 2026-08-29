@@ -580,6 +580,107 @@ function PresentationPage() {
         </div>
       </Scene>
 
+      {/* 09 — OPERATIONS A: RECIPE SYSTEM */}
+      <Scene
+        id="s09"
+        number="09"
+        kicker="Operations A"
+        title="Your recipes become Zaki's recipes."
+        lead="Turn kitchen knowledge into documented, repeatable company standards."
+        tone="cream"
+      >
+        <div className="grid gap-5 lg:grid-cols-[1.5fr_1fr]">
+          <DocSlot
+            label="PALESTINIAN HUMMUS MASTER RECIPE"
+            kind="document"
+            ratio="4/3"
+            dominant
+          />
+          <div className="grid gap-5">
+            <DocSlot label="CHICKEN SHAWARMA 10 LB BATCH RECIPE" kind="document" ratio="16/10" />
+            <DocSlot label="FALAFEL BATCH RECIPE" kind="document" ratio="16/10" />
+          </div>
+        </div>
+        <div className="mt-6">
+          <KeyLine
+            items={[
+              "Ingredients",
+              "Batch quantities",
+              "Equipment",
+              "Method",
+              "Control points",
+              "Quality",
+            ]}
+          />
+        </div>
+        <div className="mt-10">
+          <Statement tone="gold">Same recipe. Same result. Every location.</Statement>
+        </div>
+      </Scene>
+
+      {/* 10 — OPERATIONS B: ASSEMBLY STANDARDS */}
+      <Scene
+        id="s10"
+        number="10"
+        kicker="Operations B"
+        title={
+          <>
+            Employees don't guess.
+            <br />
+            They follow the Zaki standard.
+          </>
+        }
+        tone="white"
+      >
+        <div className="grid gap-5 lg:grid-cols-3">
+          <DocSlot label="CHICKEN BOWL ASSEMBLY GUIDE" kind="document" ratio="4/5" dominant />
+          <DocSlot label="CHICKEN SHAWARMA ASSEMBLY GUIDE" kind="document" ratio="4/5" dominant />
+          <DocSlot
+            label="SUMMER SALATA / PRODUCT ASSEMBLY GUIDE"
+            kind="document"
+            ratio="4/5"
+            dominant
+          />
+        </div>
+        <div className="mt-8">
+          <Flow steps={["Portion", "Position", "Build", "Finish", "Serve"]} />
+        </div>
+        <p className="mt-6 text-center text-base text-muted-foreground">
+          Visual station guides standardize portion, sequence and presentation.
+        </p>
+      </Scene>
+
+      {/* 11 — OPERATIONS C: SOP SYSTEM */}
+      <Scene
+        id="s11"
+        number="11"
+        kicker="Operations C"
+        title="Every location opens, operates and closes the Zaki way."
+        tone="cream"
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <DocSlot label="FOOD TRUCK OPENING SOP" kind="document" ratio="3/4" dominant />
+          <DocSlot label="FOOD TRUCK CLOSING SOP" kind="document" ratio="3/4" dominant />
+          <DocSlot label="BUDD DAIRY OPENING SOP" kind="document" ratio="3/4" dominant />
+          <DocSlot label="BUDD DAIRY CLOSING SOP" kind="document" ratio="3/4" dominant />
+        </div>
+        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:max-w-2xl">
+          <DocSlot label="FOOD SAFETY & TEMPERATURE CONTROL SOP" kind="document" ratio="16/10" />
+          <DocSlot label="RECEIVING & INVENTORY SOP" kind="document" ratio="16/10" />
+        </div>
+        <div className="mt-8">
+          <Flow steps={["Open", "Operate", "Verify", "Close", "Report"]} />
+        </div>
+        <div className="mt-10">
+          <Statement tone="gold">
+            Systems replace memory.
+            <br />
+            Managers verify execution.
+          </Statement>
+        </div>
+      </Scene>
+
+
       {/* 12 — TRAINING & CERTIFICATION */}
       <Scene
         id="s12"
