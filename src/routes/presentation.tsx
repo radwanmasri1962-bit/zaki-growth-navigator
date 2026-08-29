@@ -580,55 +580,53 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 09 — STAFFING + TRAINING */}
+      {/* 12 — TRAINING & CERTIFICATION */}
       <Scene
         id="s12"
         number="12"
         kicker="People"
-        title="The system trains the team."
+        title="Train the team without making Ahmed the training department."
         tone="cream"
       >
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <Chain
+            highlightLast
             steps={[
-              "Recruit",
-              "Onboard",
-              "Train",
-              "Test",
+              "New hire",
+              "Learn",
+              "Watch",
+              "Practice",
+              "Demonstrate",
               "Certify",
-              "Schedule",
-              "Review",
-              "Develop",
+              "Work independently",
             ]}
           />
-          <div>
-            <p className="eyebrow">Supporting deliverables</p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              {[
-                "Employee handbook",
-                "Training manual",
-                "Position descriptions",
-                "Station training",
-                "Kitchen standards",
-                "Manager expectations",
-                "Checklists",
-                "Training sign-offs",
-                "Performance standards",
-              ].map((c) => (
-                <Chip key={c}>{c}</Chip>
-              ))}
-            </div>
-            <div className="mt-8">
-              <AssetFrame
-                label="Team at the counter"
-                batch="Batch 5"
-                src={zakiAssets.team}
-                alt="Zaki team serving at the counter"
-                ratio="16/9"
-                type="concept"
-              />
-            </div>
+          <div className="space-y-5">
+            <DocSlot
+              label="ZAKI EMPLOYEE TRAINING & CERTIFICATION SYSTEM"
+              kind="document"
+              ratio="16/10"
+              dominant
+            />
+            <DocSlot
+              label="DIGITAL EMPLOYEE TRAINING / MOBILE SYSTEM"
+              kind="screen"
+              ratio="16/10"
+              note="JARA concept / proposed Zaki operations system."
+            />
           </div>
+        </div>
+        <div className="mt-8">
+          <Flow
+            tone="gold"
+            steps={[
+              "Training assigned",
+              "Completed",
+              "Skill demonstrated",
+              "Manager verified",
+              "Employee certified",
+            ]}
+          />
         </div>
         <div className="mt-10">
           <Statement tone="gold">
@@ -636,6 +634,68 @@ function PresentationPage() {
           </Statement>
         </div>
       </Scene>
+
+      {/* 13 — PHYSICAL + DIGITAL OPERATING SYSTEM */}
+      <Scene
+        id="s13"
+        number="13"
+        kicker="Operating system"
+        title={
+          <>
+            One standard.
+            <br />
+            Available where the team needs it.
+          </>
+        }
+        tone="white"
+      >
+        <div className="grid items-start gap-6 lg:grid-cols-[1fr_auto_1fr]">
+          <div>
+            <p className="eyebrow mb-3">On the line</p>
+            <DocSlot
+              label="PHYSICAL RECIPE / SOP / CHEAT SHEET"
+              kind="document"
+              ratio="4/3"
+              dominant
+            />
+          </div>
+          <div className="flex h-full flex-col items-center justify-center gap-3 lg:px-4">
+            <span className="rounded-md border border-primary/30 bg-sage-soft/65 px-5 py-3 text-center font-display text-sm font-bold uppercase leading-tight tracking-[0.1em] text-espresso">
+              One Zaki standard
+              <br />↓<br />
+              Every location
+            </span>
+          </div>
+          <div>
+            <p className="eyebrow mb-3">On phone &amp; tablet</p>
+            <DocSlot
+              label="ZAKI DIGITAL OPERATIONS TABLET / MOBILE MOCKUP"
+              kind="screen"
+              ratio="4/3"
+              dominant
+              note="JARA concept / proposed Zaki operations system — not a live software product."
+            />
+          </div>
+        </div>
+        <div className="mt-8 grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
+          {[
+            "Recipes",
+            "Assembly",
+            "Opening",
+            "Closing",
+            "Food safety",
+            "Training",
+            "Inventory",
+            "Food trucks",
+            "Catering",
+          ].map((c) => (
+            <Chip key={c} tone="green">
+              {c}
+            </Chip>
+          ))}
+        </div>
+      </Scene>
+
 
       {/* 10 — CUSTOMER COMMUNICATION */}
       <Scene
