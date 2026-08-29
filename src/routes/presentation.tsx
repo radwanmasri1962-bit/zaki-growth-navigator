@@ -1,6 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Chain, Chip, GroupCard, RouteRow, Scene, Statement } from "@/components/dash/present";
+import {
+  Chain,
+  Chip,
+  DocSlot,
+  Flow,
+  KeyLine,
+  RouteRow,
+  Scene,
+  Statement,
+} from "@/components/dash/present";
+
 import { AssetFrame, Timeline } from "@/components/dash/primitives";
 import { zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
