@@ -107,10 +107,10 @@ export function Statement({
   align?: "center" | "left";
 }) {
   const tones = {
-    gold: "border-gold/40 bg-gold-soft/50 text-foreground",
-    green: "border-primary/25 bg-accent/60 text-accent-foreground",
+    gold: "border-sand bg-gold-soft/70 text-espresso",
+    green: "border-primary/25 bg-sage-soft/70 text-espresso",
     dark: "border-foreground/15 bg-foreground text-background",
-    light: "border-background/20 bg-background/10 text-background",
+    light: "border-background/30 bg-background/12 text-background",
   } as const;
   return (
     <div
@@ -137,10 +137,10 @@ export function Chip({
 }) {
   const tones = {
     neutral: "border-border bg-card text-foreground",
-    green: "border-primary/25 bg-accent/60 text-accent-foreground",
-    gold: "border-gold/35 bg-gold-soft/60 text-gold",
-    warn: "border-warn/35 bg-warn-soft/60 text-warn",
-    light: "border-background/25 bg-background/10 text-background",
+    green: "border-primary/30 bg-sage-soft/70 text-espresso",
+    gold: "border-sand bg-gold-soft/70 text-espresso",
+    warn: "border-espresso/25 bg-espresso-soft text-espresso",
+    light: "border-background/30 bg-background/14 text-background",
   } as const;
   return (
     <div
@@ -165,8 +165,8 @@ export function Chain({
   highlightLast?: boolean;
 }) {
   const box = {
-    green: "border-primary/25 bg-accent/50 text-accent-foreground",
-    gold: "border-gold/30 bg-gold-soft/60 text-gold",
+    green: "border-primary/30 bg-sage-soft/65 text-espresso",
+    gold: "border-sand bg-gold-soft/70 text-espresso",
     neutral: "border-border bg-card text-foreground",
   } as const;
   return (
@@ -208,7 +208,7 @@ export function RouteRow({
     <div
       className={cn(
         "grid items-center gap-3 rounded-md border px-4 py-3 sm:grid-cols-[1fr_auto_1fr]",
-        emphasis ? "border-gold/45 bg-gold-soft/50" : "border-border bg-card",
+        emphasis ? "border-sand bg-gold-soft/70" : "border-border bg-card",
       )}
     >
       <span className="text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">
@@ -220,7 +220,7 @@ export function RouteRow({
       <span
         className={cn(
           "text-xs font-semibold uppercase tracking-[0.1em] sm:text-right",
-          emphasis ? "text-gold" : "text-foreground",
+          emphasis ? "text-espresso" : "text-foreground",
         )}
       >
         {to}
