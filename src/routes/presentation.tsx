@@ -4,8 +4,8 @@ import { Chain, Chip, GroupCard, RouteRow, Scene, Statement } from "@/components
 import { AssetFrame, Timeline } from "@/components/dash/primitives";
 import { zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
-import jaraDark from "@/assets/jara-logo-dark.png.asset.json";
-import jaraLight from "@/assets/jara-logo-light.png.asset.json";
+import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
+import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/presentation")({
@@ -158,7 +158,7 @@ function PresentationPage() {
             <button
               type="button"
               onClick={() => setPresentMode((v) => !v)}
-              className="rounded-md border border-gold/40 bg-gold-soft/50 px-3 py-1.5 text-xs font-semibold text-gold"
+              className="rounded-md border border-sand bg-gold-soft/70 px-3 py-1.5 text-xs font-semibold text-espresso"
             >
               {presentMode ? "Exit" : "Present"}
             </button>
@@ -166,7 +166,7 @@ function PresentationPage() {
         </div>
         <div className="h-0.5 w-full bg-border/70">
           <div
-            className="h-0.5 bg-gold transition-[width] duration-500"
+            className="h-0.5 bg-primary transition-[width] duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -180,20 +180,22 @@ function PresentationPage() {
       >
         <div className="mx-auto grid max-w-[76rem] items-center gap-10 px-5 py-20 sm:px-10 sm:py-28 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <img src={zakiWordmark.url} alt="Zaki Grill" className="h-14 w-auto sm:h-16" />
+            <div className="inline-flex rounded-lg bg-background px-6 py-4">
+              <img src={zakiWordmark.url} alt="Zaki Grill" className="h-[4.5rem] w-auto sm:h-[5.25rem]" />
+            </div>
             <h1 className="mt-10 font-display text-4xl font-bold leading-[1.05] text-background sm:text-6xl">
               From founder-led success
               <br />
               to a business built to scale
             </h1>
-            <p className="mt-6 text-base uppercase tracking-[0.24em] text-gold">
+            <p className="mt-6 text-base font-medium uppercase tracking-[0.24em] text-sage">
               90-Day Business Transformation
             </p>
             <div className="mt-12 flex items-center gap-3">
-              <span className="text-xs uppercase tracking-[0.2em] text-background/50">
+              <span className="text-xs uppercase tracking-[0.2em] text-background/70">
                 Prepared by
               </span>
-              <img src={jaraLight.url} alt="JARA AI" className="h-6 w-auto" />
+              <img src={jaraOnDark.url} alt="JARA AI" className="h-6 w-auto" />
             </div>
           </div>
           <div className="relative">
@@ -204,7 +206,7 @@ function PresentationPage() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <p className="mt-3 text-center text-[0.6875rem] uppercase tracking-[0.18em] text-background/45">
+            <p className="mt-3 text-center text-[0.6875rem] uppercase tracking-[0.18em] text-background/70">
               Ahmed · Founder, Zaki Grill
             </p>
           </div>
@@ -349,7 +351,7 @@ function PresentationPage() {
               </Chip>
             ))}
           </div>
-          <div className="mt-6 flex justify-center gap-6 text-lg text-gold" aria-hidden>
+          <div className="mt-6 flex justify-center gap-6 text-lg text-espresso" aria-hidden>
             <span>↓</span>
             <span>↓</span>
             <span>↓</span>
@@ -384,8 +386,8 @@ function PresentationPage() {
         tone="dark"
       >
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-lg border border-background/15 bg-background/5 p-6">
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-background/50">
+          <div className="rounded-lg border border-background/30 bg-background/12 p-6">
+            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-background/70">
               Current state
             </p>
             <div className="mt-5">
@@ -393,7 +395,7 @@ function PresentationPage() {
             </div>
           </div>
           <div>
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-background/50">
+            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-background/70">
               Competing for the same attention
             </p>
             <div className="mt-5 grid gap-2 sm:grid-cols-3">
@@ -422,7 +424,7 @@ function PresentationPage() {
           <Statement tone="light">
             Every question that reaches Ahmed is time taken from leading the business.
           </Statement>
-          <p className="mt-5 text-center text-sm text-background/60">
+          <p className="mt-5 text-center text-sm text-background/75">
             The customers are not the problem. The absence of routing and infrastructure is.
           </p>
         </div>
@@ -697,8 +699,8 @@ function PresentationPage() {
                 </Chip>
               ))}
             </div>
-            <div className="mt-6 rounded-lg border border-gold/35 bg-gold-soft/40 p-5">
-              <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-gold">
+            <div className="mt-6 rounded-lg border border-sand bg-gold-soft/40 p-5">
+              <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-espresso">
                 JARA concept prototype — not the current live Zaki website
               </p>
               <a
@@ -900,7 +902,7 @@ function PresentationPage() {
           </div>
           <div className="mx-auto mt-2 h-6 w-px bg-border-strong" />
           <div className="flex justify-center">
-            <div className="rounded-md border border-gold/40 bg-gold-soft px-10 py-3 font-display text-2xl font-bold uppercase tracking-[0.18em] text-gold">
+            <div className="rounded-md border border-sand bg-gold-soft px-10 py-3 font-display text-2xl font-bold uppercase tracking-[0.18em] text-espresso">
               Ahmed
             </div>
           </div>
@@ -1013,7 +1015,7 @@ function PresentationPage() {
             { m: "Month 3", t: "Train + automate + stabilize" },
           ].map((x) => (
             <div key={x.m} className="rounded-lg border border-border bg-background p-5">
-              <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-gold">{x.m}</p>
+              <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-espresso">{x.m}</p>
               <p className="mt-1.5 font-display text-lg font-bold">{x.t}</p>
             </div>
           ))}
@@ -1099,9 +1101,9 @@ function PresentationPage() {
       {/* 18 — PARTNERSHIP */}
       <Scene id="s18" number="18" kicker="Working together" title="JARA + Zaki" tone="white">
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-lg border border-border bg-background p-6 shadow-card sm:p-8">
+          <div className="rounded-lg border border-primary/25 bg-sage-soft/35 p-6 shadow-card sm:p-8">
             <div className="flex items-center gap-3">
-              <img src={jaraDark.url} alt="JARA AI" className="h-6 w-auto" />
+              <img src={jaraOnLight.url} alt="JARA AI" className="h-6 w-auto" />
               <span className="eyebrow">provides</span>
             </div>
             <div className="mt-5 grid gap-2 sm:grid-cols-2">
@@ -1124,9 +1126,9 @@ function PresentationPage() {
               ))}
             </div>
           </div>
-          <div className="rounded-lg border border-border bg-background p-6 shadow-card sm:p-8">
+          <div className="rounded-lg border border-sand bg-gold-soft/40 p-6 shadow-card sm:p-8">
             <div className="flex items-center gap-3">
-              <img src={zakiWordmark.url} alt="Zaki Grill" className="h-6 w-auto invert" />
+              <img src={zakiWordmark.url} alt="Zaki Grill" className="h-6 w-auto" />
               <span className="eyebrow">provides</span>
             </div>
             <div className="mt-5 grid gap-2 sm:grid-cols-2">
@@ -1183,20 +1185,22 @@ function PresentationPage() {
               of the business depending on one person.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <img src={zakiWordmark.url} alt="Zaki Grill" className="h-8 w-auto" />
+              <span className="inline-flex rounded-md bg-background px-4 py-2.5">
+                <img src={zakiWordmark.url} alt="Zaki Grill" className="h-8 w-auto" />
+              </span>
               <span className="text-background/40">×</span>
-              <img src={jaraLight.url} alt="JARA AI" className="h-6 w-auto" />
+              <img src={jaraOnDark.url} alt="JARA AI" className="h-6 w-auto" />
             </div>
-            <p className="mt-3 text-xs uppercase tracking-[0.22em] text-gold">
+            <p className="mt-3 text-xs font-medium uppercase tracking-[0.22em] text-sage">
               90-Day Business Transformation
             </p>
             <div className="mt-10 grid gap-3 sm:grid-cols-3">
               {["Approve scope", "Finalize agreement", "Kickoff"].map((s, i) => (
                 <div
                   key={s}
-                  className="rounded-md border border-background/20 bg-background/5 px-4 py-4 text-center"
+                  className="rounded-md border border-background/28 bg-background/12 px-4 py-4 text-center"
                 >
-                  <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-gold">
+                  <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-sage">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <p className="mt-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-background">
@@ -1244,8 +1248,8 @@ function InvestmentScene() {
       tone="cream"
     >
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-lg border border-gold/40 bg-gold-soft/40 p-8">
-          <p className="eyebrow text-gold">Diagnostic &amp; discovery</p>
+        <div className="rounded-lg border border-sand bg-gold-soft/40 p-8">
+          <p className="eyebrow text-espresso">Diagnostic &amp; discovery</p>
           <p className="mt-3 font-display text-4xl font-bold text-foreground">Complimentary</p>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Included as JARA's initial investment in understanding Zaki.
