@@ -794,7 +794,13 @@ function PresentationPage() {
             </p>
           </div>
         </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <DocSlot label="GOOGLE REVIEWS" kind="screen" ratio="4/3" />
+          <DocSlot label="YELP REVIEWS" kind="screen" ratio="4/3" />
+          <DocSlot label="DELIVERY MARKETPLACE RATINGS" kind="screen" ratio="4/3" />
+        </div>
       </Scene>
+
 
       {/* 13 — CATERING */}
       <Scene
