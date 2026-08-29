@@ -731,30 +731,60 @@ function PresentationPage() {
             </div>
           </div>
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <AssetFrame
-            label="Website prototype — homepage"
-            batch="Batch 6"
-            ratio="4/3"
-            type="concept"
-            caption="JARA concept prototype — proposed future website."
+        <div className="mt-8 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+          <DocSlot
+            label="JARA ZAKI WEBSITE PROTOTYPE"
+            kind="screen"
+            ratio="16/10"
+            dominant
+            note="JARA concept prototype — not Zaki's current live website."
           />
-          <AssetFrame
-            label="Website prototype — menu"
-            batch="Batch 6"
-            ratio="4/3"
-            type="concept"
-            caption="JARA concept prototype — proposed future website."
-          />
-          <AssetFrame
-            label="Website prototype — catering"
-            batch="Batch 6"
-            ratio="4/3"
-            type="concept"
-            caption="JARA concept prototype — proposed future website."
+          <DocSlot
+            label="WEBSITE / CUSTOMER EXPERIENCE SCREEN"
+            kind="screen"
+            ratio="16/10"
+            note="JARA concept prototype — not Zaki's current live website."
           />
         </div>
       </Scene>
+
+      {/* 16 — DIGITAL MENU */}
+      <Scene
+        id="s16"
+        number="16"
+        kicker="Ahmed's idea"
+        title={
+          <>
+            Your digital menu idea.
+            <br />
+            Brought to life.
+          </>
+        }
+        tone="white"
+      >
+        <p className="-mt-6 mb-10 font-display text-xl font-bold uppercase tracking-[0.06em] text-espresso sm:text-2xl">
+          Let customers see the food before they order it.
+        </p>
+        <DocSlot
+          label="THREE-PRODUCT DIGITAL MENU TV MOCKUP"
+          kind="screen"
+          ratio="16/9"
+          dominant
+          note="JARA concept / proposed Zaki digital menu."
+        />
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <DocSlot label="CHICKEN BOWL LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
+          <DocSlot label="LOADED GYRO FRIES LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
+          <DocSlot label="REVENGE OF THE FALAFEL LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
+        </div>
+        <div className="mt-8">
+          <Flow steps={["See the food", "Understand the build", "Order with confidence"]} tone="gold" />
+        </div>
+        <div className="mt-8">
+          <Statement tone="green">Made fresh. Layer by layer.</Statement>
+        </div>
+      </Scene>
+
 
       {/* 12 — REPUTATION */}
       <Scene
