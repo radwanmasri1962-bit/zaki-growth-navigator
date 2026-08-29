@@ -36,6 +36,10 @@
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-sand: var(--sand);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-espresso: var(--espresso);
+  --color-espresso-soft: var(--espresso-soft);
   --color-warn: var(--warn);
   --color-warn-soft: var(--warn-soft);
   --color-destructive: var(--destructive);
