@@ -864,7 +864,31 @@ function PresentationPage() {
             </div>
           </div>
         </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <DocSlot label="ZAKI CATERING FOOD" kind="photo" ratio="4/3" />
+          <DocSlot label="ZAKI EVENT / FOOD TRUCK" kind="photo" ratio="4/3" />
+          <DocSlot label="EZCATER PRESENCE / LOGO" kind="screen" ratio="4/3" />
+        </div>
+        <div className="mt-6">
+          <Flow steps={["Direct catering", "ezCater", "Events"]} tone="gold" />
+        </div>
+        <div className="mt-4">
+          <Flow
+            steps={[
+              "Inquiry",
+              "Capture",
+              "Qualify",
+              "Quote",
+              "Follow-up",
+              "Order",
+              "Production",
+              "Review",
+              "Repeat business",
+            ]}
+          />
+        </div>
       </Scene>
+
 
       {/* 14 — COMMAND CENTER */}
       <Scene
