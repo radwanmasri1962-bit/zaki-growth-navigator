@@ -684,19 +684,66 @@ function PresentationPage() {
         title="Every location opens, operates and closes the Zaki way."
         tone="cream"
       >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <DocSlot label="FOOD TRUCK OPENING SOP" kind="document" ratio="3/4" dominant />
-          <DocSlot label="FOOD TRUCK CLOSING SOP" kind="document" ratio="3/4" dominant />
-          <DocSlot label="BUDD DAIRY OPENING SOP" kind="document" ratio="3/4" dominant />
-          <DocSlot label="BUDD DAIRY CLOSING SOP" kind="document" ratio="3/4" dominant />
+        <p className="mb-4 text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          Opening &amp; closing procedures
+        </p>
+        <div className="grid gap-5 lg:grid-cols-2">
+          <DocSlot
+            label="FOOD TRUCK OPENING SOP"
+            kind="document"
+            ratio="1536/1024"
+            src={zakiAssets.sopTruckOpening}
+            alt="Zaki food truck opening procedure SOP"
+          />
+          <DocSlot
+            label="FOOD TRUCK CLOSING PROCEDURE SOP"
+            kind="document"
+            ratio="1536/1024"
+            src={zakiAssets.sopTruckClosing}
+            alt="Zaki food truck closing procedure SOP"
+          />
+          <DocSlot
+            label="BUDD DAIRY OPENING PROCEDURE"
+            kind="document"
+            ratio="1536/1024"
+            src={zakiAssets.sopBuddOpening}
+            alt="Zaki Budd Dairy opening procedure SOP"
+          />
+          <DocSlot
+            label="BUDD DAIRY CLOSING PROCEDURE"
+            kind="document"
+            ratio="1536/1024"
+            src={zakiAssets.sopBuddClosing}
+            alt="Zaki Budd Dairy closing procedure SOP"
+          />
         </div>
-        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:max-w-2xl">
-          <DocSlot label="FOOD SAFETY & TEMPERATURE CONTROL SOP" kind="document" ratio="16/10" />
-          <DocSlot label="RECEIVING & INVENTORY SOP" kind="document" ratio="16/10" />
+
+        <p className="mb-4 mt-12 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          Operational control standards
+        </p>
+        <div className="mx-auto grid max-w-3xl items-start gap-5 sm:grid-cols-2">
+          <DocSlot
+            label="FOOD SAFETY & TEMPERATURE CONTROL SOP"
+            kind="document"
+            ratio="1024/1536"
+            src={zakiAssets.sopFoodSafety}
+            alt="Zaki food safety and temperature control SOP"
+          />
+          <DocSlot
+            label="RECEIVING & INVENTORY SOP"
+            kind="document"
+            ratio="1024/1536"
+            src={zakiAssets.sopReceivingInventory}
+            alt="Zaki receiving and inventory SOP"
+          />
         </div>
         <div className="mt-8">
           <Flow steps={["Open", "Operate", "Verify", "Close", "Report"]} />
         </div>
+        <p className="mt-6 text-center text-sm text-muted-foreground">
+          Presentation examples of the operating infrastructure JARA proposes to develop and
+          validate with Zaki during the engagement.
+        </p>
         <div className="mt-10">
           <Statement tone="gold">
             Systems replace memory.
@@ -707,60 +754,53 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 12 — TRAINING & CERTIFICATION */}
+      {/* 12 — OPERATIONS D: TRAINING & CERTIFICATION */}
       <Scene
         id="s12"
         number="12"
-        kicker="People"
-        title="Train the team without making Ahmed the training department."
+        kicker="Operations D — Training"
+        title="Training turns standards into habits."
+        lead="Every employee learns the same system, demonstrates the same standards and earns the right to work independently."
         tone="cream"
       >
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <Chain
-            highlightLast
-            steps={[
-              "New hire",
-              "Learn",
-              "Watch",
-              "Practice",
-              "Demonstrate",
-              "Certify",
-              "Work independently",
-            ]}
+        <div className="grid items-start gap-8 lg:grid-cols-[1.35fr_0.65fr]">
+          <DocSlot
+            label="NEW EMPLOYEE TRAINING & CERTIFICATION"
+            kind="document"
+            ratio="1024/1536"
+            src={zakiAssets.trainingCertification}
+            alt="Zaki new employee training and certification system document"
+            dominant
           />
-          <div className="space-y-5">
-            <DocSlot
-              label="ZAKI EMPLOYEE TRAINING & CERTIFICATION SYSTEM"
-              kind="document"
-              ratio="16/10"
-              dominant
+          <div className="space-y-8">
+            <Chain
+              highlightLast
+              steps={[
+                "New hire",
+                "Learn",
+                "Watch",
+                "Practice",
+                "Demonstrate",
+                "Certify",
+                "Work independently",
+              ]}
             />
-            <DocSlot
-              label="DIGITAL EMPLOYEE TRAINING / MOBILE SYSTEM"
-              kind="screen"
-              ratio="16/10"
-              note="JARA concept / proposed Zaki operations system."
-            />
+            <div className="space-y-3">
+              <Chip tone="green">Consistent execution</Chip>
+              <Chip tone="gold">Faster onboarding</Chip>
+              <Chip tone="warn">Less dependence on Ahmed</Chip>
+            </div>
           </div>
-        </div>
-        <div className="mt-8">
-          <Flow
-            tone="gold"
-            steps={[
-              "Training assigned",
-              "Completed",
-              "Skill demonstrated",
-              "Manager verified",
-              "Employee certified",
-            ]}
-          />
         </div>
         <div className="mt-10">
           <Statement tone="gold">
-            From "ask Ahmed" to "follow the Zaki standard."
+            No employee works a station alone
+            <br />
+            until they are trained and certified.
           </Statement>
         </div>
       </Scene>
+
 
       {/* 13 — PHYSICAL + DIGITAL OPERATING SYSTEM */}
       <Scene
