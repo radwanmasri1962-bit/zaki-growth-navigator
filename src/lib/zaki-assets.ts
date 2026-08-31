@@ -15,6 +15,7 @@ import truckFleet from "@/assets/Food_Truck_Image_WOW_ChatGPT_1.webp.asset.json"
 import hummusHarissa from "@/assets/Hummus_Harissa_ChatGPT_1.webp.asset.json";
 import summerSalata from "@/assets/Summer_Salata_with_Chicken_ChatGPT_1.webp.asset.json";
 import cateringSpread from "@/assets/Zaki_Catering_ChatGPT_1.webp.asset.json";
+import cateringPackages from "@/assets/catering-packages.png.asset.json";
 import truckEvent from "@/assets/Zaki_Food_Truck_Event_ChatGPT_1.webp.asset.json";
 import takeAwayOrder from "@/assets/Zaki_Take_Away_Order_ChatGPT_1.webp.asset.json";
 import team from "@/assets/Zaki_Team_ChatGPT_1.webp.asset.json";
