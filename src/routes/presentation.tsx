@@ -983,7 +983,7 @@ function PresentationPage() {
           <div className="flex flex-col">
             <figure className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
               <div
-                style={{ aspectRatio: "16/9" }}
+                style={{ aspectRatio: "16/10" }}
                 className="relative flex w-full flex-col items-center justify-center gap-3 border-b border-border bg-secondary/70 px-5 text-center"
               >
                 <span
