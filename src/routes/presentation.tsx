@@ -789,56 +789,25 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 04 — THE SUCCESS TRAP */}
+      {/* 04 — THE PRESSURE */}
       <Scene
         id="s04"
         number="04"
         kicker="Current state"
         title="Zaki grew faster than its systems."
-        lead="The business expanded. The infrastructure around Ahmed did not expand at the same speed."
+        titleClassName="max-w-5xl text-[2.5rem] sm:text-[3.5rem]"
         tone="cream"
       >
-        <div className="rounded-lg border border-border bg-card p-6 shadow-card sm:p-10">
-          <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-4">
-            {[
-              "Customers",
-              "Food trucks",
-              "Budd Dairy",
-              "Worthington",
-              "Staff",
-              "Chef / kitchen",
-              "Suppliers",
-              "Catering",
-              "Customer issues",
-              "Events",
-              "Business inquiries",
-              "Phone calls",
-              "Digital questions",
-            ].map((i) => (
-              <Chip key={i} tone="warn">
-                {i}
-              </Chip>
-            ))}
-          </div>
-          <div className="mt-6 flex justify-center gap-6 text-lg text-espresso" aria-hidden>
-            <span>↓</span>
-            <span>↓</span>
-            <span>↓</span>
-            <span>↓</span>
-            <span>↓</span>
-          </div>
-          <div className="mt-6 flex justify-center">
-            <div className="rounded-md border border-warn/50 bg-warn-soft px-12 py-5 text-center font-display text-3xl font-bold uppercase tracking-[0.16em] text-warn">
-              Ahmed
-            </div>
-          </div>
-          <p className="mt-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Today, too much of Zaki still ends up here
+        <PressureMap />
+        <div className="mt-10">
+          <Statement tone="gold">Everything still comes back to Ahmed.</Statement>
+          <p className="mt-5 text-center text-sm text-muted-foreground">
+            Growth created more opportunity — and more pressure on one person.
           </p>
         </div>
       </Scene>
 
-      {/* 05 — ONE NUMBER */}
+      {/* 05 — THE BOTTLENECK */}
       <Scene
         id="s05"
         number="05"
@@ -852,85 +821,50 @@ function PresentationPage() {
             One person answering.
           </>
         }
+        titleClassName="max-w-5xl text-[2.25rem] sm:text-[3.5rem]"
         tone="dark"
       >
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-lg border border-background/30 bg-background/12 p-6">
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-background/70">
-              Current state
-            </p>
-            <div className="mt-5">
-              <Chain steps={["Customer", "Zaki phone number", "Ahmed"]} tone="gold" />
-            </div>
-          </div>
-          <div>
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-background/70">
-              Competing for the same attention
-            </p>
-            <div className="mt-5 grid gap-2 sm:grid-cols-3">
-              {[
-                "Orders",
-                "Location questions",
-                "Truck locations",
-                "Catering inquiries",
-                "Staff questions",
-                "Supplier questions",
-                "Customer complaints",
-                "Event opportunities",
-                "Business inquiries",
-                "Menu questions",
-                "Large orders",
-                "Operational problems",
-              ].map((i) => (
-                <Chip key={i} tone="light">
-                  {i}
-                </Chip>
-              ))}
-            </div>
-          </div>
-        </div>
+        <BottleneckFunnel />
         <div className="mt-10">
           <Statement tone="light">
-            Every question that reaches Ahmed is time taken from leading the business.
+            Every question that reaches Ahmed
+            <br />
+            is time taken from leading the business.
           </Statement>
-          <p className="mt-5 text-center text-sm text-background/75">
-            The customers are not the problem. The absence of routing and infrastructure is.
+          <p className="mt-5 text-center text-sm text-background/70">
+            The demand isn&apos;t the problem. The routing is.
           </p>
         </div>
       </Scene>
 
-      {/* 06 — WHAT THIS COSTS */}
+      {/* 06 — THE SYSTEM / REVEAL */}
       <Scene
         id="s06"
         number="06"
-        kicker="The real cost"
-        title="What this really costs"
+        kicker="The system"
+        title={
+          <>
+            Keep the number.
+            <br />
+            Change what happens behind it.
+          </>
+        }
+        titleClassName="max-w-5xl text-[2.25rem] sm:text-[3.25rem]"
         tone="white"
       >
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "Time",
-            "Mental bandwidth",
-            "Interruptions",
-            "Repeated questions",
-            "Slow follow-up",
-            "Lost opportunities",
-            "Inconsistency",
-            "Owner dependency",
-          ].map((c) => (
-            <Chip key={c} tone="warn">
-              {c}
-            </Chip>
-          ))}
-        </div>
+        <RoutingSystem />
         <div className="mt-12">
-          <Statement tone="dark">
-            Ahmed should run Zaki.
+          <Statement tone="green">
+            Ahmed stays in control.
             <br />
-            Zaki should not run Ahmed.
+            Without being the switchboard.
           </Statement>
+          <p className="mt-5 text-center text-sm text-muted-foreground">
+            Same number. Better system. Less interruption.
+          </p>
         </div>
       </Scene>
+
 
       {/* 07 — THE TRANSFORMATION */}
       <Scene
