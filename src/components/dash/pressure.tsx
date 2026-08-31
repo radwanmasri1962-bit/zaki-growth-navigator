@@ -262,7 +262,10 @@ export function BottleneckFunnel() {
     const dx = NX - n.x;
     const dy = NY - n.y;
     const t = Math.sqrt(dx * dx + dy * dy);
-    const k = Math.max(0, 1 - Math.max(300 * Math.abs(dx) / (t || 1), 130 * Math.abs(dy) / (t || 1)) / (t || 1));
+    const cos = dx / (t || 1);
+    const sin = dy / (t || 1);
+    const clearance = 1 / Math.sqrt((cos / 262) ** 2 + (sin / 108) ** 2);
+    const k = Math.max(0.2, 1 - clearance / (t || 1));
     const ex = n.x + dx * k;
     const ey = n.y + dy * k;
     const bend = ([96, -80, 58, -110, 74, -52][i % 6] ?? 70) as number;
