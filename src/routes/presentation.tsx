@@ -271,6 +271,319 @@ function FounderJourney() {
   );
 }
 
+/* ---------- 03 · Foundation collage ---------- */
+
+/** Hand-drawn feeling connector. */
+function Squiggle({
+  className,
+  d = "M2 40 C 60 4, 150 78, 238 26",
+  label,
+}: {
+  className?: string;
+  d?: string;
+  label?: string;
+}) {
+  return (
+    <div className={cn("pointer-events-none select-none", className)} aria-hidden>
+      <svg viewBox="0 0 240 80" className="h-14 w-full overflow-visible">
+        <path
+          d={d}
+          fill="none"
+          stroke="hsl(var(--primary))"
+          strokeOpacity="0.5"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeDasharray="7 8"
+        />
+        <path
+          d="M232 20 L239 26 L231 32"
+          fill="none"
+          stroke="hsl(var(--primary))"
+          strokeOpacity="0.65"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+      {label ? (
+        <p className="-mt-3 text-center font-display text-[0.7rem] italic tracking-[0.08em] text-gold">
+          {label}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+/** Simplified Columbus-area illustration with the two permanent locations. */
+function ColumbusMap() {
+  return (
+    <svg viewBox="0 0 420 460" className="h-full w-full" role="img" aria-label="Simplified Columbus area map showing Budd Dairy and Worthington locations">
+      <rect width="420" height="460" fill="hsl(var(--secondary))" />
+      {/* soft abstract land mass */}
+      <path
+        d="M40 60 C 130 20, 300 30, 380 90 C 400 190, 372 300, 330 400 C 230 440, 120 430, 50 380 C 20 280, 18 150, 40 60 Z"
+        fill="hsl(var(--primary) / 0.08)"
+        stroke="hsl(var(--primary) / 0.25)"
+        strokeWidth="1.5"
+      />
+      {/* abstract river */}
+      <path
+        d="M150 30 C 175 130, 130 220, 165 320 C 180 390, 160 420, 150 440"
+        fill="none"
+        stroke="hsl(var(--primary) / 0.22)"
+        strokeWidth="7"
+        strokeLinecap="round"
+      />
+      {/* hand-drawn route between the two pins */}
+      <path
+        d="M212 150 C 275 205, 200 250, 232 316"
+        fill="none"
+        stroke="hsl(var(--gold, 38 55% 45%))"
+        stroke-opacity="0.9"
+        strokeWidth="2"
+        strokeDasharray="6 8"
+        strokeLinecap="round"
+      />
+      {/* Worthington pin (north) */}
+      <g transform="translate(212 150)">
+        <circle r="30" fill="hsl(var(--primary) / 0.12)" />
+        <path
+          d="M0 8 C -13 -6, -18 -13, -18 -20 A18 18 0 0 1 18 -20 C 18 -13, 13 -6, 0 8 Z"
+          fill="hsl(var(--primary))"
+        />
+        <circle cx="0" cy="-20" r="6" fill="hsl(var(--card))" />
+      </g>
+      <text x="248" y="140" className="font-display" fontSize="21" fontWeight="700" fill="hsl(var(--foreground))" letterSpacing="1">
+        WORTHINGTON
+      </text>
+      <text x="248" y="162" fontSize="13" fill="hsl(var(--muted-foreground))" letterSpacing="1.5">
+        NORTH COLUMBUS
+      </text>
+      {/* Budd Dairy pin (central) */}
+      <g transform="translate(232 316)">
+        <circle r="36" fill="hsl(var(--primary) / 0.12)" />
+        <path
+          d="M0 10 C -16 -7, -22 -16, -22 -24 A22 22 0 0 1 22 -24 C 22 -16, 16 -7, 0 10 Z"
+          fill="hsl(var(--primary))"
+        />
+        <circle cx="0" cy="-24" r="7.5" fill="hsl(var(--card))" />
+      </g>
+      <text x="60" y="380" className="font-display" fontSize="23" fontWeight="700" fill="hsl(var(--foreground))" letterSpacing="1">
+        BUDD DAIRY
+      </text>
+      <text x="60" y="402" fontSize="13" fill="hsl(var(--muted-foreground))" letterSpacing="1.5">
+        1086 N 4TH ST
+      </text>
+    </svg>
+  );
+}
+
+function StatOverlay({
+  value,
+  title,
+  note,
+}: {
+  value: string;
+  title: string;
+  note?: string;
+}) {
+  return (
+    <div className="flex items-end gap-4">
+      <span className="font-display text-6xl font-extrabold leading-none text-background drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)] sm:text-8xl">
+        {value}
+      </span>
+      <span className="pb-2">
+        <span className="block font-display text-lg font-bold uppercase leading-tight tracking-[0.14em] text-background sm:text-2xl">
+          {title}
+        </span>
+        {note ? (
+          <span className="mt-1 block text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-background/75">
+            {note}
+          </span>
+        ) : null}
+      </span>
+    </div>
+  );
+}
+
+function EditorialCaption({
+  title,
+  sub,
+  align = "left",
+}: {
+  title: ReactNode;
+  sub: string;
+  align?: "left" | "right";
+}) {
+  return (
+    <div className={cn(align === "right" ? "text-right" : "text-left")}>
+      <p className="font-display text-2xl font-bold uppercase leading-[1.05] tracking-[0.02em] text-espresso sm:text-4xl">
+        {title}
+      </p>
+      <p className="mt-3 text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-gold sm:text-xs">
+        {sub}
+      </p>
+    </div>
+  );
+}
+
+function FoundationCollage() {
+  return (
+    <div className="space-y-14">
+      {/* Trucks + map */}
+      <div className="grid items-stretch gap-8 lg:grid-cols-12">
+        <figure className="relative overflow-hidden rounded-lg shadow-lift lg:col-span-7">
+          <img
+            src={zakiAssets.truckFleet}
+            alt="Zaki Grill food trucks with the team in Columbus"
+            className="h-full w-full object-cover"
+            style={{ aspectRatio: "5/4" }}
+            loading="lazy"
+          />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-espresso/85 via-espresso/40 to-transparent px-6 pb-7 pt-20">
+            <StatOverlay value="4" title="Food trucks" note="Across Columbus" />
+          </div>
+        </figure>
+
+        <div className="relative lg:col-span-5">
+          <Squiggle
+            className="absolute -left-16 top-16 hidden w-32 rotate-[8deg] lg:block"
+            d="M2 60 C 70 10, 160 70, 238 30"
+          />
+          <div className="flex h-full flex-col justify-between gap-6">
+            <div className="flex items-end gap-4">
+              <span className="font-display text-6xl font-extrabold leading-none text-primary sm:text-7xl">
+                2
+              </span>
+              <span className="pb-2 font-display text-lg font-bold uppercase leading-tight tracking-[0.14em] text-espresso sm:text-2xl">
+                Permanent
+                <br />
+                locations
+              </span>
+            </div>
+            <div className="overflow-hidden rounded-lg border border-border bg-secondary/60">
+              <div style={{ aspectRatio: "5/5" }} className="w-full">
+                <ColumbusMap />
+              </div>
+            </div>
+            <p className="font-display text-sm italic tracking-[0.06em] text-gold">
+              Zaki is already expanding beyond one location.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Product + people */}
+      <div className="grid items-center gap-8 lg:grid-cols-12">
+        <figure className="overflow-hidden rounded-lg shadow-lift lg:col-span-7 lg:-ml-6">
+          <img
+            src={zakiAssets.takeAwayContainers}
+            alt="Zaki bowls, wraps and dips in branded take-away packaging"
+            className="w-full object-cover"
+            style={{ aspectRatio: "16/9" }}
+            loading="lazy"
+          />
+        </figure>
+        <div className="lg:col-span-5">
+          <EditorialCaption
+            title={
+              <>
+                A product
+                <br />
+                people want.
+              </>
+            }
+            sub="Bowls • Wraps • Dips"
+          />
+          <Squiggle className="mt-6 w-40" d="M2 20 C 70 70, 150 6, 238 46" />
+        </div>
+      </div>
+
+      <div className="grid items-center gap-8 lg:grid-cols-12">
+        <div className="lg:col-span-5 lg:order-1">
+          <EditorialCaption
+            title={
+              <>
+                A team
+                <br />
+                already serving it.
+              </>
+            }
+            sub="People • Kitchen • Service"
+          />
+        </div>
+        <figure className="overflow-hidden rounded-lg shadow-card lg:col-span-7 lg:order-2 lg:-mr-6">
+          <img
+            src={zakiAssets.team}
+            alt="Zaki team preparing bowls behind the counter"
+            className="w-full object-cover"
+            style={{ aspectRatio: "16/10" }}
+            loading="lazy"
+          />
+        </figure>
+      </div>
+
+      {/* Editorial story moment */}
+      <div className="relative py-4 text-center">
+        <Squiggle
+          className="mx-auto mb-2 w-44 opacity-80"
+          d="M2 60 C 80 8, 160 8, 238 56"
+        />
+        <p className="mx-auto max-w-3xl font-display text-3xl font-bold uppercase leading-[1.08] tracking-[0.02em] text-espresso sm:text-5xl">
+          What Ahmed built
+          <br />
+          is already working.
+        </p>
+      </div>
+
+      {/* Events / demand */}
+      <div className="grid items-end gap-8 lg:grid-cols-12">
+        <figure className="overflow-hidden rounded-lg shadow-lift lg:col-span-8">
+          <img
+            src={zakiAssets.truckEvent}
+            alt="Zaki food truck serving a busy event crowd"
+            className="w-full object-cover"
+            style={{ aspectRatio: "16/9" }}
+            loading="lazy"
+          />
+        </figure>
+        <div className="lg:col-span-4">
+          <EditorialCaption
+            title={
+              <>
+                Demand
+                <br />
+                beyond the four walls.
+              </>
+            }
+            sub="Events • Catering • Community"
+          />
+        </div>
+      </div>
+
+      {/* Conclusion */}
+      <div className="rounded-lg border border-primary/25 bg-sage-soft/70 px-6 py-12 text-center sm:px-14 sm:py-16">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-espresso/70 sm:text-base">
+          Zaki doesn’t need to start over.
+        </p>
+        <p className="mt-5 font-display text-3xl font-bold uppercase leading-[1.06] tracking-[0.02em] text-espresso sm:text-5xl">
+          It needs the systems
+          <br />
+          to support what Ahmed built.
+        </p>
+        <svg viewBox="0 0 300 20" className="mx-auto mt-6 h-5 w-56" aria-hidden>
+          <path
+            d="M4 13 C 70 3, 150 18, 296 7"
+            fill="none"
+            stroke="hsl(var(--primary))"
+            strokeOpacity="0.7"
+            strokeWidth="3"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+    </div>
+  );
+}
 
 
 function PresentationPage() {
