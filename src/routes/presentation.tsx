@@ -17,7 +17,17 @@ import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
-import { ClipboardList, Lightbulb, MapPin, Store, Truck, Users, UtensilsCrossed } from "lucide-react";
+import {
+  ClipboardList,
+  Gauge,
+  MapPin,
+  PhoneCall,
+  Store,
+  TrendingUp,
+  Truck,
+  UserCheck,
+  UtensilsCrossed,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/presentation")({
@@ -48,7 +58,7 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s04", label: "The pressure", chapter: 1 },
   { id: "s05", label: "The bottleneck", chapter: 1 },
   { id: "s06", label: "The system", chapter: 1 },
-  { id: "s07", label: "Knowledge into system", chapter: 2 },
+  { id: "s07", label: "What JARA does", chapter: 2 },
   { id: "s08", label: "Recipe system", chapter: 2 },
   { id: "s09", label: "Assembly standards", chapter: 2 },
   { id: "s10", label: "SOP system", chapter: 2 },
@@ -1099,17 +1109,17 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 07 — KNOWLEDGE INTO THE BUSINESS */}
+      {/* 07 — JARA BUILDS THE SYSTEM AROUND ZAKI */}
       <Scene
         id="s07"
         number="07"
-        kicker="Operating system"
-        title="Put the business knowledge into the business."
-        titleClassName="max-w-5xl text-[2.25rem] sm:text-[3.25rem]"
-        lead="So Zaki runs on standards — not on Ahmed repeating the same instructions every day."
+        kicker="The solution"
+        title="JARA builds the system around Zaki."
+        titleClassName="max-w-5xl text-[2.5rem] sm:text-[3.75rem]"
+        lead="Ahmed stays in control — without being required for every task."
         tone="cream"
       >
-        <KnowledgeToSystem />
+        <JaraEcosystem />
       </Scene>
 
       {/* 08 — OPERATIONS A: RECIPE SYSTEM */}
