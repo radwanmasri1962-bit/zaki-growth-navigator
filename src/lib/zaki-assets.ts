@@ -38,6 +38,7 @@ import sopReceivingInventory from "@/assets/sop-receiving-inventory.png.asset.js
 import trainingCertification from "@/assets/training-certification.png.asset.json";
 import stationCheatSheets from "@/assets/station-cheat-sheets.png.asset.json";
 import digitalOperationsMockup from "@/assets/digital-operations-mockup.png.asset.json";
+import zakiWebsitePrototype from "@/assets/zaki-website-prototype.png.asset.json";
 
 export const zakiAssets = {
   buddDairy: buddDairy.url,
@@ -72,6 +73,7 @@ export const zakiAssets = {
   trainingCertification: trainingCertification.url,
   stationCheatSheets: stationCheatSheets.url,
   digitalOperationsMockup: digitalOperationsMockup.url,
+  zakiWebsitePrototype: zakiWebsitePrototype.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */
