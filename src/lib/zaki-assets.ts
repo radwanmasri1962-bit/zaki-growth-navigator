@@ -29,6 +29,13 @@ import recipeMexicanRice from "@/assets/recipe-mexican-rice.png.asset.json";
 import assemblyChickenBowl from "@/assets/assembly-chicken-bowl.png.asset.json";
 import assemblyChickenShawarma from "@/assets/assembly-chicken-shawarma-ar-v2.png.asset.json";
 import assemblySummerSalata from "@/assets/assembly-summer-salata.png.asset.json";
+import sopTruckOpening from "@/assets/sop-truck-opening.png.asset.json";
+import sopTruckClosing from "@/assets/sop-truck-closing.png.asset.json";
+import sopBuddOpening from "@/assets/sop-budd-opening.png.asset.json";
+import sopBuddClosing from "@/assets/sop-budd-closing.png.asset.json";
+import sopFoodSafety from "@/assets/sop-food-safety.png.asset.json";
+import sopReceivingInventory from "@/assets/sop-receiving-inventory.png.asset.json";
+import trainingCertification from "@/assets/training-certification.png.asset.json";
 
 export const zakiAssets = {
   buddDairy: buddDairy.url,
@@ -54,6 +61,13 @@ export const zakiAssets = {
   assemblyChickenBowl: assemblyChickenBowl.url,
   assemblyChickenShawarma: assemblyChickenShawarma.url,
   assemblySummerSalata: assemblySummerSalata.url,
+  sopTruckOpening: sopTruckOpening.url,
+  sopTruckClosing: sopTruckClosing.url,
+  sopBuddOpening: sopBuddOpening.url,
+  sopBuddClosing: sopBuddClosing.url,
+  sopFoodSafety: sopFoodSafety.url,
+  sopReceivingInventory: sopReceivingInventory.url,
+  trainingCertification: trainingCertification.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */
