@@ -18,9 +18,15 @@ import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
 import {
+  CalendarCheck,
   ClipboardList,
   Gauge,
+  Globe,
+  Instagram,
+  Mail,
   MapPin,
+  MessageCircle,
+  Phone,
   PhoneCall,
   Store,
   TrendingUp,
