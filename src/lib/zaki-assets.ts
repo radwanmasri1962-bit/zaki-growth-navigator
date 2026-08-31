@@ -36,6 +36,8 @@ import sopBuddClosing from "@/assets/sop-budd-closing.png.asset.json";
 import sopFoodSafety from "@/assets/sop-food-safety.png.asset.json";
 import sopReceivingInventory from "@/assets/sop-receiving-inventory.png.asset.json";
 import trainingCertification from "@/assets/training-certification.png.asset.json";
+import stationCheatSheets from "@/assets/station-cheat-sheets.png.asset.json";
+import digitalOperationsMockup from "@/assets/digital-operations-mockup.png.asset.json";
 
 export const zakiAssets = {
   buddDairy: buddDairy.url,
