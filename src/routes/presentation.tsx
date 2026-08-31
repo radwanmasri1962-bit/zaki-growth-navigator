@@ -11,16 +11,22 @@ import {
   Statement,
 } from "@/components/dash/present";
 
-import { AssetFrame, Timeline } from "@/components/dash/primitives";
+import { Timeline } from "@/components/dash/primitives";
 import { BottleneckFunnel, PressureMap, RoutingSystem } from "@/components/dash/pressure";
 import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
 import {
+  CalendarCheck,
   ClipboardList,
   Gauge,
+  Globe,
+  Instagram,
+  Mail,
   MapPin,
+  MessageCircle,
+  Phone,
   PhoneCall,
   Store,
   TrendingUp,
@@ -1819,90 +1825,108 @@ function PresentationPage() {
       <Scene id="s17"
         number="17"
         kicker="Growth"
-        title={
-          <>
-            Turn catering from inquiries
-            <br />
-            into a pipeline.
-          </>
-        }
-        lead="Every serious catering inquiry should be captured, tracked and followed up. Not remembered."
+        title="Turn catering inquiries into booked events."
+        lead="Make it easy to inquire. Easy to quote. Easy to book."
         tone="cream"
       >
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <Chain
-            steps={[
-              "Customer / company",
-              "Catering page",
-              "Package / menu",
-              "Event details",
-              "Quote",
-              "CRM",
-              "Follow-up",
-              "Confirmation",
-              "Production",
-              "Event",
-              "Review",
-              "Reorder",
-            ]}
-            highlightLast
-          />
-          <div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {[
-                "Direct catering",
-                "Corporate accounts",
-                "Events",
-                "Repeat customers",
-                "Large orders",
-                "ezCater acquisition channel",
-              ].map((c) => (
-                <Chip key={c} tone="green">
-                  {c}
-                </Chip>
-              ))}
-            </div>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <AssetFrame
-                label="Catering spread"
-                batch="Batch 5"
-                src={zakiAssets.cateringSpread}
-                alt="Zaki catering spread"
-                ratio="4/3"
-                type="concept"
+        {/* SECTION 1 — how leads enter */}
+        <div className="relative">
+          <svg
+            className="pointer-events-none absolute inset-x-0 top-16 hidden h-40 w-full lg:block"
+            viewBox="0 0 1200 200"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            {[120, 360, 600, 840, 1080].map((x, i) => (
+              <path
+                key={x}
+                d={`M${x} 20 C ${x} 110, ${600 + (i - 2) * 30} 110, 600 180`}
+                fill="none"
+                stroke="currentColor"
+                className={i % 2 === 0 ? "text-gold/70" : "text-primary/50"}
+                strokeWidth="2.5"
+                strokeLinecap="round"
               />
-              <AssetFrame
-                label="Event activation"
-                batch="Batch 5"
-                src={zakiAssets.truckEvent}
-                alt="Zaki food truck at an event"
-                ratio="4/3"
-                type="concept"
-              />
+            ))}
+          </svg>
+
+          <div className="relative grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+            {[
+              { icon: Phone, label: "Phone call" },
+              { icon: Globe, label: "Website" },
+              { icon: Mail, label: "Email" },
+              { icon: MessageCircle, label: "WhatsApp / SMS" },
+              { icon: Instagram, label: "Social / digital" },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex flex-col items-center gap-3 text-center">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full border border-sand bg-card shadow-card">
+                  <Icon className="h-7 w-7 text-primary" strokeWidth={1.6} />
+                </span>
+                <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="relative mt-32 flex justify-center lg:mt-36">
+            <div className="rounded-2xl border border-primary/30 bg-sage-soft/70 px-8 py-5 text-center shadow-card">
+              <CalendarCheck className="mx-auto mb-2 h-7 w-7 text-primary" strokeWidth={1.6} />
+              <p className="font-display text-lg font-bold uppercase tracking-[0.12em] text-espresso sm:text-xl">
+                Catering inquiry system
+              </p>
             </div>
           </div>
-        </div>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          <DocSlot label="EZCATER PRESENCE / LOGO" kind="screen" ratio="4/3" />
+
+          <div className="mt-8">
+            <Flow steps={["Inquiry", "Package / quote", "Confirmation", "Event"]} tone="gold" />
+          </div>
+
+          <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
+            Every serious catering inquiry is captured, organized and followed up — without Ahmed
+            having to remember it.
+          </p>
         </div>
 
-        <div className="mt-6">
-          <Flow steps={["Direct catering", "ezCater", "Events"]} tone="gold" />
+        {/* SECTION 2 — packages */}
+        <div className="mt-20">
+          <p className="mb-6 text-center font-display text-2xl font-bold uppercase tracking-[0.06em] text-espresso sm:text-3xl">
+            Make catering easy to buy.
+          </p>
+          <figure className="overflow-hidden rounded-lg border border-sand bg-card shadow-lift">
+            <img
+              src={zakiAssets.cateringPackages}
+              alt="Zaki catering packages concept: Zaki Express, Zaki Feast and Zaki Experience"
+              className="w-full object-contain"
+              loading="lazy"
+            />
+          </figure>
+          <div className="mt-5 flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
+            <p className="text-[0.6875rem] leading-relaxed text-muted-foreground">
+              {JARA_CONCEPT_NOTE}
+            </p>
+            <p
+              className="rotate-[-1.5deg] text-center text-xl leading-snug text-espresso"
+              style={{ fontFamily: '"Segoe Script", "Bradley Hand", "Snell Roundhand", cursive' }}
+            >
+              Customers choose the level.
+              <br />
+              Zaki builds the event.
+            </p>
+          </div>
         </div>
-        <div className="mt-4">
-          <Flow
-            steps={[
-              "Inquiry",
-              "Capture",
-              "Qualify",
-              "Quote",
-              "Follow-up",
-              "Order",
-              "Production",
-              "Review",
-              "Repeat business",
-            ]}
-          />
+
+        {/* SECTION 3 — outcome */}
+        <div className="mt-16">
+          <Statement tone="green">
+            More catering. Faster response. Less work for Ahmed.
+          </Statement>
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              Structured and automated by
+            </span>
+            <img src={jaraOnLight.url} alt="JARA AI" className="h-4 w-auto opacity-80" />
+          </div>
         </div>
       </Scene>
 
