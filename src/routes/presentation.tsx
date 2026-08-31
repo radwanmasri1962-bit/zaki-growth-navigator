@@ -17,7 +17,7 @@ import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
-import { MapPin, Store, Truck, UtensilsCrossed } from "lucide-react";
+import { ClipboardList, Lightbulb, MapPin, Store, Truck, Users, UtensilsCrossed } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/presentation")({
@@ -48,26 +48,25 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s04", label: "The pressure", chapter: 1 },
   { id: "s05", label: "The bottleneck", chapter: 1 },
   { id: "s06", label: "The system", chapter: 1 },
-  { id: "s07", label: "The transformation", chapter: 2 },
-  { id: "s08", label: "Operations", chapter: 2 },
-  { id: "s09", label: "Recipe system", chapter: 2 },
-  { id: "s10", label: "Assembly standards", chapter: 2 },
-  { id: "s11", label: "SOP system", chapter: 2 },
-  { id: "s12", label: "Training & certification", chapter: 2 },
-  { id: "s13", label: "Physical + digital", chapter: 2 },
-  { id: "s14", label: "Customer communication", chapter: 2 },
-  { id: "s15", label: "The digital Zaki", chapter: 3 },
-  { id: "s16", label: "Digital menu", chapter: 3 },
-  { id: "s17", label: "Reputation engine", chapter: 3 },
-  { id: "s18", label: "Catering & events", chapter: 3 },
-  { id: "s19", label: "Command center", chapter: 4 },
-  { id: "s20", label: "What JARA builds", chapter: 4 },
-  { id: "s21", label: "90-day roadmap", chapter: 4 },
-  { id: "s22", label: "What changes for Ahmed", chapter: 4 },
-  { id: "s23", label: "Relevant experience", chapter: 5 },
-  { id: "s24", label: "The partnership", chapter: 5 },
-  { id: "s25", label: "Investment", chapter: 5 },
-  { id: "s26", label: "Closing", chapter: 5 },
+  { id: "s07", label: "Knowledge into system", chapter: 2 },
+  { id: "s08", label: "Recipe system", chapter: 2 },
+  { id: "s09", label: "Assembly standards", chapter: 2 },
+  { id: "s10", label: "SOP system", chapter: 2 },
+  { id: "s11", label: "Training & certification", chapter: 2 },
+  { id: "s12", label: "Physical + digital", chapter: 2 },
+  { id: "s13", label: "Customer communication", chapter: 2 },
+  { id: "s14", label: "The digital Zaki", chapter: 3 },
+  { id: "s15", label: "Digital menu", chapter: 3 },
+  { id: "s16", label: "Reputation engine", chapter: 3 },
+  { id: "s17", label: "Catering & events", chapter: 3 },
+  { id: "s18", label: "Command center", chapter: 4 },
+  { id: "s19", label: "What JARA builds", chapter: 4 },
+  { id: "s20", label: "90-day roadmap", chapter: 4 },
+  { id: "s21", label: "What changes for Ahmed", chapter: 4 },
+  { id: "s22", label: "Relevant experience", chapter: 5 },
+  { id: "s23", label: "The partnership", chapter: 5 },
+  { id: "s24", label: "Investment", chapter: 5 },
+  { id: "s25", label: "Closing", chapter: 5 },
 ];
 
 
@@ -586,6 +585,189 @@ function FoundationCollage() {
   );
 }
 
+/* ---------- 07 · Knowledge into the business ---------- */
+
+const knowledgeBranches = [
+  {
+    key: "recipes",
+    title: "Recipes & Food",
+    icon: UtensilsCrossed,
+    items: ["Recipe Cards", "Portion Control", "Recipe Costing", "Prep Standards", "Quality Control"],
+    x: 180,
+    y: 420,
+  },
+  {
+    key: "operations",
+    title: "Operations",
+    icon: ClipboardList,
+    items: ["Opening + Closing", "Food Safety", "Cleaning Standards", "Food Truck SOPs", "Purchasing + Waste"],
+    x: 500,
+    y: 420,
+  },
+  {
+    key: "people",
+    title: "People & Control",
+    icon: Users,
+    items: ["Employee Training", "Chef Accountability", "Management Checklists", "Certification", "Manager Verification"],
+    x: 820,
+    y: 420,
+  },
+] as const;
+
+function KnowledgeToSystem() {
+  return (
+    <div className="space-y-10">
+      {/* Desktop canvas */}
+      <div className="relative hidden w-full lg:block" style={{ aspectRatio: "1000 / 520" }}>
+        <svg viewBox="0 0 1000 520" className="absolute inset-0 h-full w-full" aria-hidden>
+          {/* Ahmed's knowledge → hub */}
+          <path
+            d="M500,120 C500,160 500,180 500,220"
+            fill="none"
+            stroke="var(--color-gold)"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeDasharray="8 8"
+            opacity="0.7"
+          />
+          {/* Hub → branches */}
+          <path
+            d="M500,260 C420,300 300,340 180,380"
+            fill="none"
+            stroke="var(--color-primary)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            opacity="0.5"
+          />
+          <path
+            d="M500,260 C500,300 500,340 500,380"
+            fill="none"
+            stroke="var(--color-primary)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            opacity="0.5"
+          />
+          <path
+            d="M500,260 C580,300 700,340 820,380"
+            fill="none"
+            stroke="var(--color-primary)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            opacity="0.5"
+          />
+          {/* Arrow heads */}
+          <path d="M495,212 L500,224 L505,212" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
+          <path d="M174,372 L180,384 L186,372" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.65" />
+          <path d="M494,372 L500,384 L506,372" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.65" />
+          <path d="M814,372 L820,384 L826,372" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.65" />
+        </svg>
+
+        {/* Top node */}
+        <div className="absolute left-1/2 top-[6%] -translate-x-1/2 text-center">
+          <div className="inline-flex flex-col items-center gap-3 rounded-full border border-gold/40 bg-card px-10 py-5 shadow-card">
+            <Lightbulb className="h-6 w-6 text-gold" strokeWidth={1.6} />
+            <span className="font-display text-sm font-bold uppercase tracking-[0.14em] text-espresso">
+              Ahmed&apos;s Knowledge
+            </span>
+          </div>
+        </div>
+
+        {/* Hub */}
+        <div className="absolute left-1/2 top-[44%] -translate-x-1/2 -translate-y-1/2 text-center">
+          <div className="relative inline-block">
+            <span className="absolute -inset-8 rounded-full bg-sage-soft/70 blur-2xl" aria-hidden />
+            <div className="relative rounded-full border-2 border-primary/40 bg-accent/60 px-12 py-8 shadow-lift">
+              <p className="font-display text-2xl font-bold uppercase leading-tight tracking-[0.12em] text-espresso">
+                Zaki
+              </p>
+              <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-primary">
+                Operating System
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Branches */}
+        {knowledgeBranches.map((b) => (
+          <div
+            key={b.key}
+            className="absolute -translate-x-1/2 -translate-y-1/2"
+            style={{ left: `${(b.x / 1000) * 100}%`, top: `${(b.y / 520) * 100}%` }}
+          >
+            <div className="flex w-[16rem] flex-col items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-sage-soft/70">
+                <b.icon className="h-5 w-5 text-primary" strokeWidth={1.7} />
+              </span>
+              <p className="text-center font-display text-base font-bold uppercase tracking-[0.1em] text-espresso">
+                {b.title}
+              </p>
+              <ul className="space-y-2 text-center">
+                {b.items.map((item) => (
+                  <li key={item} className="text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile fallback */}
+      <div className="space-y-8 lg:hidden">
+        <div className="flex flex-col items-center gap-3 rounded-full border border-gold/40 bg-card px-8 py-4 shadow-card">
+          <Lightbulb className="h-6 w-6 text-gold" strokeWidth={1.6} />
+          <span className="font-display text-sm font-bold uppercase tracking-[0.14em] text-espresso">
+            Ahmed&apos;s Knowledge
+          </span>
+        </div>
+        <div className="text-center">
+          <div className="relative inline-block">
+            <span className="absolute -inset-6 rounded-full bg-sage-soft/70 blur-2xl" aria-hidden />
+            <div className="relative rounded-full border-2 border-primary/40 bg-accent/60 px-8 py-5 shadow-lift">
+              <p className="font-display text-xl font-bold uppercase leading-tight tracking-[0.12em] text-espresso">
+                Zaki
+              </p>
+              <p className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary">
+                Operating System
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {knowledgeBranches.map((b) => (
+            <div key={b.key} className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-4 shadow-card">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-sage-soft/70">
+                <b.icon className="h-4 w-4 text-primary" strokeWidth={1.7} />
+              </span>
+              <p className="text-center font-display text-sm font-bold uppercase tracking-[0.1em] text-espresso">
+                {b.title}
+              </p>
+              <ul className="space-y-1.5 text-center">
+                {b.items.map((item) => (
+                  <li key={item} className="text-[0.6875rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom statement */}
+      <div className="rounded-lg border border-primary/25 bg-sage-soft/70 px-6 py-10 text-center sm:px-12 sm:py-14">
+        <p className="font-display text-2xl font-bold uppercase leading-[1.1] tracking-[0.02em] text-espresso sm:text-4xl">
+          Today: Ahmed is the system.
+        </p>
+        <p className="mt-3 font-display text-2xl font-bold uppercase leading-[1.1] tracking-[0.02em] text-primary sm:text-4xl">
+          Tomorrow: Zaki has the system. Ahmed leads it.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 
 function PresentationPage() {
   const [active, setActive] = useState(0);
@@ -867,110 +1049,23 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 07 — THE TRANSFORMATION */}
+      {/* 07 — KNOWLEDGE INTO THE BUSINESS */}
       <Scene
         id="s07"
         number="07"
-        kicker="Before / after"
-        title={
-          <>
-            From owner dependency
-            <br />
-            to business infrastructure
-          </>
-        }
+        kicker="Operating system"
+        title="Put the business knowledge into the business."
+        titleClassName="max-w-5xl text-[2.25rem] sm:text-[3.25rem]"
+        lead="So Zaki runs on standards — not on Ahmed repeating the same instructions every day."
         tone="cream"
       >
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-lg border border-warn/30 bg-warn-soft/30 p-6 sm:p-8">
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-warn">
-              Today
-            </p>
-            <div className="mt-5">
-              <Chain
-                tone="neutral"
-                steps={[
-                  "Ahmed",
-                  "Recipes in people's heads",
-                  "Training by conversation",
-                  "Questions by phone",
-                  "Problems escalated manually",
-                  "Catering handled manually",
-                  "Customer information fragmented",
-                  "Owner intervention",
-                ]}
-              />
-            </div>
-          </div>
-          <div className="rounded-lg border border-primary/25 bg-accent/30 p-6 sm:p-8">
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-primary">
-              Future
-            </p>
-            <div className="mt-5">
-              <Chain
-                highlightLast
-                steps={[
-                  "Zaki operating system",
-                  "Documented recipes",
-                  "SOPs",
-                  "Structured training",
-                  "Communication routing",
-                  "CRM",
-                  "Catering workflow",
-                  "Management reporting",
-                  "Ahmed handles decisions that require Ahmed",
-                ]}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="mt-10">
-          <Statement tone="gold">
-            Today: Ahmed is the system.
-            <br />
-            Future: Zaki has the system. Ahmed leads it.
-          </Statement>
-        </div>
+        <KnowledgeToSystem />
       </Scene>
 
-      {/* 08 — OPERATIONS */}
+      {/* 08 — OPERATIONS A: RECIPE SYSTEM */}
       <Scene
         id="s08"
         number="08"
-        kicker="Operations"
-        title="Put the business knowledge into the business."
-        lead="The objective is not paperwork. The objective is consistent execution without Ahmed explaining the same thing repeatedly."
-        tone="white"
-      >
-        <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          {[
-            "Recipe library",
-            "Recipe costing",
-            "Portion control",
-            "Preparation standards",
-            "Kitchen SOPs",
-            "Opening checklists",
-            "Closing checklists",
-            "Cleaning standards",
-            "Food safety",
-            "Purchasing controls",
-            "Waste controls",
-            "Food truck SOPs",
-            "Quality control",
-            "Chef accountability",
-            "Management checklists",
-          ].map((c) => (
-            <Chip key={c} tone="green">
-              {c}
-            </Chip>
-          ))}
-        </div>
-      </Scene>
-
-      {/* 09 — OPERATIONS A: RECIPE SYSTEM */}
-      <Scene
-        id="s09"
-        number="09"
         kicker="Operations A"
         title="Your recipes become Zaki's recipes."
         lead="Turn kitchen knowledge into documented, repeatable company standards."
@@ -1017,10 +1112,10 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 10 — OPERATIONS B: ASSEMBLY STANDARDS */}
+      {/* 09 — OPERATIONS B: ASSEMBLY STANDARDS */}
       <Scene
-        id="s10"
-        number="10"
+        id="s09"
+        number="09"
         kicker="Operations B"
         title={
           <>
@@ -1063,10 +1158,10 @@ function PresentationPage() {
         </p>
       </Scene>
 
-      {/* 11 — OPERATIONS C: SOP SYSTEM */}
+      {/* 10 — OPERATIONS C: SOP SYSTEM */}
       <Scene
-        id="s11"
-        number="11"
+        id="s10"
+        number="10"
         kicker="Operations C"
         title="Every location opens, operates and closes the Zaki way."
         tone="cream"
@@ -1141,10 +1236,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 12 — OPERATIONS D: TRAINING & CERTIFICATION */}
+      {/* 11 — OPERATIONS D: TRAINING & CERTIFICATION */}
       <Scene
-        id="s12"
-        number="12"
+        id="s11"
+        number="11"
         kicker="Operations D — Training"
         title="Training turns standards into habits."
         lead="Every employee learns the same system, demonstrates the same standards and earns the right to work independently."
@@ -1189,10 +1284,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 13 — PHYSICAL + DIGITAL OPERATING SYSTEM */}
+      {/* 12 — PHYSICAL + DIGITAL OPERATING SYSTEM */}
       <Scene
-        id="s13"
-        number="13"
+        id="s12"
+        number="12"
         kicker="Operating system"
         title={
           <>
@@ -1273,10 +1368,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 10 — CUSTOMER COMMUNICATION */}
+      {/* 09 — CUSTOMER COMMUNICATION */}
       <Scene
-        id="s14"
-        number="14"
+        id="s13"
+        number="13"
         kicker="Target operating model"
         title="Not every call needs Ahmed."
         lead="Proposed future state — this routing layer is what the engagement builds."
@@ -1299,10 +1394,10 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 11 — DIGITAL ZAKI */}
+      {/* 10 — DIGITAL ZAKI */}
       <Scene
-        id="s15"
-        number="15"
+        id="s14"
+        number="14"
         kicker="Digital"
         title={
           <>
@@ -1389,10 +1484,10 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 16 — DIGITAL MENU */}
+      {/* 15 — DIGITAL MENU */}
       <Scene
-        id="s16"
-        number="16"
+        id="s15"
+        number="15"
         kicker="Ahmed's idea"
         title={
           <>
@@ -1449,10 +1544,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 12 — REPUTATION */}
+      {/* 11 — REPUTATION */}
       <Scene
-        id="s17"
-        number="17"
+        id="s16"
+        number="16"
         kicker="Reputation"
         title="Happy customers should become great Google reviews."
         lead="JARA makes the follow-up automatic."
@@ -1578,10 +1673,10 @@ function PresentationPage() {
 
 
 
-      {/* 13 — CATERING */}
+      {/* 12 — CATERING */}
       <Scene
-        id="s18"
-        number="18"
+        id="s17"
+        number="17"
         kicker="Growth"
         title={
           <>
@@ -1671,10 +1766,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 14 — COMMAND CENTER */}
+      {/* 13 — COMMAND CENTER */}
       <Scene
-        id="s19"
-        number="19"
+        id="s18"
+        number="18"
         kicker="Architecture"
         title={
           <>
@@ -1747,10 +1842,10 @@ function PresentationPage() {
         </p>
       </Scene>
 
-      {/* 15 — WHAT JARA WILL BUILD */}
+      {/* 14 — WHAT JARA WILL BUILD */}
       <Scene
-        id="s20"
-        number="20"
+        id="s19"
+        number="19"
         kicker="Deliverables"
         title="What JARA will build with Zaki"
         tone="cream"
@@ -1827,10 +1922,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 16 — ROADMAP */}
+      {/* 15 — ROADMAP */}
       <Scene
-        id="s21"
-        number="21"
+        id="s20"
+        number="20"
         kicker="90 days"
         title="90-day transformation roadmap"
         lead="Multiple workstreams move together — foundation, build and implementation overlap by design."
@@ -1873,8 +1968,8 @@ function PresentationPage() {
         />
       </Scene>
 
-      {/* 17 — WHAT CHANGES FOR AHMED */}
-      <Scene id="s22" number="22" kicker="Personal" title="90 days later" tone="cream">
+      {/* 16 — WHAT CHANGES FOR AHMED */}
+      <Scene id="s21" number="21" kicker="Personal" title="90 days later" tone="cream">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-warn/30 bg-warn-soft/30 p-6 sm:p-8">
             <p className="font-display text-2xl font-bold uppercase tracking-[0.1em] text-warn">
@@ -1926,10 +2021,10 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 23 — RELEVANT EXPERIENCE */}
+      {/* 22 — RELEVANT EXPERIENCE */}
       <Scene
-        id="s23"
-        number="23"
+        id="s22"
+        number="22"
         kicker="Experience"
         title="Built in this category."
         lead="Mediterranean restaurant experience across operations, fast casual, multi-location growth and international markets."
@@ -1995,8 +2090,8 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 24 — PARTNERSHIP */}
-      <Scene id="s24" number="24" kicker="Working together" title="JARA + Zaki" tone="white">
+      {/* 23 — PARTNERSHIP */}
+      <Scene id="s23" number="23" kicker="Working together" title="JARA + Zaki" tone="white">
 
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-primary/25 bg-sage-soft/35 p-6 shadow-card sm:p-8">
@@ -2054,13 +2149,13 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 19 — INVESTMENT */}
+      {/* 18 — INVESTMENT */}
       <InvestmentScene />
 
-      {/* 20 — CLOSING */}
+      {/* 19 — CLOSING */}
       <section
-        id="s26"
-        data-scene="s26"
+        id="s25"
+        data-scene="s25"
         className="scroll-mt-32 bg-foreground px-5 py-20 sm:px-10 sm:py-28"
       >
         <div className="mx-auto grid max-w-[76rem] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -2138,8 +2233,8 @@ function InvestmentScene() {
 
   return (
     <Scene
-      id="s25"
-      number="25"
+      id="s24"
+      number="24"
       kicker="Investment"
       title="90-day Zaki business transformation"
       lead="One engagement. Defined scope. Defined deliverables. Defined implementation period."
