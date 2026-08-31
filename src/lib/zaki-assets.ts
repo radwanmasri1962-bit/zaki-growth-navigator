@@ -43,6 +43,9 @@ import menuTvScreen from "@/assets/menu-tv-screen.png.asset.json";
 import productChickenBowl from "@/assets/product-chicken-bowl.png.asset.json";
 import productGyroFries from "@/assets/product-gyro-fries.png.asset.json";
 import productFalafelWrap from "@/assets/product-falafel-wrap.png.asset.json";
+import jobDescriptionEnglish from "@/assets/job-description-english.png.asset.json";
+import jobDescriptionArabic from "@/assets/job-description-arabic.png.asset.json";
+import jobDescriptionSpanish from "@/assets/job-description-spanish.png.asset.json";
 
 export const zakiAssets = {
   buddDairy: buddDairy.url,
@@ -82,6 +85,9 @@ export const zakiAssets = {
   productChickenBowl: productChickenBowl.url,
   productGyroFries: productGyroFries.url,
   productFalafelWrap: productFalafelWrap.url,
+  jobDescriptionEnglish: jobDescriptionEnglish.url,
+  jobDescriptionArabic: jobDescriptionArabic.url,
+  jobDescriptionSpanish: jobDescriptionSpanish.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */
