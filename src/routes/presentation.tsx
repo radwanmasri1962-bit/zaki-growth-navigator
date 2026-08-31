@@ -150,7 +150,7 @@ const journeySteps = [
     title: "Zaki today",
     caption: "",
     size: 150,
-    x: 93,
+    x: 90,
     y: 22,
   },
 ] as const;
@@ -188,7 +188,7 @@ function MilestoneMark({ step }: { step: (typeof journeySteps)[number] }) {
       <p
         className={cn(
           "mt-3 font-display font-bold uppercase leading-tight tracking-[0.04em] text-espresso",
-          last ? "text-lg sm:text-2xl" : "text-[0.8125rem] sm:text-sm",
+          last ? "whitespace-nowrap text-lg sm:text-2xl" : "text-[0.8125rem] sm:text-sm",
         )}
       >
         {step.title}
@@ -214,7 +214,7 @@ function FounderJourney() {
           aria-hidden
         >
           <path
-            d="M60,248 C130,196 176,146 246,158 C316,170 350,286 416,262 C482,238 520,120 586,138 C652,156 692,244 762,230 C832,216 872,152 926,96"
+            d="M60,248 C130,196 176,146 246,158 C316,170 350,286 416,262 C482,238 520,120 586,138 C652,156 692,244 762,230 C832,216 852,152 900,100"
             fill="none"
             stroke="var(--color-primary, #177e66)"
             strokeOpacity="0.45"
@@ -224,7 +224,7 @@ function FounderJourney() {
             vectorEffect="non-scaling-stroke"
           />
           <path
-            d="M926,96 C972,168 984,300 930,392"
+            d="M900,100 C956,170 968,300 916,392"
             fill="none"
             stroke="#b08a3e"
             strokeOpacity="0.6"
@@ -233,7 +233,7 @@ function FounderJourney() {
             vectorEffect="non-scaling-stroke"
           />
           <path
-            d="M912,352 L930,392 L952,360"
+            d="M898,352 L916,392 L938,360"
             fill="none"
             stroke="#b08a3e"
             strokeOpacity="0.8"
