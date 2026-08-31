@@ -6,7 +6,7 @@ import {
   DocSlot,
   Flow,
   KeyLine,
-  RouteRow,
+  
   Scene,
   Statement,
 } from "@/components/dash/present";
@@ -59,12 +59,12 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s05", label: "The bottleneck", chapter: 1 },
   { id: "s06", label: "The system", chapter: 1 },
   { id: "s07", label: "What JARA does", chapter: 2 },
-  { id: "s08", label: "Recipe system", chapter: 2 },
-  { id: "s09", label: "Assembly standards", chapter: 2 },
-  { id: "s10", label: "SOP system", chapter: 2 },
-  { id: "s11", label: "Training & certification", chapter: 2 },
-  { id: "s12", label: "Physical + digital", chapter: 2 },
-  { id: "s13", label: "Customer communication", chapter: 2 },
+  { id: "s08", label: "Job descriptions", chapter: 2 },
+  { id: "s09", label: "Recipe system", chapter: 2 },
+  { id: "s10", label: "Assembly standards", chapter: 2 },
+  { id: "s11", label: "SOP system", chapter: 2 },
+  { id: "s12", label: "Training & certification", chapter: 2 },
+  { id: "s13", label: "Physical + digital", chapter: 2 },
   { id: "s14", label: "The digital Zaki", chapter: 3 },
   { id: "s15", label: "Digital menu", chapter: 3 },
   { id: "s16", label: "Reputation engine", chapter: 3 },
@@ -78,6 +78,104 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s24", label: "Investment", chapter: 5 },
   { id: "s25", label: "Closing", chapter: 5 },
 ];
+
+/** Slide 08 — the three real Location Manager job-description documents. */
+const JOB_DOCS = [
+  {
+    label: "English",
+    src: zakiAssets.jobDescriptionEnglish,
+    alt: "Zaki Mediterranean Grill Location Manager job description, English version, developed with JARA AI",
+  },
+  {
+    label: "العربية",
+    src: zakiAssets.jobDescriptionArabic,
+    alt: "Zaki Mediterranean Grill Location Manager job description, Arabic version, developed with JARA AI",
+  },
+  {
+    label: "Español",
+    src: zakiAssets.jobDescriptionSpanish,
+    alt: "Zaki Mediterranean Grill Location Manager job description, Spanish version, developed with JARA AI",
+  },
+] as const;
+
+function CurveArrow() {
+  return (
+    <svg viewBox="0 0 64 24" className="h-6 w-12 shrink-0" aria-hidden>
+      <path
+        d="M2 16 C 16 4, 40 4, 56 13"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M50 8 L 58 13.5 L 49 17"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function JobDescriptions() {
+  const steps = ["Hire", "Role defined", "Train", "Certify", "Manage"];
+  return (
+    <div>
+      <div className="grid gap-8 lg:grid-cols-3">
+        {JOB_DOCS.map((doc) => (
+          <figure key={doc.label} className="flex flex-col">
+            <figcaption className="mb-3 flex items-center gap-3">
+              <span className="h-px w-6 bg-border-strong" aria-hidden />
+              <span className="font-display text-sm font-bold uppercase tracking-[0.18em] text-espresso">
+                {doc.label}
+              </span>
+            </figcaption>
+            <div className="flex flex-1 items-center rounded-lg border border-border bg-background p-2.5 shadow-lift sm:p-3">
+              <img
+                src={doc.src}
+                alt={doc.alt}
+                className="w-full rounded-md object-contain"
+                style={{ aspectRatio: "1447/1080" }}
+                loading="lazy"
+              />
+            </div>
+          </figure>
+        ))}
+      </div>
+
+      <div className="mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-4 text-gold">
+        {steps.map((s, i) => (
+          <div key={s} className="flex items-center gap-3">
+            <span className="rounded-md border border-primary/30 bg-sage-soft/65 px-4 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-espresso sm:text-xs">
+              {s}
+            </span>
+            {i < steps.length - 1 ? <CurveArrow /> : null}
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 rounded-lg border border-primary/25 bg-sage-soft/70 px-6 py-10 text-center sm:px-12 sm:py-14">
+        <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          The question changes from
+        </p>
+        <p className="mt-4 font-display text-2xl font-bold uppercase leading-[1.2] tracking-[0.02em] text-espresso sm:text-4xl">
+          “Ahmed, what should I do?”
+        </p>
+        <p className="mt-5 text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-gold">to</p>
+        <p className="mt-4 font-display text-2xl font-bold uppercase leading-[1.2] tracking-[0.02em] text-espresso sm:text-4xl">
+          “This is my responsibility.”
+        </p>
+        <p className="mx-auto mt-8 max-w-3xl text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-xs">
+          Location Manager • Head Chef • Prep Cook • Line Cook • Food Truck Lead • Service Team
+        </p>
+      </div>
+    </div>
+  );
+}
+
 
 
 const CHAPTERS = [
@@ -1122,10 +1220,22 @@ function PresentationPage() {
         <JaraEcosystem />
       </Scene>
 
-      {/* 08 — OPERATIONS A: RECIPE SYSTEM */}
+      {/* 08 — JOB DESCRIPTIONS: EVERY ROLE, CLEAR RESPONSIBILITY */}
       <Scene
         id="s08"
         number="08"
+        kicker="People & roles"
+        title="Every role. Clear responsibility."
+        lead="JARA turns positions into defined roles — so employees know what they own, how they are measured and when to escalate."
+        tone="white"
+      >
+        <JobDescriptions />
+      </Scene>
+
+      {/* 09 — OPERATIONS A: RECIPE SYSTEM */}
+      <Scene
+        id="s09"
+        number="09"
         kicker="Operations A"
         title="Your recipes become Zaki's recipes."
         lead="Turn kitchen knowledge into documented, repeatable company standards."
@@ -1172,10 +1282,10 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 09 — OPERATIONS B: ASSEMBLY STANDARDS */}
+      {/* 10 — OPERATIONS B: ASSEMBLY STANDARDS */}
       <Scene
-        id="s09"
-        number="09"
+        id="s10"
+        number="10"
         kicker="Operations B"
         title={
           <>
@@ -1218,10 +1328,10 @@ function PresentationPage() {
         </p>
       </Scene>
 
-      {/* 10 — OPERATIONS C: SOP SYSTEM */}
+      {/* 11 — OPERATIONS C: SOP SYSTEM */}
       <Scene
-        id="s10"
-        number="10"
+        id="s11"
+        number="11"
         kicker="Operations C"
         title="Every location opens, operates and closes the Zaki way."
         tone="cream"
@@ -1296,10 +1406,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 11 — OPERATIONS D: TRAINING & CERTIFICATION */}
+      {/* 12 — OPERATIONS D: TRAINING & CERTIFICATION */}
       <Scene
-        id="s11"
-        number="11"
+        id="s12"
+        number="12"
         kicker="Operations D — Training"
         title="Training turns standards into habits."
         lead="Every employee learns the same system, demonstrates the same standards and earns the right to work independently."
@@ -1344,10 +1454,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 12 — PHYSICAL + DIGITAL OPERATING SYSTEM */}
+      {/* 13 — PHYSICAL + DIGITAL OPERATING SYSTEM */}
       <Scene
-        id="s12"
-        number="12"
+        id="s13"
+        number="13"
         kicker="Operating system"
         title={
           <>
@@ -1427,31 +1537,6 @@ function PresentationPage() {
         </div>
       </Scene>
 
-
-      {/* 13 — CUSTOMER COMMUNICATION */}
-      <Scene id="s13"
-        number="13"
-        kicker="Target operating model"
-        title="Not every call needs Ahmed."
-        lead="Proposed future state — this routing layer is what the engagement builds."
-        tone="white"
-      >
-        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
-          <Chain steps={["Customer", "Zaki number", "Communication / routing layer"]} tone="gold" />
-          <div className="space-y-2">
-            <RouteRow from="Order" to="Ordering channel" />
-            <RouteRow from="Catering" to="Catering pipeline" />
-            <RouteRow from="Location / hours" to="Automated information" />
-            <RouteRow from="Food truck" to="Location information" />
-            <RouteRow from="Customer service" to="Assigned responsible person" />
-            <RouteRow from="Business inquiry" to="Routed / tracked" />
-            <RouteRow from="Important issue" to="Ahmed" emphasis />
-          </div>
-        </div>
-        <div className="mt-10">
-          <Statement tone="green">Ahmed receives what actually requires Ahmed.</Statement>
-        </div>
-      </Scene>
 
       {/* 14 — DIGITAL ZAKI */}
       <Scene id="s14"
