@@ -238,44 +238,27 @@ function PresentationPage() {
         id="s02"
         number="02"
         kicker="The founder"
-        title="Built from the ground up"
+        title={
+          <span className="block font-display text-4xl font-bold uppercase leading-[1.03] tracking-[0.01em] sm:text-[3.5rem]">
+            Built from the ground up.
+          </span>
+        }
         lead="Ahmed did not inherit a restaurant group. He built one — through food, persistence, customer relationships and entrepreneurship."
         tone="cream"
       >
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="overflow-hidden rounded-lg border border-border shadow-card">
-            <img
-              src={zakiAssets.ahmedPortrait}
-              alt="Portrait of Ahmed, founder of Zaki Grill"
-              className="aspect-[4/5] w-full object-cover"
-            />
-          </div>
-          <div>
-            <Chain
-              steps={[
-                "Palestine",
-                "United States",
-                "Limited resources",
-                "Learns · works · builds",
-                "Food business",
-                "Customer following",
-                "Food trucks",
-                "Permanent locations",
-                "Zaki today",
-              ]}
-              highlightLast
-            />
-          </div>
-        </div>
-        <div className="mt-10">
-          <Statement tone="green">
-            The next chapter
-            <span className="mt-3 block font-display text-lg tracking-[0.16em] sm:text-2xl">
+        <FounderJourney />
+        <div className="relative mt-4">
+          <div className="rounded-lg border border-primary/25 bg-sage-soft/70 px-6 py-12 text-center sm:px-12 sm:py-16">
+            <p className="font-display text-3xl font-bold uppercase leading-[1.05] tracking-[0.02em] text-espresso sm:text-6xl">
+              The next chapter
+            </p>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-espresso/70 sm:text-base">
               Systems + People + Control + Scale
-            </span>
-          </Statement>
+            </p>
+          </div>
         </div>
       </Scene>
+
 
       {/* 03 — WHAT AHMED HAS BUILT */}
       <Scene
