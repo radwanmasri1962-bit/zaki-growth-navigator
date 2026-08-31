@@ -197,9 +197,12 @@ function PresentationPage() {
       >
         <div className="mx-auto grid max-w-[76rem] items-center gap-10 px-5 py-20 sm:px-10 sm:py-28 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <div className="inline-flex rounded-lg bg-background px-6 py-4">
-              <img src={zakiWordmark.url} alt="Zaki Grill" className="h-[4.5rem] w-auto sm:h-[5.25rem]" />
-            </div>
+            <img
+              src={zakiWordmark.url}
+              alt="Zaki Grill"
+              className="h-[6rem] w-auto sm:h-[7rem]"
+            />
+
             <h1 className="mt-10 font-display text-4xl font-bold leading-[1.05] text-background sm:text-6xl">
               From founder-led success
               <br />
