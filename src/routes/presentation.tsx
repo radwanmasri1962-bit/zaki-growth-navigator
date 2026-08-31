@@ -1019,21 +1019,43 @@ function PresentationPage() {
         <p className="-mt-6 mb-10 font-display text-xl font-bold uppercase tracking-[0.06em] text-espresso sm:text-2xl">
           Let customers see the food before they order it.
         </p>
-        <DocSlot
-          label="THREE-PRODUCT DIGITAL MENU TV MOCKUP"
-          kind="screen"
-          ratio="16/9"
-          dominant
-          note="JARA concept / proposed Zaki digital menu."
-        />
+        <figure className="overflow-hidden rounded-lg border border-sand bg-secondary/40 shadow-card">
+          <img
+            src={zakiAssets.menuTvScreen}
+            alt="Three-product Zaki digital menu displayed on in-store TV screens"
+            className="w-full object-contain"
+            loading="lazy"
+          />
+        </figure>
+        <p className="mt-2 text-[0.6875rem] leading-relaxed text-muted-foreground">
+          JARA concept / proposed Zaki digital menu.
+        </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          <DocSlot label="CHICKEN BOWL LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
-          <DocSlot label="LOADED GYRO FRIES LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
-          <DocSlot label="REVENGE OF THE FALAFEL LAYERED DIGITAL MENU" kind="screen" ratio="4/5" />
+          {[
+            { src: zakiAssets.productChickenBowl, label: "Chicken Bowl" },
+            { src: zakiAssets.productGyroFries, label: "Loaded Gyro Fries" },
+            { src: zakiAssets.productFalafelWrap, label: "Revenge of the Falafel" },
+          ].map((p) => (
+            <figure
+              key={p.label}
+              className="overflow-hidden rounded-lg border border-sand bg-card shadow-card"
+            >
+              <img
+                src={p.src}
+                alt={p.label}
+                className="aspect-[4/3] w-full object-cover"
+                loading="lazy"
+              />
+              <figcaption className="px-3 py-2.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-espresso">
+                {p.label}
+              </figcaption>
+            </figure>
+          ))}
         </div>
-        <div className="mt-8">
+        <div className="mt-6">
           <Flow steps={["See the food", "Understand the build", "Order with confidence"]} tone="gold" />
         </div>
+
         <div className="mt-8">
           <Statement tone="green">Made fresh. Layer by layer.</Statement>
         </div>
