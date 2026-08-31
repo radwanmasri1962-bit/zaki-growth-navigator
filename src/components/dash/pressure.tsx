@@ -258,8 +258,13 @@ const inbound: { x: number; y: number; label: string; icon: typeof Users }[] = [
 
 export function BottleneckFunnel() {
   const paths = inbound.map((n, i) => {
-    const ex = n.x + (NX - n.x) * 0.8;
-    const ey = n.y + (NY - n.y) * 0.74;
+    // stop each wire on an ellipse around the number so nothing crosses it
+    const dx = NX - n.x;
+    const dy = NY - n.y;
+    const t = Math.sqrt(dx * dx + dy * dy);
+    const k = Math.max(0, 1 - Math.max(300 * Math.abs(dx) / (t || 1), 130 * Math.abs(dy) / (t || 1)) / (t || 1));
+    const ex = n.x + dx * k;
+    const ey = n.y + dy * k;
     const bend = ([96, -80, 58, -110, 74, -52][i % 6] ?? 70) as number;
     const mx = (n.x + ex) / 2 + bend;
     const my = (n.y + ey) / 2 - bend * 0.55;
@@ -307,7 +312,7 @@ export function BottleneckFunnel() {
         {/* number → Ahmed */}
         <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full" fill="none" aria-hidden>
           <path
-            d={`M${NX},${NY + 78} C${NX + 10},${NY + 150} ${NX - 10},${NY + 190} ${NX},${NY + 244}`}
+            d={`M${NX},${NY + 92} C${NX + 10},${NY + 150} ${NX - 10},${NY + 190} ${NX},${NY + 244}`}
             stroke="oklch(0.78 0.06 82)"
             strokeWidth="3"
             strokeLinecap="round"
@@ -329,7 +334,7 @@ export function BottleneckFunnel() {
             <p className="relative text-[0.625rem] font-semibold uppercase tracking-[0.28em] text-background/60">
               The number everyone knows
             </p>
-            <p className="relative mt-2 whitespace-nowrap font-display text-[4.25rem] font-bold leading-none tracking-tight text-gold xl:text-[5rem]">
+            <p className="relative mt-2 whitespace-nowrap font-display text-[4.25rem] font-bold leading-none tracking-tight text-[oklch(0.87_0.085_84)] xl:text-[5rem]">
               614-377-1274
             </p>
           </div>
