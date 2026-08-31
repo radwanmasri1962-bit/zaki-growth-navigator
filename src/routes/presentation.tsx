@@ -1067,45 +1067,128 @@ function PresentationPage() {
         id="s17"
         number="17"
         kicker="Reputation"
-        title="Good reviews should create more good reviews."
+        title="Happy customers should become great Google reviews."
+        lead="JARA makes the follow-up automatic."
         tone="white"
       >
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <Chain
-            steps={[
-              "Guest experience",
-              "Review request",
-              "Google / Yelp",
-              "Response",
-              "Local discovery",
-              "New customer",
-              "Guest experience",
-            ]}
-          />
-          <div className="grid gap-3 sm:grid-cols-2">
-            {[
-              "Google",
-              "Yelp",
-              "Delivery marketplace reviews",
-              "Review responses",
-              "Negative-review escalation",
-              "Post-catering review requests",
-            ].map((c) => (
-              <Chip key={c} tone="gold">
-                {c}
-              </Chip>
-            ))}
-            <p className="sm:col-span-2 mt-2 text-sm leading-relaxed text-muted-foreground">
-              Reputation becomes a repeatable routine rather than something that happens on its own.
-            </p>
+        <div className="relative">
+          {/* organic connecting strokes */}
+          <svg
+            className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
+            viewBox="0 0 1200 420"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <path
+              d="M330 150 C 400 60, 470 60, 545 140"
+              fill="none"
+              stroke="currentColor"
+              className="text-gold"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeDasharray="1 0"
+            />
+            <path d="M534 128 L547 143 L529 148" fill="none" stroke="currentColor" className="text-gold" strokeWidth="3" strokeLinecap="round" />
+            <path
+              d="M700 240 C 780 330, 850 330, 915 250"
+              fill="none"
+              stroke="currentColor"
+              className="text-primary/70"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path d="M902 268 L917 252 L921 271" fill="none" stroke="currentColor" className="text-primary/70" strokeWidth="3" strokeLinecap="round" />
+          </svg>
+
+          <div className="relative grid items-center gap-10 lg:grid-cols-3 lg:gap-6">
+            {/* 1 — happy customer */}
+            <figure className="relative lg:mt-6">
+              <div className="overflow-hidden rounded-[1.75rem] border border-sand bg-card shadow-lift">
+                <img
+                  src={zakiAssets.takeAwayOrder}
+                  alt="A guest enjoying a Zaki meal"
+                  className="aspect-[4/5] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                className="mt-4 text-center text-xl text-espresso"
+                style={{ fontFamily: '"Segoe Script", "Bradley Hand", "Snell Roundhand", cursive' }}
+              >
+                Great experience
+              </figcaption>
+            </figure>
+
+            {/* 2 — quick follow-up phone */}
+            <div className="relative flex justify-center lg:-mt-4">
+              <div className="w-[16rem] rounded-[2.25rem] border-[6px] border-espresso bg-espresso p-2 shadow-lift">
+                <div className="rounded-[1.75rem] bg-background px-5 pb-7 pt-5">
+                  <div className="mx-auto mb-5 h-1.5 w-14 rounded-full bg-border-strong" />
+                  <div className="rounded-2xl rounded-bl-md bg-sage-soft/80 px-4 py-4 text-left">
+                    <p className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary">
+                      Zaki Grill
+                    </p>
+                    <p className="mt-2 text-[0.95rem] leading-snug text-espresso">
+                      Loved your Zaki experience?
+                      <br />
+                      Leave us a quick Google review ★
+                    </p>
+                  </div>
+                  <div className="mt-4 rounded-full bg-primary px-4 py-2 text-center text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-primary-foreground">
+                    Leave a review
+                  </div>
+                </div>
+              </div>
+              <span
+                className="absolute -bottom-9 text-xl text-espresso"
+                style={{ fontFamily: '"Segoe Script", "Bradley Hand", "Snell Roundhand", cursive' }}
+              >
+                Quick follow-up
+              </span>
+            </div>
+
+            {/* 3 — google review */}
+            <div className="relative lg:mt-10">
+              <div className="rotate-[-1.5deg] rounded-2xl border border-border bg-card p-6 shadow-lift">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary font-display text-lg font-bold text-espresso">
+                    G
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Zaki Grill</p>
+                    <p className="text-[0.6875rem] uppercase tracking-[0.14em] text-muted-foreground">
+                      Google review
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 text-2xl tracking-[0.15em] text-gold">★★★★★</p>
+                <p className="mt-3 font-display text-xl font-bold leading-snug text-espresso">
+                  “Great food. Great experience.”
+                </p>
+              </div>
+              <div className="absolute -bottom-4 -right-3 hidden rotate-[3deg] rounded-xl border border-border bg-secondary/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground shadow-card sm:block">
+                ★★★★★
+              </div>
+              <p
+                className="mt-8 text-center text-xl text-espresso"
+                style={{ fontFamily: '"Segoe Script", "Bradley Hand", "Snell Roundhand", cursive' }}
+              >
+                5 stars
+              </p>
+            </div>
           </div>
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <DocSlot label="GOOGLE REVIEWS" kind="screen" ratio="4/3" />
-          <DocSlot label="YELP REVIEWS" kind="screen" ratio="4/3" />
-          <DocSlot label="DELIVERY MARKETPLACE RATINGS" kind="screen" ratio="4/3" />
+
+        <div className="mt-14">
+          <Statement tone="green">
+            More reviews. Less work for Ahmed.
+          </Statement>
+          <p className="mt-4 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Automated by JARA
+          </p>
         </div>
       </Scene>
+
 
 
       {/* 13 — CATERING */}
