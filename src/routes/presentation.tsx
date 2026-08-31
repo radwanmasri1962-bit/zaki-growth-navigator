@@ -18,7 +18,9 @@ import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
 import {
+  AlertTriangle,
   CalendarCheck,
+  ChefHat,
   ClipboardList,
   Gauge,
   Globe,
@@ -32,6 +34,7 @@ import {
   TrendingUp,
   Truck,
   UserCheck,
+  Users,
   UtensilsCrossed,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -2229,7 +2232,7 @@ function AhmedTransformation() {
               Leads the business
             </p>
           </div>
-          <span className="-my-2 font-caveat text-lg text-gold">“Finally — time to lead.”</span>
+          <span className="-my-2 font-display text-sm italic tracking-[0.06em] text-gold">“Finally — time to lead.”</span>
           <svg viewBox="0 0 240 60" className="h-14 w-full text-primary/40" aria-hidden>
             <g fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
               <path d="M120 2 C 120 22, 60 22, 26 56" />
