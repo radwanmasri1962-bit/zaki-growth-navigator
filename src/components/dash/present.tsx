@@ -11,6 +11,7 @@ export function Scene({
   children,
   tone = "cream",
   className,
+  titleClassName,
 }: {
   id: string;
   number: string;
@@ -20,6 +21,7 @@ export function Scene({
   children?: ReactNode;
   tone?: "cream" | "white" | "dark" | "green";
   className?: string;
+  titleClassName?: string;
 }) {
   const tones = {
     cream: "bg-background text-foreground",
@@ -73,6 +75,7 @@ export function Scene({
             className={cn(
               "max-w-4xl font-display text-3xl font-bold leading-[1.08] sm:text-[2.75rem]",
               tone === "dark" || tone === "green" ? "text-background" : "text-foreground",
+              titleClassName,
             )}
           >
             {title}
