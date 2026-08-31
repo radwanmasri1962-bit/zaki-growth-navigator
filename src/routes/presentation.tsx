@@ -460,63 +460,21 @@ function PresentationPage() {
         id="s03"
         number="03"
         kicker="The foundation"
-        title="The foundation is already there"
-        lead="A recognisable Columbus concept with real product, real customers and a real operating footprint."
+        title={
+          <span className="block text-[1.22em] font-extrabold">
+            The foundation is already there.
+          </span>
+        }
+        lead={
+          <span className="text-base font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:text-lg">
+            Real locations. Real food. Real people. Real demand.
+          </span>
+        }
         tone="white"
       >
-        <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {[
-            "4 food trucks",
-            "Budd Dairy Food Hall",
-            "Worthington",
-            "Strong food product",
-            "Local customer following",
-            "Event experience",
-            "Catering potential",
-            "Positive customer sentiment",
-            "Social presence",
-            "Halal / Middle Eastern positioning",
-            "Founder reputation",
-          ].map((c) => (
-            <Chip key={c} tone="green">
-              {c}
-            </Chip>
-          ))}
-        </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <AssetFrame
-            label="Food truck"
-            batch="Batch 3"
-            src={zakiAssets.truckFleet}
-            alt="Zaki Grill food truck"
-            ratio="4/3"
-            type="concept"
-          />
-          <AssetFrame
-            label="Budd Dairy"
-            batch="Batch 1"
-            src={zakiAssets.buddDairy}
-            alt="Budd Dairy Food Hall location"
-            ratio="4/3"
-            type="evidence"
-          />
-          <AssetFrame
-            label="Signature product"
-            batch="Batch 2"
-            src={zakiAssets.chickenBowl}
-            alt="Zaki chicken bowl"
-            ratio="4/3"
-            type="evidence"
-          />
-        </div>
-        <div className="mt-10">
-          <Statement tone="gold">
-            Zaki does not need to be reinvented.
-            <br />
-            It needs to be organized for its next stage.
-          </Statement>
-        </div>
+        <FoundationCollage />
       </Scene>
+
 
       {/* 04 — THE SUCCESS TRAP */}
       <Scene
