@@ -11,7 +11,7 @@ import {
   Statement,
 } from "@/components/dash/present";
 
-import { AssetFrame, Timeline } from "@/components/dash/primitives";
+import { Timeline } from "@/components/dash/primitives";
 import { BottleneckFunnel, PressureMap, RoutingSystem } from "@/components/dash/pressure";
 import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
