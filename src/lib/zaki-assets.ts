@@ -70,6 +70,8 @@ export const zakiAssets = {
   sopFoodSafety: sopFoodSafety.url,
   sopReceivingInventory: sopReceivingInventory.url,
   trainingCertification: trainingCertification.url,
+  stationCheatSheets: stationCheatSheets.url,
+  digitalOperationsMockup: digitalOperationsMockup.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */
