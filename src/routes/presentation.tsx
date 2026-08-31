@@ -75,14 +75,11 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s15", label: "Digital menu", chapter: 3 },
   { id: "s16", label: "Reputation engine", chapter: 3 },
   { id: "s17", label: "Catering & events", chapter: 3 },
-  { id: "s18", label: "Command center", chapter: 4 },
-  { id: "s19", label: "What JARA builds", chapter: 4 },
-  { id: "s20", label: "90-day roadmap", chapter: 4 },
-  { id: "s21", label: "What changes for Ahmed", chapter: 4 },
-  { id: "s22", label: "Relevant experience", chapter: 5 },
-  { id: "s23", label: "The partnership", chapter: 5 },
-  { id: "s24", label: "Investment", chapter: 5 },
-  { id: "s25", label: "Closing", chapter: 5 },
+  { id: "s18", label: "90-day roadmap", chapter: 4 },
+  { id: "s19", label: "90 days later", chapter: 4 },
+  { id: "s20", label: "The partnership", chapter: 5 },
+  { id: "s21", label: "Investment", chapter: 5 },
+  { id: "s22", label: "Closing", chapter: 5 },
 ];
 
 /** Slide 08 — the three real Location Manager job-description documents. */
@@ -1931,163 +1928,10 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 18 — COMMAND CENTER */}
+
+      {/* 18 — ROADMAP */}
       <Scene id="s18"
         number="18"
-        kicker="Architecture"
-        title={
-          <>
-            One business.
-            <br />
-            One operating view.
-          </>
-        }
-        tone="white"
-      >
-        <div className="rounded-lg border border-border bg-background p-6 shadow-card sm:p-10">
-          <div className="flex justify-center">
-            <div className="rounded-md bg-primary px-8 py-3 font-display text-lg font-bold uppercase tracking-[0.18em] text-primary-foreground">
-              Zaki
-            </div>
-          </div>
-          <div className="mx-auto h-6 w-px bg-border-strong" />
-          <div className="grid gap-5 sm:grid-cols-3">
-            {[
-              { t: "Operations", i: ["Recipes", "SOPs", "Controls", "Trucks"] },
-              { t: "People", i: ["Training", "Staffing", "Standards", "Performance"] },
-              { t: "Customers", i: ["CRM", "Catering", "Reviews", "Communication"] },
-            ].map((b) => (
-              <div key={b.t} className="flex flex-col items-center gap-2">
-                <div className="w-full rounded-md border border-border bg-secondary px-3 py-2 text-center text-xs font-bold uppercase tracking-[0.12em]">
-                  {b.t}
-                </div>
-                <span className="text-xs text-border-strong">↓</span>
-                <div className="flex w-full flex-col gap-1.5">
-                  {b.i.map((x) => (
-                    <div
-                      key={x}
-                      className="rounded border border-border bg-card px-3 py-1.5 text-center text-xs text-muted-foreground"
-                    >
-                      {x}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mx-auto mt-6 h-6 w-px bg-border-strong" />
-          <div className="flex justify-center">
-            <div className="rounded-md border border-border-strong bg-secondary px-8 py-2.5 text-center text-xs font-bold uppercase tracking-[0.16em]">
-              Management
-            </div>
-          </div>
-          <div className="mx-auto mt-2 h-6 w-px bg-border-strong" />
-          <div className="flex justify-center">
-            <div className="rounded-md border border-sand bg-gold-soft px-10 py-3 font-display text-2xl font-bold uppercase tracking-[0.18em] text-espresso">
-              Ahmed
-            </div>
-          </div>
-          <div className="mt-5 flex flex-wrap justify-center gap-2">
-            {["Decisions", "Leadership", "Quality", "Growth", "Relationships", "Expansion"].map(
-              (r) => (
-                <span
-                  key={r}
-                  className="rounded-full border border-primary/25 bg-accent/60 px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-accent-foreground"
-                >
-                  {r}
-                </span>
-              ),
-            )}
-          </div>
-        </div>
-        <p className="mt-8 text-center text-base text-muted-foreground">
-          The goal is not to remove Ahmed from Zaki. The goal is to remove unnecessary operational
-          noise from Ahmed.
-        </p>
-      </Scene>
-
-      {/* 19 — WHAT JARA WILL BUILD */}
-      <Scene id="s19"
-        number="19"
-        kicker="Deliverables"
-        title="What JARA will build with Zaki"
-        tone="cream"
-      >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              n: "01",
-              t: "Operations",
-              s: "Recipes + SOPs + Assembly standards",
-              label: "OPERATIONS DELIVERABLE PREVIEW",
-              kind: "document" as const,
-            },
-            {
-              n: "02",
-              t: "People",
-              s: "Training + Certification",
-              label: "TRAINING DELIVERABLE PREVIEW",
-              kind: "document" as const,
-            },
-            {
-              n: "03",
-              t: "Customer",
-              s: "Communication + Customer journey",
-              label: "CUSTOMER JOURNEY PREVIEW",
-              kind: "screen" as const,
-              src: zakiAssets.takeAwayOrder,
-              note: JARA_CONCEPT_NOTE,
-            },
-            {
-              n: "04",
-              t: "Digital",
-              s: "Website + Digital menu + CRM",
-              label: "DIGITAL DELIVERABLE PREVIEW",
-              kind: "screen" as const,
-            },
-            {
-              n: "05",
-              t: "Growth",
-              s: "Catering + Events + Reputation",
-              label: "GROWTH DELIVERABLE PREVIEW",
-              kind: "photo" as const,
-              src: zakiAssets.cateringSpread,
-              note: JARA_CONCEPT_NOTE,
-            },
-            {
-              n: "06",
-              t: "Management",
-              s: "Controls + Reporting + Accountability",
-              label: "MANAGEMENT REPORTING PREVIEW",
-              kind: "screen" as const,
-            },
-          ].map((d) => (
-            <div
-              key={d.n}
-              className="overflow-hidden rounded-lg border border-border bg-card shadow-card"
-            >
-              <DocSlot
-                label={d.label}
-                kind={d.kind}
-                ratio="16/10"
-                src={d.src}
-                note={d.note}
-                className="rounded-none border-0 border-b shadow-none"
-              />
-              <div className="p-5">
-                <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-gold">{d.n}</p>
-                <p className="mt-1.5 font-display text-xl font-bold">{d.t}</p>
-                <p className="mt-1.5 text-sm text-muted-foreground">{d.s}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Scene>
-
-
-      {/* 20 — ROADMAP */}
-      <Scene id="s20"
-        number="20"
         kicker="90 days"
         title="90-day transformation roadmap"
         lead="Multiple workstreams move together — foundation, build and implementation overlap by design."
@@ -2130,130 +1974,30 @@ function PresentationPage() {
         />
       </Scene>
 
-      {/* 21 — WHAT CHANGES FOR AHMED */}
-      <Scene id="s21" number="21" kicker="Personal" title="90 days later" tone="cream">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-lg border border-warn/30 bg-warn-soft/30 p-6 sm:p-8">
-            <p className="font-display text-2xl font-bold uppercase tracking-[0.1em] text-warn">
-              Less of this
-            </p>
-            <ul className="mt-5 space-y-3">
-              {[
-                "Answering every question",
-                "Repeating instructions",
-                "Chasing staff",
-                "Explaining recipes",
-                "Handling routine calls",
-                "Remembering catering leads",
-                "Checking everything personally",
-                "Putting out preventable fires",
-              ].map((i) => (
-                <li key={i} className="text-base text-foreground/80">
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-lg border border-primary/25 bg-accent/40 p-6 sm:p-8">
-            <p className="font-display text-2xl font-bold uppercase tracking-[0.1em] text-primary">
-              More of this
-            </p>
-            <ul className="mt-5 space-y-3">
-              {[
-                "Leading",
-                "Quality control",
-                "Key relationships",
-                "Growth",
-                "Expansion",
-                "Major decisions",
-                "Business development",
-                "Time to think",
-              ].map((i) => (
-                <li key={i} className="text-base text-foreground/80">
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="mt-10">
-          <Statement tone="gold">
-            The business still has Ahmed. It just doesn't need all of Ahmed, all of the time.
-          </Statement>
-        </div>
-      </Scene>
-
-      {/* 22 — RELEVANT EXPERIENCE */}
+      {/* 19 — 90 DAYS LATER */}
       <Scene
-        id="s22"
-        number="22"
-        kicker="Experience"
-        title="Built in this category."
-        lead="Mediterranean restaurant experience across operations, fast casual, multi-location growth and international markets."
+        id="s19"
+        number="19"
+        kicker="Ahmed's new role"
+        title="90 days later."
+        lead="Same Ahmed. Different role."
         tone="cream"
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              name: "Falafill",
-              place: "Chicago · Detroit · Panama",
-              role: "Opening · Management · Operations",
-            },
-            {
-              name: "Olive Mediterranean Grill",
-              place: "Chicago",
-              role: "Restaurant Consulting · Operations",
-            },
-            {
-              name: "Ayy Karamba",
-              place: "Dubai",
-              role: "Restaurant Operations · Development",
-            },
-            {
-              name: "Sajj Mediterranean",
-              place: "California",
-              role: "Consulting · Multi-Location Operations",
-            },
-          ].map((x) => (
-            <div
-              key={x.name}
-              className="flex flex-col rounded-lg border border-border bg-card p-6 shadow-card"
-            >
-              <p className="font-display text-xl font-bold uppercase leading-tight tracking-[0.02em]">
-                {x.name}
-              </p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
-                {x.place}
-              </p>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{x.role}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-6">
-          <KeyLine
-            items={[
-              "Recipes",
-              "Production",
-              "Fast casual",
-              "Training",
-              "Multi-location",
-              "Catering",
-              "Food trucks",
-              "Systems",
-            ]}
-          />
-        </div>
-        <div className="mt-10">
-          <Statement tone="dark" align="center">
-            Zaki is not my introduction to Mediterranean restaurant operations.
+        <AhmedTransformation />
+        <div className="mt-14 rounded-lg border border-primary/25 bg-sage-soft/60 px-6 py-14 text-center sm:px-14 sm:py-20">
+          <p className="mx-auto max-w-4xl font-display text-3xl font-bold uppercase leading-[1.12] tracking-[0.02em] text-espresso sm:text-5xl">
+            Minimal involvement.
             <br />
-            It is a category I already understand.
-          </Statement>
+            Maximum efficiency.
+          </p>
+          <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-espresso/70 sm:text-lg">
+            Ahmed stays in control — without having to personally carry the operation.
+          </p>
         </div>
       </Scene>
 
-      {/* 23 — PARTNERSHIP */}
-      <Scene id="s23" number="23" kicker="Working together" title="JARA + Zaki" tone="white">
+      {/* 20 — PARTNERSHIP */}
+      <Scene id="s20" number="20" kicker="Working together" title="JARA + Zaki" tone="white">
 
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-primary/25 bg-sage-soft/35 p-6 shadow-card sm:p-8">
@@ -2311,12 +2055,12 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 24 — INVESTMENT */}
+      {/* 21 — INVESTMENT */}
       <InvestmentScene />
 
-      {/* 25 — CLOSING */}
-      <section id="s25"
-        data-scene="s25"
+      {/* 22 — CLOSING */}
+      <section id="s22"
+        data-scene="s22"
         className="scroll-mt-32 bg-foreground px-5 py-20 sm:px-10 sm:py-28"
       >
         <div className="mx-auto grid max-w-[76rem] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -2394,8 +2138,8 @@ function InvestmentScene() {
 
   return (
     <Scene
-      id="s24"
-      number="24"
+      id="s21"
+      number="21"
       kicker="Investment"
       title="90-day Zaki business transformation"
       lead="One engagement. Defined scope. Defined deliverables. Defined implementation period."
