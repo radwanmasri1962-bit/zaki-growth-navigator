@@ -927,26 +927,26 @@ function PresentationPage() {
         lead="The point is not a prettier website. The point is connecting the customer journey."
         tone="cream"
       >
-        <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:items-start">
+        <div className="grid gap-8 lg:grid-cols-[45fr_55fr] lg:items-center">
           {/* Left column — customer journey */}
           <div className="flex flex-col">
             <div className="flex flex-col gap-1">
               {[
-                { label: "Discover", channels: ["Google Presence", "Social Media", "Food Truck Information"] },
+                { label: "Discover", channels: ["Google", "Social", "Truck Locations"] },
                 { label: "Website" },
                 { label: "Menu" },
-                { label: "Order", channels: ["Online Ordering", "Delivery Marketplaces"] },
-                { label: "Catering", channels: ["Catering"] },
-                { label: "CRM", channels: ["Email / SMS Capture"] },
+                { label: "Order", channels: ["Direct", "Delivery"] },
+                { label: "Catering" },
+                { label: "CRM", channels: ["Email / SMS"] },
                 { label: "Follow-up" },
-                { label: "Reviews", channels: ["Reviews"] },
+                { label: "Reviews" },
                 { label: "Repeat Business", final: true },
               ].map((step, i, arr) => (
-                <div key={step.label} className="flex items-start gap-3">
+                <div key={step.label} className="flex items-center gap-3">
                   <div className="flex flex-col items-center">
                     <div
                       className={cn(
-                        "rounded-md px-4 py-2 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.12em] sm:text-xs",
+                        "min-w-[9.5rem] rounded-md px-5 py-2.5 text-center text-xs font-bold uppercase tracking-[0.12em] sm:text-sm",
                         step.final
                           ? "bg-primary text-primary-foreground"
                           : "border border-border bg-card text-foreground shadow-card",
@@ -955,17 +955,17 @@ function PresentationPage() {
                       {step.label}
                     </div>
                     {i < arr.length - 1 ? (
-                      <span className="py-1 text-sm text-gold" aria-hidden>
+                      <span className="py-1 text-base text-gold sm:text-lg" aria-hidden>
                         ↓
                       </span>
                     ) : null}
                   </div>
                   {step.channels ? (
-                    <div className="flex flex-wrap gap-1.5 pt-0.5">
+                    <div className="flex flex-wrap gap-2">
                       {step.channels.map((c) => (
                         <span
                           key={c}
-                          className="rounded border border-sand bg-gold-soft/50 px-2 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.1em] text-espresso"
+                          className="rounded border border-sand bg-gold-soft/50 px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-espresso"
                         >
                           {c}
                         </span>
