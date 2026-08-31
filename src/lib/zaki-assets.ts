@@ -39,6 +39,10 @@ import trainingCertification from "@/assets/training-certification.png.asset.jso
 import stationCheatSheets from "@/assets/station-cheat-sheets.png.asset.json";
 import digitalOperationsMockup from "@/assets/digital-operations-mockup.png.asset.json";
 import zakiWebsitePrototype from "@/assets/zaki-website-prototype.png.asset.json";
+import menuTvScreen from "@/assets/menu-tv-screen.png.asset.json";
+import productChickenBowl from "@/assets/product-chicken-bowl.png.asset.json";
+import productGyroFries from "@/assets/product-gyro-fries.png.asset.json";
+import productFalafelWrap from "@/assets/product-falafel-wrap.png.asset.json";
 
 export const zakiAssets = {
   buddDairy: buddDairy.url,
@@ -74,6 +78,10 @@ export const zakiAssets = {
   stationCheatSheets: stationCheatSheets.url,
   digitalOperationsMockup: digitalOperationsMockup.url,
   zakiWebsitePrototype: zakiWebsitePrototype.url,
+  menuTvScreen: menuTvScreen.url,
+  productChickenBowl: productChickenBowl.url,
+  productGyroFries: productGyroFries.url,
+  productFalafelWrap: productFalafelWrap.url,
 } as const;
 
 /** Standard disclaimer for JARA-created concept imagery. */
