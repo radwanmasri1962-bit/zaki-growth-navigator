@@ -2142,7 +2142,7 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 18 — INVESTMENT */}
+      {/* 24 — INVESTMENT */}
       <InvestmentScene />
 
       {/* 25 — CLOSING */}
