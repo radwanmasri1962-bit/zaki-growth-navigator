@@ -927,73 +927,86 @@ function PresentationPage() {
         lead="The point is not a prettier website. The point is connecting the customer journey."
         tone="cream"
       >
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <div>
-            <Chain
-              tone="neutral"
-              steps={[
-                "Google",
-                "Website",
-                "Menu",
-                "Locations",
-                "Ordering",
-                "Catering",
-                "CRM",
-                "Follow-up",
-                "Reviews",
-                "Repeat business",
-              ]}
-              highlightLast
-            />
-          </div>
-          <div>
-            <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:items-start">
+          {/* Left column — customer journey */}
+          <div className="flex flex-col">
+            <div className="flex flex-col gap-1">
               {[
-                "Website",
-                "Google presence",
-                "Social media",
-                "Online ordering",
-                "Delivery marketplaces",
-                "Reviews",
-                "CRM",
-                "Email / SMS capture",
-                "Food truck information",
-                "Catering",
-              ].map((c) => (
-                <Chip key={c} tone="green">
-                  {c}
-                </Chip>
+                { label: "Discover", channels: ["Google Presence", "Social Media", "Food Truck Information"] },
+                { label: "Website" },
+                { label: "Menu" },
+                { label: "Order", channels: ["Online Ordering", "Delivery Marketplaces"] },
+                { label: "Catering", channels: ["Catering"] },
+                { label: "CRM", channels: ["Email / SMS Capture"] },
+                { label: "Follow-up" },
+                { label: "Reviews", channels: ["Reviews"] },
+                { label: "Repeat Business", final: true },
+              ].map((step, i, arr) => (
+                <div key={step.label} className="flex items-start gap-3">
+                  <div className="flex flex-col items-center">
+                    <div
+                      className={cn(
+                        "rounded-md px-4 py-2 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.12em] sm:text-xs",
+                        step.final
+                          ? "bg-primary text-primary-foreground"
+                          : "border border-border bg-card text-foreground shadow-card",
+                      )}
+                    >
+                      {step.label}
+                    </div>
+                    {i < arr.length - 1 ? (
+                      <span className="py-1 text-sm text-gold" aria-hidden>
+                        ↓
+                      </span>
+                    ) : null}
+                  </div>
+                  {step.channels ? (
+                    <div className="flex flex-wrap gap-1.5 pt-0.5">
+                      {step.channels.map((c) => (
+                        <span
+                          key={c}
+                          className="rounded border border-sand bg-gold-soft/50 px-2 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.1em] text-espresso"
+                        >
+                          {c}
+                        </span>
+                      ))}
+                    </div>
+                  ) : (
+                    <span className="sr-only">No secondary channels</span>
+                  )}
+                </div>
               ))}
             </div>
-            <div className="mt-6 rounded-lg border border-sand bg-gold-soft/40 p-5">
-              <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-espresso">
-                JARA concept prototype — not the current live Zaki website
-              </p>
-              <a
-                href="https://zaki-hub-fresh-fast.lovable.app"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-2 inline-block font-mono text-sm text-foreground underline underline-offset-4"
-              >
-                zaki-hub-fresh-fast.lovable.app
-              </a>
-            </div>
           </div>
-        </div>
-        <div className="mt-8 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
-          <DocSlot
-            label="JARA ZAKI WEBSITE PROTOTYPE"
-            kind="screen"
-            ratio="16/10"
-            dominant
-            note="JARA concept prototype — not Zaki's current live website."
-          />
-          <DocSlot
-            label="WEBSITE / CUSTOMER EXPERIENCE SCREEN"
-            kind="screen"
-            ratio="16/10"
-            note="JARA concept prototype — not Zaki's current live website."
-          />
+
+          {/* Right column — unified digital experience visual */}
+          <div className="flex flex-col">
+            <figure className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
+              <div
+                style={{ aspectRatio: "16/9" }}
+                className="relative flex w-full flex-col items-center justify-center gap-3 border-b border-border bg-secondary/70 px-5 text-center"
+              >
+                <span
+                  className="pointer-events-none absolute inset-3 rounded-md border border-dashed border-border-strong/70"
+                  aria-hidden
+                />
+                <span className="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-gold">
+                  JARA Website Prototype
+                </span>
+                <span className="max-w-md font-display text-xl font-bold uppercase leading-tight tracking-[0.04em] text-espresso sm:text-2xl">
+                  Zaki Digital Customer Experience
+                </span>
+              </div>
+              <figcaption className="px-4 py-3">
+                <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-foreground">
+                  Zaki Digital Customer Experience
+                </p>
+                <p className="mt-1 text-[0.6875rem] leading-relaxed text-muted-foreground">
+                  JARA concept prototype — proposed connected Zaki customer experience.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </Scene>
 
