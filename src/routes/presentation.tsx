@@ -819,12 +819,22 @@ function PresentationPage() {
         <div className="grid items-start gap-6 lg:grid-cols-[1fr_auto_1fr]">
           <div>
             <p className="eyebrow mb-3">On the line</p>
-            <DocSlot
-              label="PHYSICAL RECIPE / SOP / CHEAT SHEET"
-              kind="document"
-              ratio="4/3"
-              dominant
-            />
+            <figure className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
+              <img
+                src={zakiAssets.stationCheatSheets}
+                alt="Physical Zaki station with six laminated assembly cheat sheets installed above a prep station"
+                className="w-full object-contain"
+                loading="lazy"
+              />
+              <figcaption className="px-4 py-3">
+                <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-foreground">
+                  Physical station standards
+                </p>
+                <p className="mt-1 text-[0.6875rem] leading-relaxed text-muted-foreground">
+                  Visual guidance available directly where the team works.
+                </p>
+              </figcaption>
+            </figure>
           </div>
           <div className="flex h-full flex-col items-center justify-center gap-3 lg:px-4">
             <span className="rounded-md border border-primary/30 bg-sage-soft/65 px-5 py-3 text-center font-display text-sm font-bold uppercase leading-tight tracking-[0.1em] text-espresso">
@@ -835,13 +845,25 @@ function PresentationPage() {
           </div>
           <div>
             <p className="eyebrow mb-3">On phone &amp; tablet</p>
-            <DocSlot
-              label="ZAKI DIGITAL OPERATIONS TABLET / MOBILE MOCKUP"
-              kind="screen"
-              ratio="4/3"
-              dominant
-              note="JARA concept / proposed Zaki operations system — not a live software product."
-            />
+            <figure className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
+              <img
+                src={zakiAssets.digitalOperationsMockup}
+                alt="Zaki Digital Operations mockup showing the operating system on a tablet and mobile phone"
+                className="w-full object-contain"
+                loading="lazy"
+              />
+              <figcaption className="px-4 py-3">
+                <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-foreground">
+                  Digital operations system
+                </p>
+                <p className="mt-1 text-[0.6875rem] leading-relaxed text-muted-foreground">
+                  Training and operating knowledge available anywhere.
+                </p>
+                <p className="mt-1 text-[0.625rem] leading-relaxed text-muted-foreground/70">
+                  JARA concept / proposed Zaki operations system.
+                </p>
+              </figcaption>
+            </figure>
           </div>
         </div>
         <div className="mt-8 grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
