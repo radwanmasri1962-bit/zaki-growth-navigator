@@ -42,7 +42,7 @@ function Wires({
   arrowColor,
   id,
 }: {
-  paths: { d: string; width?: number; opacity?: number; dash?: string }[];
+  paths: { d: string; width?: number; opacity?: number; dash?: string | undefined }[];
   stroke: string;
   arrowColor?: string;
   className?: string;
@@ -260,7 +260,7 @@ export function BottleneckFunnel() {
   const paths = inbound.map((n, i) => {
     const ex = n.x + (NX - n.x) * 0.8;
     const ey = n.y + (NY - n.y) * 0.74;
-    const bend = [96, -80, 58, -110, 74, -52][i % 6];
+    const bend = ([96, -80, 58, -110, 74, -52][i % 6] ?? 70) as number;
     const mx = (n.x + ex) / 2 + bend;
     const my = (n.y + ey) / 2 - bend * 0.55;
     return {
