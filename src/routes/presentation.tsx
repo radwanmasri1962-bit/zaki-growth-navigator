@@ -16,6 +16,7 @@ import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
+import { MapPin, Store, Truck, UtensilsCrossed } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/presentation")({
@@ -77,6 +78,200 @@ const CHAPTERS = [
   "05 90 Days",
   "06 Partnership",
 ];
+
+/* ---------- 02 · Founder journey (illustrated) ---------- */
+
+function FlagPS({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 60 40" className={className} aria-hidden>
+      <rect width="60" height="13.34" fill="#1b1b18" />
+      <rect y="13.34" width="60" height="13.33" fill="#f7f4ec" />
+      <rect y="26.67" width="60" height="13.33" fill="#177e66" />
+      <path d="M0 0 L26 20 L0 40 Z" fill="#9c2b2b" />
+    </svg>
+  );
+}
+
+function FlagUS({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 60 40" className={className} aria-hidden>
+      <rect width="60" height="40" fill="#f7f4ec" />
+      {[0, 2, 4, 6, 8, 10, 12].map((i) => (
+        <rect key={i} y={(i * 40) / 13} width="60" height={40 / 13} fill="#9c2b2b" />
+      ))}
+      <rect width="26" height={(40 / 13) * 7} fill="#2c3e57" />
+    </svg>
+  );
+}
+
+const journeySteps = [
+  {
+    key: "palestine",
+    title: "Palestine",
+    caption: "The beginning",
+    size: 78,
+    x: 5,
+    y: 60,
+  },
+  {
+    key: "usa",
+    title: "United States · Columbus",
+    caption: "Starts again",
+    size: 86,
+    x: 23,
+    y: 34,
+  },
+  {
+    key: "food",
+    title: "Food",
+    caption: "Learns · works · builds",
+    size: 94,
+    x: 41,
+    y: 64,
+  },
+  {
+    key: "trucks",
+    title: "Food trucks",
+    caption: "Customers follow",
+    size: 104,
+    x: 59,
+    y: 30,
+  },
+  {
+    key: "locations",
+    title: "Permanent locations",
+    caption: "The business grows",
+    size: 114,
+    x: 76.5,
+    y: 58,
+  },
+  {
+    key: "today",
+    title: "Zaki today",
+    caption: "",
+    size: 150,
+    x: 90,
+    y: 22,
+  },
+] as const;
+
+function MilestoneMark({ step }: { step: (typeof journeySteps)[number] }) {
+  const last = step.key === "today";
+  return (
+    <div className="flex flex-col items-center text-center">
+      <div
+        style={{ width: step.size, height: step.size }}
+        className={cn(
+          "flex items-center justify-center rounded-full",
+          last
+            ? "border-2 border-primary/40 bg-primary/10 shadow-lift"
+            : "border border-sand/80 bg-card/80 shadow-card",
+        )}
+      >
+        {step.key === "palestine" ? (
+          <FlagPS className="w-1/2 rounded-[2px] shadow-sm" />
+        ) : step.key === "usa" ? (
+          <div className="flex flex-col items-center gap-1">
+            <FlagUS className="w-10 rounded-[2px] shadow-sm" />
+            <MapPin className="h-4 w-4 text-primary" strokeWidth={1.8} />
+          </div>
+        ) : step.key === "food" ? (
+          <UtensilsCrossed className="h-9 w-9 text-espresso" strokeWidth={1.4} />
+        ) : step.key === "trucks" ? (
+          <Truck className="h-11 w-11 text-espresso" strokeWidth={1.4} />
+        ) : step.key === "locations" ? (
+          <Store className="h-12 w-12 text-espresso" strokeWidth={1.4} />
+        ) : (
+          <img src={zakiWordmark.url} alt="Zaki Grill" className="w-[68%]" />
+        )}
+      </div>
+      <p
+        className={cn(
+          "mt-3 font-display font-bold uppercase leading-tight tracking-[0.04em] text-espresso",
+          last ? "whitespace-nowrap text-lg sm:text-2xl" : "text-[0.8125rem] sm:text-sm",
+        )}
+      >
+        {step.title}
+      </p>
+      {step.caption ? (
+        <p className="mt-1 text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+          {step.caption}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+function FounderJourney() {
+  return (
+    <div className="-mt-2">
+      {/* Illustrated path — large screens */}
+      <div className="relative hidden h-[30rem] w-full lg:block">
+        <svg
+          viewBox="0 0 1000 400"
+          preserveAspectRatio="none"
+          className="absolute inset-0 h-full w-full"
+          aria-hidden
+        >
+          <path
+            d="M60,248 C130,196 176,146 246,158 C316,170 350,286 416,262 C482,238 520,120 586,138 C652,156 692,244 762,230 C832,216 852,152 900,100"
+            fill="none"
+            stroke="var(--color-primary, #177e66)"
+            strokeOpacity="0.45"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeDasharray="9 9"
+            vectorEffect="non-scaling-stroke"
+          />
+          <path
+            d="M900,100 C956,170 968,300 916,392"
+            fill="none"
+            stroke="#b08a3e"
+            strokeOpacity="0.6"
+            strokeWidth="2"
+            strokeLinecap="round"
+            vectorEffect="non-scaling-stroke"
+          />
+          <path
+            d="M898,352 L916,392 L938,360"
+            fill="none"
+            stroke="#b08a3e"
+            strokeOpacity="0.8"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+        {journeySteps.map((s) => (
+          <div
+            key={s.key}
+            className="absolute -translate-x-1/2 -translate-y-1/2"
+            style={{ left: `${s.x}%`, top: `${s.y}%` }}
+          >
+            <MilestoneMark step={s} />
+          </div>
+        ))}
+      </div>
+
+      {/* Stacked fallback — small screens */}
+      <div className="flex flex-col items-center gap-5 lg:hidden">
+        {journeySteps.map((s, i) => (
+          <div key={s.key} className="flex flex-col items-center">
+            <MilestoneMark step={s} />
+            {i < journeySteps.length - 1 ? (
+              <span className="mt-3 text-lg text-gold" aria-hidden>
+                ↓
+              </span>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
 
 function PresentationPage() {
   const [active, setActive] = useState(0);
@@ -197,9 +392,12 @@ function PresentationPage() {
       >
         <div className="mx-auto grid max-w-[76rem] items-center gap-10 px-5 py-20 sm:px-10 sm:py-28 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <div className="inline-flex rounded-lg bg-background px-6 py-4">
-              <img src={zakiWordmark.url} alt="Zaki Grill" className="h-[4.5rem] w-auto sm:h-[5.25rem]" />
-            </div>
+            <img
+              src={zakiWordmark.url}
+              alt="Zaki Grill"
+              className="h-[6rem] w-auto sm:h-[7rem]"
+            />
+
             <h1 className="mt-10 font-display text-4xl font-bold leading-[1.05] text-background sm:text-6xl">
               From founder-led success
               <br />
@@ -235,44 +433,27 @@ function PresentationPage() {
         id="s02"
         number="02"
         kicker="The founder"
-        title="Built from the ground up"
+        title={
+          <span className="block font-display text-4xl font-bold uppercase leading-[1.03] tracking-[0.01em] sm:text-[3.5rem]">
+            Built from the ground up.
+          </span>
+        }
         lead="Ahmed did not inherit a restaurant group. He built one — through food, persistence, customer relationships and entrepreneurship."
         tone="cream"
       >
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="overflow-hidden rounded-lg border border-border shadow-card">
-            <img
-              src={zakiAssets.ahmedPortrait}
-              alt="Portrait of Ahmed, founder of Zaki Grill"
-              className="aspect-[4/5] w-full object-cover"
-            />
-          </div>
-          <div>
-            <Chain
-              steps={[
-                "Palestine",
-                "United States",
-                "Limited resources",
-                "Learns · works · builds",
-                "Food business",
-                "Customer following",
-                "Food trucks",
-                "Permanent locations",
-                "Zaki today",
-              ]}
-              highlightLast
-            />
-          </div>
-        </div>
-        <div className="mt-10">
-          <Statement tone="green">
-            The next chapter
-            <span className="mt-3 block font-display text-lg tracking-[0.16em] sm:text-2xl">
+        <FounderJourney />
+        <div className="relative mt-4">
+          <div className="rounded-lg border border-primary/25 bg-sage-soft/70 px-6 py-12 text-center sm:px-12 sm:py-16">
+            <p className="font-display text-3xl font-bold uppercase leading-[1.05] tracking-[0.02em] text-espresso sm:text-6xl">
+              The next chapter
+            </p>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-espresso/70 sm:text-base">
               Systems + People + Control + Scale
-            </span>
-          </Statement>
+            </p>
+          </div>
         </div>
       </Scene>
+
 
       {/* 03 — WHAT AHMED HAS BUILT */}
       <Scene
