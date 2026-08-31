@@ -982,21 +982,13 @@ function PresentationPage() {
           {/* Right column — unified digital experience visual */}
           <div className="flex flex-col">
             <figure className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
-              <div
+              <img
+                src={zakiAssets.zakiWebsitePrototype}
+                alt="JARA-created Zaki website prototype showing navigation, hero headline, call-to-action buttons and hero food image"
                 style={{ aspectRatio: "16/10" }}
-                className="relative flex w-full flex-col items-center justify-center gap-3 border-b border-border bg-secondary/70 px-5 text-center"
-              >
-                <span
-                  className="pointer-events-none absolute inset-3 rounded-md border border-dashed border-border-strong/70"
-                  aria-hidden
-                />
-                <span className="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-gold">
-                  JARA Website Prototype
-                </span>
-                <span className="max-w-md font-display text-xl font-bold uppercase leading-tight tracking-[0.04em] text-espresso sm:text-2xl">
-                  Zaki Digital Customer Experience
-                </span>
-              </div>
+                className="w-full object-contain"
+                loading="lazy"
+              />
               <figcaption className="px-4 py-3">
                 <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-foreground">
                   Zaki Digital Customer Experience
