@@ -589,7 +589,7 @@ function PresentationPage() {
         lead="Turn kitchen knowledge into documented, repeatable company standards."
         tone="cream"
       >
-        <div className="grid gap-5 lg:grid-cols-[1.5fr_1fr]">
+        <div className="grid items-start gap-5 lg:grid-cols-3">
           <DocSlot
             label="PALESTINIAN HUMMUS MASTER RECIPE"
             kind="document"
@@ -597,25 +597,21 @@ function PresentationPage() {
             src={zakiAssets.recipeHummus}
             alt="Zaki Palestinian hummus master production recipe card"
             note="Presentation example of the proposed Zaki recipe system."
-            dominant
           />
-          <div className="grid gap-5">
-            <DocSlot
-              label="CHICKEN SHAWARMA 10 LB BATCH RECIPE"
-              kind="document"
-              ratio="1149/1369"
-              src={zakiAssets.recipeChickenShawarma}
-              alt="Zaki chicken shawarma 10 lb batch marinade recipe card"
-            />
-            <DocSlot
-              label="MEXICAN RICE BATCH RECIPE"
-              kind="document"
-              ratio="1149/1369"
-              src={zakiAssets.recipeMexicanRice}
-              alt="Zaki Mexican rice 5 lb batch recipe card"
-            />
-          </div>
-
+          <DocSlot
+            label="CHICKEN SHAWARMA 10 LB BATCH RECIPE"
+            kind="document"
+            ratio="1149/1369"
+            src={zakiAssets.recipeChickenShawarma}
+            alt="Zaki chicken shawarma 10 lb batch marinade recipe card"
+          />
+          <DocSlot
+            label="MEXICAN RICE BATCH RECIPE"
+            kind="document"
+            ratio="1149/1369"
+            src={zakiAssets.recipeMexicanRice}
+            alt="Zaki Mexican rice 5 lb batch recipe card"
+          />
         </div>
         <div className="mt-6">
           <KeyLine
@@ -655,15 +651,13 @@ function PresentationPage() {
             ratio="1137/1383"
             src={zakiAssets.assemblyChickenBowl}
             alt="Zaki chicken rice bowl assembly cheat sheet"
-            dominant
           />
           <DocSlot
-            label="CHICKEN SHAWARMA ASSEMBLY GUIDE"
+            label="CHICKEN SHAWARMA ASSEMBLY GUIDE — ARABIC"
             kind="document"
-            ratio="1536/1024"
+            ratio="1149/1369"
             src={zakiAssets.assemblyChickenShawarma}
-            alt="Zaki chicken shawarma on pita assembly cheat sheet"
-            dominant
+            alt="Zaki chicken shawarma assembly cheat sheet (Arabic version)"
           />
           <DocSlot
             label="SUMMER SALATA / PRODUCT ASSEMBLY GUIDE"
@@ -671,7 +665,6 @@ function PresentationPage() {
             ratio="1181/1331"
             src={zakiAssets.assemblySummerSalata}
             alt="Zaki summer salata with lamb assembly cheat sheet"
-            dominant
           />
         </div>
 
