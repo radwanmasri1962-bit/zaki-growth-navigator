@@ -1368,9 +1368,8 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 09 — CUSTOMER COMMUNICATION */}
-      <Scene
-        id="s13"
+      {/* 13 — CUSTOMER COMMUNICATION */}
+      <Scene id="s13"
         number="13"
         kicker="Target operating model"
         title="Not every call needs Ahmed."
@@ -1394,9 +1393,8 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 10 — DIGITAL ZAKI */}
-      <Scene
-        id="s14"
+      {/* 14 — DIGITAL ZAKI */}
+      <Scene id="s14"
         number="14"
         kicker="Digital"
         title={
@@ -1544,9 +1542,8 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 11 — REPUTATION */}
-      <Scene
-        id="s16"
+      {/* 16 — REPUTATION */}
+      <Scene id="s16"
         number="16"
         kicker="Reputation"
         title="Happy customers should become great Google reviews."
@@ -1673,9 +1670,8 @@ function PresentationPage() {
 
 
 
-      {/* 12 — CATERING */}
-      <Scene
-        id="s17"
+      {/* 17 — CATERING */}
+      <Scene id="s17"
         number="17"
         kicker="Growth"
         title={
@@ -1766,9 +1762,8 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 13 — COMMAND CENTER */}
-      <Scene
-        id="s18"
+      {/* 18 — COMMAND CENTER */}
+      <Scene id="s18"
         number="18"
         kicker="Architecture"
         title={
@@ -1842,9 +1837,8 @@ function PresentationPage() {
         </p>
       </Scene>
 
-      {/* 14 — WHAT JARA WILL BUILD */}
-      <Scene
-        id="s19"
+      {/* 19 — WHAT JARA WILL BUILD */}
+      <Scene id="s19"
         number="19"
         kicker="Deliverables"
         title="What JARA will build with Zaki"
@@ -1922,9 +1916,8 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 15 — ROADMAP */}
-      <Scene
-        id="s20"
+      {/* 20 — ROADMAP */}
+      <Scene id="s20"
         number="20"
         kicker="90 days"
         title="90-day transformation roadmap"
@@ -1968,7 +1961,7 @@ function PresentationPage() {
         />
       </Scene>
 
-      {/* 16 — WHAT CHANGES FOR AHMED */}
+      {/* 21 — WHAT CHANGES FOR AHMED */}
       <Scene id="s21" number="21" kicker="Personal" title="90 days later" tone="cream">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-lg border border-warn/30 bg-warn-soft/30 p-6 sm:p-8">
@@ -2152,9 +2145,8 @@ function PresentationPage() {
       {/* 18 — INVESTMENT */}
       <InvestmentScene />
 
-      {/* 19 — CLOSING */}
-      <section
-        id="s25"
+      {/* 25 — CLOSING */}
+      <section id="s25"
         data-scene="s25"
         className="scroll-mt-32 bg-foreground px-5 py-20 sm:px-10 sm:py-28"
       >
