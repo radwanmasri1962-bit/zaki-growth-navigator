@@ -496,7 +496,7 @@ export function RoutingSystem() {
         <p className="text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
           For example — a catering inquiry
         </p>
-        <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-3">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-3 lg:flex-nowrap">
           {[
             "Catering inquiry",
             "Immediate professional response",
@@ -507,7 +507,7 @@ export function RoutingSystem() {
             <span key={s} className="flex items-center gap-3">
               <span
                 className={cn(
-                  "rounded-full border px-4 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em]",
+                  "rounded-full border px-3.5 py-2 text-center text-[0.625rem] font-bold uppercase leading-tight tracking-[0.1em] xl:text-[0.6875rem]",
                   i === arr.length - 1
                     ? "border-gold/50 bg-gold-soft/70 text-espresso"
                     : "border-primary/25 bg-sage-soft/60 text-espresso",
