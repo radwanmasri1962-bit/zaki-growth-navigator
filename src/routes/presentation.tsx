@@ -2335,6 +2335,133 @@ function InvestmentScene() {
           ))}
         </div>
       </div>
+
+      {/* Optional continuing support — after the 90-day transformation */}
+      <div className="mt-20">
+        {/* Build → Protect transition */}
+        <div className="flex flex-col items-center">
+          <div className="text-center">
+            <p className="font-mono text-[0.625rem] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+              90 Days
+            </p>
+            <p className="mt-2 font-display text-xl font-bold uppercase tracking-[0.12em] text-espresso sm:text-2xl">
+              Build the system
+            </p>
+            <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+              $18,000 total
+            </p>
+          </div>
+          <svg viewBox="0 0 80 60" className="my-5 h-14 w-10 text-gold" aria-hidden>
+            <path
+              d="M40 4 C 40 28, 16 32, 16 52"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+            <path
+              d="M40 4 C 40 28, 64 32, 64 52"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+            <path
+              d="M40 4 L 40 52"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+            <path
+              d="M34 44 L40 54 L46 44"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <div className="text-center">
+            <p className="font-mono text-[0.625rem] font-semibold uppercase tracking-[0.24em] text-primary">
+              After implementation
+            </p>
+            <p className="mt-2 font-display text-xl font-bold uppercase tracking-[0.12em] text-espresso sm:text-2xl">
+              Protect the system
+            </p>
+          </div>
+        </div>
+
+        {/* Optional continuing support card */}
+        <div className="mx-auto mt-10 max-w-4xl rounded-lg border border-primary/25 bg-card px-8 py-10 text-center shadow-card sm:px-12 sm:py-12">
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            Optional continuing support
+          </p>
+          <p className="mt-5 font-display text-2xl font-bold uppercase tracking-[0.1em] text-espresso sm:text-3xl">
+            JARA Operations Oversight
+          </p>
+          <p className="mt-6 font-display text-4xl font-bold leading-none text-primary sm:text-5xl">
+            $1,500
+            <span className="ml-2 align-middle font-display text-xl font-bold text-primary/60 sm:text-2xl">
+              / month
+            </span>
+          </p>
+          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-espresso/70">
+            4 operational reviews per month
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Approximately one per week
+          </p>
+        </div>
+
+        {/* Oversight journey */}
+        <div className="mt-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4">
+            {[
+              { icon: Eye, label: "Visit & observe" },
+              { icon: ClipboardCheck, label: "Audit standards" },
+              { icon: Search, label: "Identify gaps" },
+              { icon: MessageSquare, label: "Advise management" },
+              { icon: RefreshCw, label: "Follow up" },
+            ].map((step, i, arr) => (
+              <div key={step.label} className="flex items-center gap-2">
+                <div className="flex flex-col items-center rounded-lg border border-border bg-card px-4 py-3.5 text-center shadow-card sm:px-5">
+                  <step.icon className="h-5 w-5 text-primary" aria-hidden />
+                  <p className="mt-2 max-w-[7.5rem] font-display text-[0.625rem] font-bold uppercase leading-tight tracking-[0.1em] text-foreground sm:text-xs">
+                    {step.label}
+                  </p>
+                </div>
+                {i < arr.length - 1 ? (
+                  <span className="text-gold" aria-hidden>
+                    →
+                  </span>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Supporting statement */}
+        <div className="mt-12 text-center">
+          <p className="font-display text-lg font-bold uppercase leading-snug tracking-[0.04em] text-espresso sm:text-2xl">
+            An independent outside perspective — without adding another full-time management position.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            {["Independent", "Objective", "Already familiar with the Zaki system"].map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-primary/25 bg-sage-soft/60 px-4 py-1.5 text-[0.625rem] font-bold uppercase tracking-[0.14em] text-espresso sm:text-xs"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+          <p className="mx-auto mt-10 max-w-3xl text-[0.6875rem] font-semibold uppercase leading-relaxed tracking-[0.14em] text-muted-foreground sm:text-xs">
+            Optional month-to-month advisory support following completion of the 90-day engagement.
+            Operational execution and employee management remain with Zaki management.
+          </p>
+        </div>
+      </div>
     </Scene>
   );
 }
