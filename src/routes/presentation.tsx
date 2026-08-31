@@ -651,15 +651,13 @@ function PresentationPage() {
             ratio="1137/1383"
             src={zakiAssets.assemblyChickenBowl}
             alt="Zaki chicken rice bowl assembly cheat sheet"
-            dominant
           />
           <DocSlot
-            label="CHICKEN SHAWARMA ASSEMBLY GUIDE"
+            label="CHICKEN SHAWARMA ASSEMBLY GUIDE — ARABIC"
             kind="document"
-            ratio="1536/1024"
+            ratio="1149/1369"
             src={zakiAssets.assemblyChickenShawarma}
-            alt="Zaki chicken shawarma on pita assembly cheat sheet"
-            dominant
+            alt="Zaki chicken shawarma assembly cheat sheet (Arabic version)"
           />
           <DocSlot
             label="SUMMER SALATA / PRODUCT ASSEMBLY GUIDE"
@@ -667,7 +665,6 @@ function PresentationPage() {
             ratio="1181/1331"
             src={zakiAssets.assemblySummerSalata}
             alt="Zaki summer salata with lamb assembly cheat sheet"
-            dominant
           />
         </div>
 
