@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   Chain,
   Chip,
@@ -289,7 +289,7 @@ function Squiggle({
         <path
           d={d}
           fill="none"
-          stroke="hsl(var(--primary))"
+          stroke="var(--primary)"
           strokeOpacity="0.5"
           strokeWidth="2"
           strokeLinecap="round"
@@ -298,7 +298,7 @@ function Squiggle({
         <path
           d="M232 20 L239 26 L231 32"
           fill="none"
-          stroke="hsl(var(--primary))"
+          stroke="var(--primary)"
           strokeOpacity="0.65"
           strokeWidth="2"
           strokeLinecap="round"
@@ -317,19 +317,19 @@ function Squiggle({
 function ColumbusMap() {
   return (
     <svg viewBox="0 0 420 460" className="h-full w-full" role="img" aria-label="Simplified Columbus area map showing Budd Dairy and Worthington locations">
-      <rect width="420" height="460" fill="hsl(var(--secondary))" />
+      <rect width="420" height="460" fill="var(--secondary)" />
       {/* soft abstract land mass */}
       <path
         d="M40 60 C 130 20, 300 30, 380 90 C 400 190, 372 300, 330 400 C 230 440, 120 430, 50 380 C 20 280, 18 150, 40 60 Z"
-        fill="hsl(var(--primary) / 0.08)"
-        stroke="hsl(var(--primary) / 0.25)"
+        fill="color-mix(in oklab, var(--primary) 8%, transparent)"
+        stroke="color-mix(in oklab, var(--primary) 25%, transparent)"
         strokeWidth="1.5"
       />
       {/* abstract river */}
       <path
         d="M150 30 C 175 130, 130 220, 165 320 C 180 390, 160 420, 150 440"
         fill="none"
-        stroke="hsl(var(--primary) / 0.22)"
+        stroke="color-mix(in oklab, var(--primary) 22%, transparent)"
         strokeWidth="7"
         strokeLinecap="round"
       />
@@ -337,40 +337,40 @@ function ColumbusMap() {
       <path
         d="M212 150 C 275 205, 200 250, 232 316"
         fill="none"
-        stroke="hsl(var(--gold, 38 55% 45%))"
-        stroke-opacity="0.9"
+        stroke="var(--gold)"
+        strokeOpacity="0.9"
         strokeWidth="2"
         strokeDasharray="6 8"
         strokeLinecap="round"
       />
       {/* Worthington pin (north) */}
       <g transform="translate(212 150)">
-        <circle r="30" fill="hsl(var(--primary) / 0.12)" />
+        <circle r="30" fill="color-mix(in oklab, var(--primary) 12%, transparent)" />
         <path
           d="M0 8 C -13 -6, -18 -13, -18 -20 A18 18 0 0 1 18 -20 C 18 -13, 13 -6, 0 8 Z"
-          fill="hsl(var(--primary))"
+          fill="var(--primary)"
         />
-        <circle cx="0" cy="-20" r="6" fill="hsl(var(--card))" />
+        <circle cx="0" cy="-20" r="6" fill="var(--card)" />
       </g>
-      <text x="248" y="140" className="font-display" fontSize="21" fontWeight="700" fill="hsl(var(--foreground))" letterSpacing="1">
+      <text x="248" y="140" className="font-display" fontSize="21" fontWeight="700" fill="var(--foreground)" letterSpacing="1">
         WORTHINGTON
       </text>
-      <text x="248" y="162" fontSize="13" fill="hsl(var(--muted-foreground))" letterSpacing="1.5">
+      <text x="248" y="162" fontSize="13" fill="var(--muted-foreground)" letterSpacing="1.5">
         NORTH COLUMBUS
       </text>
       {/* Budd Dairy pin (central) */}
       <g transform="translate(232 316)">
-        <circle r="36" fill="hsl(var(--primary) / 0.12)" />
+        <circle r="36" fill="color-mix(in oklab, var(--primary) 12%, transparent)" />
         <path
           d="M0 10 C -16 -7, -22 -16, -22 -24 A22 22 0 0 1 22 -24 C 22 -16, 16 -7, 0 10 Z"
-          fill="hsl(var(--primary))"
+          fill="var(--primary)"
         />
-        <circle cx="0" cy="-24" r="7.5" fill="hsl(var(--card))" />
+        <circle cx="0" cy="-24" r="7.5" fill="var(--card)" />
       </g>
-      <text x="60" y="380" className="font-display" fontSize="23" fontWeight="700" fill="hsl(var(--foreground))" letterSpacing="1">
+      <text x="60" y="380" className="font-display" fontSize="23" fontWeight="700" fill="var(--foreground)" letterSpacing="1">
         BUDD DAIRY
       </text>
-      <text x="60" y="402" fontSize="13" fill="hsl(var(--muted-foreground))" letterSpacing="1.5">
+      <text x="60" y="402" fontSize="13" fill="var(--muted-foreground)" letterSpacing="1.5">
         1086 N 4TH ST
       </text>
     </svg>
@@ -574,7 +574,7 @@ function FoundationCollage() {
           <path
             d="M4 13 C 70 3, 150 18, 296 7"
             fill="none"
-            stroke="hsl(var(--primary))"
+            stroke="var(--primary)"
             strokeOpacity="0.7"
             strokeWidth="3"
             strokeLinecap="round"
