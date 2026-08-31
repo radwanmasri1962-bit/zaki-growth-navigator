@@ -12,6 +12,7 @@ import {
 } from "@/components/dash/present";
 
 import { AssetFrame, Timeline } from "@/components/dash/primitives";
+import { BottleneckFunnel, PressureMap, RoutingSystem } from "@/components/dash/pressure";
 import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
@@ -44,9 +45,9 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s01", label: "Cover", chapter: 0 },
   { id: "s02", label: "Founder story", chapter: 0 },
   { id: "s03", label: "What Ahmed built", chapter: 0 },
-  { id: "s04", label: "The success trap", chapter: 1 },
-  { id: "s05", label: "One number", chapter: 1 },
-  { id: "s06", label: "What it costs", chapter: 1 },
+  { id: "s04", label: "The pressure", chapter: 1 },
+  { id: "s05", label: "The bottleneck", chapter: 1 },
+  { id: "s06", label: "The system", chapter: 1 },
   { id: "s07", label: "The transformation", chapter: 2 },
   { id: "s08", label: "Operations", chapter: 2 },
   { id: "s09", label: "Recipe system", chapter: 2 },
