@@ -58,6 +58,7 @@ export const zakiAssets = {
   hummusHarissa: hummusHarissa.url,
   summerSalata: summerSalata.url,
   cateringSpread: cateringSpread.url,
+  cateringPackages: cateringPackages.url,
   truckEvent: truckEvent.url,
   takeAwayOrder: takeAwayOrder.url,
   team: team.url,
