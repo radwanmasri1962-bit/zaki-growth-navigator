@@ -2124,7 +2124,142 @@ function PresentationPage() {
   return <div className="-mx-5 -mb-20 -mt-10 sm:-mx-8">{body}</div>;
 }
 
+/** Slide 19 — BEFORE → AFTER: Ahmed's role after the transformation. */
+const NOISE = [
+  { icon: PhoneCall, label: "Calls", pos: "left-0 top-2" },
+  { icon: Users, label: "Staff questions", pos: "right-0 top-0" },
+  { icon: ChefHat, label: "Kitchen issues", pos: "left-1 top-1/3" },
+  { icon: ClipboardList, label: "Instructions", pos: "right-0 top-1/3" },
+  { icon: Truck, label: "Truck questions", pos: "left-0 bottom-8" },
+  { icon: UtensilsCrossed, label: "Catering inquiries", pos: "right-1 bottom-8" },
+  { icon: AlertTriangle, label: "Problems", pos: "left-1/2 -translate-x-1/2 bottom-0" },
+] as const;
+
+function AhmedTransformation() {
+  return (
+    <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr]">
+      {/* TODAY */}
+      <div>
+        <p className="mb-6 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-espresso/55">
+          Today
+        </p>
+        <div className="relative mx-auto h-[24rem] w-full max-w-sm">
+          <svg
+            viewBox="0 0 320 384"
+            className="absolute inset-0 h-full w-full text-espresso/25"
+            aria-hidden
+          >
+            <g fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
+              <path d="M46 44 C 100 80, 120 130, 140 176" />
+              <path d="M274 36 C 230 80, 205 130, 182 172" />
+              <path d="M40 140 C 80 152, 108 172, 132 190" />
+              <path d="M280 140 C 240 152, 212 172, 190 190" />
+              <path d="M46 316 C 92 288, 116 246, 136 212" />
+              <path d="M274 316 C 228 288, 206 246, 186 212" />
+              <path d="M160 356 C 160 310, 160 260, 160 226" />
+            </g>
+          </svg>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-sand bg-gold-soft px-7 py-6 text-center shadow-lift">
+            <p className="font-display text-xl font-bold uppercase tracking-[0.14em] text-espresso">
+              Ahmed
+            </p>
+            <p className="mt-1 max-w-[8.5rem] text-[0.625rem] font-semibold uppercase leading-snug tracking-[0.14em] text-espresso/60">
+              In the middle of everything
+            </p>
+          </div>
+          {NOISE.map((n) => (
+            <div
+              key={n.label}
+              className={cn(
+                "absolute flex items-center gap-1.5 rounded-full border border-border bg-card/95 px-3 py-1.5 shadow-card",
+                n.pos,
+              )}
+            >
+              <n.icon className="h-3.5 w-3.5 shrink-0 text-espresso/70" aria-hidden />
+              <span className="text-[0.625rem] font-semibold uppercase tracking-[0.1em] text-foreground">
+                {n.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* TRANSITION */}
+      <div className="flex flex-col items-center gap-3">
+        <span className="font-display text-sm font-bold uppercase tracking-[0.28em] text-gold">
+          90 days
+        </span>
+        <svg
+          viewBox="0 0 120 40"
+          className="h-10 w-28 text-gold lg:h-24 lg:w-16 lg:rotate-0"
+          aria-hidden
+        >
+          <path
+            d="M4 28 C 40 4, 78 4, 108 20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+          <path d="M108 20 L 99 13 M108 20 L 98 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      </div>
+
+      {/* AFTER */}
+      <div>
+        <p className="mb-6 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-primary">
+          After the transformation
+        </p>
+        <div className="relative mx-auto flex h-[24rem] w-full max-w-sm flex-col items-center justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-2">
+            {["Lead", "Grow", "Decide", "Relationships", "Expand"].map((r) => (
+              <span
+                key={r}
+                className="rounded-full border border-primary/25 bg-sage-soft/70 px-3 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.12em] text-espresso"
+              >
+                {r}
+              </span>
+            ))}
+          </div>
+          <div className="rounded-md border border-sand bg-gold-soft px-9 py-4 text-center shadow-lift">
+            <p className="font-display text-xl font-bold uppercase tracking-[0.16em] text-espresso">
+              Ahmed
+            </p>
+            <p className="mt-1 text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-espresso/60">
+              Leads the business
+            </p>
+          </div>
+          <span className="-my-2 font-caveat text-lg text-gold">“Finally — time to lead.”</span>
+          <svg viewBox="0 0 240 60" className="h-14 w-full text-primary/40" aria-hidden>
+            <g fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
+              <path d="M120 2 C 120 22, 60 22, 26 56" />
+              <path d="M120 2 C 120 24, 90 28, 74 56" />
+              <path d="M120 2 L 120 56" />
+              <path d="M120 2 C 120 24, 150 28, 166 56" />
+              <path d="M120 2 C 120 22, 180 22, 214 56" />
+            </g>
+          </svg>
+          <div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-3">
+            {["Operations", "People", "Customers", "Catering", "Digital"].map((d) => (
+              <div
+                key={d}
+                className="rounded-md border border-primary/25 bg-card px-2 py-2.5 text-center text-[0.625rem] font-bold uppercase tracking-[0.1em] text-espresso shadow-card"
+              >
+                {d}
+              </div>
+            ))}
+            <div className="flex items-center justify-center rounded-md border border-dashed border-primary/30 px-2 text-center text-[0.5625rem] font-semibold uppercase leading-tight tracking-[0.1em] text-muted-foreground">
+              Systems · Standards · People
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function InvestmentScene() {
+
   const [price, setPrice] = useState("");
 
   useEffect(() => {
