@@ -17,7 +17,17 @@ import { JARA_CONCEPT_NOTE, zakiAssets } from "@/lib/zaki-assets";
 import zakiWordmark from "@/assets/zaki-wordmark.png.asset.json";
 import jaraOnDark from "@/assets/jara-logo-on-dark.png.asset.json";
 import jaraOnLight from "@/assets/jara-logo-on-light.png.asset.json";
-import { ClipboardList, Lightbulb, MapPin, Store, Truck, Users, UtensilsCrossed } from "lucide-react";
+import {
+  ClipboardList,
+  Gauge,
+  MapPin,
+  PhoneCall,
+  Store,
+  TrendingUp,
+  Truck,
+  UserCheck,
+  UtensilsCrossed,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/presentation")({
@@ -48,7 +58,7 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s04", label: "The pressure", chapter: 1 },
   { id: "s05", label: "The bottleneck", chapter: 1 },
   { id: "s06", label: "The system", chapter: 1 },
-  { id: "s07", label: "Knowledge into system", chapter: 2 },
+  { id: "s07", label: "What JARA does", chapter: 2 },
   { id: "s08", label: "Recipe system", chapter: 2 },
   { id: "s09", label: "Assembly standards", chapter: 2 },
   { id: "s10", label: "SOP system", chapter: 2 },
@@ -585,183 +595,233 @@ function FoundationCollage() {
   );
 }
 
-/* ---------- 07 · Knowledge into the business ---------- */
+/* ---------- 07 · JARA builds the system around Zaki ---------- */
 
-const knowledgeBranches = [
-  {
-    key: "recipes",
-    title: "Recipes & Food",
-    icon: UtensilsCrossed,
-    items: ["Recipe Cards", "Portion Control", "Recipe Costing", "Prep Standards", "Quality Control"],
-    x: 180,
-    y: 420,
-  },
+const solutionAreas = [
   {
     key: "operations",
+    n: "01",
     title: "Operations",
     icon: ClipboardList,
-    items: ["Opening + Closing", "Food Safety", "Cleaning Standards", "Food Truck SOPs", "Purchasing + Waste"],
-    x: 500,
-    y: 420,
+    items: ["Recipes", "SOPs", "Opening + Closing", "Food Safety", "Quality Standards"],
+    x: 168,
+    y: 140,
+    path: "M 300 190 C 400 230, 460 260, 500 292",
   },
   {
     key: "people",
-    title: "People & Control",
-    icon: Users,
-    items: ["Employee Training", "Chef Accountability", "Management Checklists", "Certification", "Manager Verification"],
-    x: 820,
-    y: 420,
+    n: "02",
+    title: "People",
+    icon: UserCheck,
+    items: ["Training", "Certification", "Chef Accountability", "Role Standards"],
+    x: 550,
+    y: 92,
+    path: "M 550 176 C 550 220, 550 250, 550 268",
+  },
+  {
+    key: "communication",
+    n: "03",
+    title: "Communication",
+    icon: PhoneCall,
+    items: ["Calls", "Customer Questions", "Inquiries", "Automated Routing", "Escalation"],
+    x: 932,
+    y: 140,
+    path: "M 800 190 C 700 230, 640 260, 600 292",
+  },
+  {
+    key: "growth",
+    n: "04",
+    title: "Growth",
+    icon: TrendingUp,
+    items: ["Catering", "CRM", "Digital Presence", "Reviews", "Customer Follow-Up"],
+    x: 168,
+    y: 410,
+    path: "M 300 396 C 390 372, 452 348, 496 330",
+  },
+  {
+    key: "control",
+    n: "05",
+    title: "Control",
+    icon: Gauge,
+    items: ["Reporting", "Management Checks", "Performance Visibility", "Exceptions", "Owner Approvals"],
+    x: 932,
+    y: 410,
+    path: "M 800 396 C 710 372, 648 348, 604 330",
   },
 ] as const;
 
-function KnowledgeToSystem() {
+function AreaCard({
+  area,
+  compact,
+}: {
+  area: (typeof solutionAreas)[number];
+  compact?: boolean;
+}) {
+  const Icon = area.icon;
+  return (
+    <div className={cn("flex flex-col gap-3", compact ? "w-full" : "w-[15.5rem]")}>
+      <div className="flex items-center gap-3">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-card shadow-card">
+          <Icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
+        </span>
+        <div>
+          <p className="font-mono text-[0.625rem] tracking-[0.22em] text-gold">{area.n}</p>
+          <p className="font-display text-lg font-bold uppercase leading-none tracking-[0.08em] text-espresso">
+            {area.title}
+          </p>
+        </div>
+      </div>
+      <div className="ml-[0.6rem] border-l border-border-strong/60 pl-4">
+        <ul className="space-y-1.5">
+          {area.items.map((item) => (
+            <li
+              key={item}
+              className="text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function JaraHub({ small }: { small?: boolean }) {
+  return (
+    <div className="relative inline-block text-center">
+      <span className="absolute -inset-10 rounded-full bg-sage-soft/60 blur-3xl" aria-hidden />
+      <div
+        className={cn(
+          "relative rounded-full border-2 border-primary/40 bg-card shadow-lift",
+          small ? "px-9 py-7" : "px-14 py-11",
+        )}
+      >
+        <p
+          className={cn(
+            "font-display font-bold uppercase leading-none tracking-[0.1em] text-espresso",
+            small ? "text-xl" : "text-3xl",
+          )}
+        >
+          JARA <span className="text-gold">×</span> Zaki
+        </p>
+        <p className="mt-2 text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-primary">
+          Business Operating System
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function AhmedOutput({ small }: { small?: boolean }) {
+  return (
+    <div className="text-center">
+      <p
+        className={cn(
+          "font-display font-bold uppercase leading-none tracking-[0.14em] text-espresso",
+          small ? "text-2xl" : "text-4xl",
+        )}
+      >
+        Ahmed
+      </p>
+      <div className="mt-3 flex items-center justify-center gap-3">
+        {["Leads", "Approves", "Grows"].map((w) => (
+          <span
+            key={w}
+            className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-primary sm:text-xs"
+          >
+            {w}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function JaraEcosystem() {
   return (
     <div className="space-y-10">
       {/* Desktop canvas */}
-      <div className="relative hidden w-full lg:block" style={{ aspectRatio: "1000 / 520" }}>
-        <svg viewBox="0 0 1000 520" className="absolute inset-0 h-full w-full" aria-hidden>
-          {/* Ahmed's knowledge → hub */}
+      <div className="relative hidden w-full lg:block" style={{ aspectRatio: "1100 / 660" }}>
+        <svg viewBox="0 0 1100 660" className="absolute inset-0 h-full w-full" aria-hidden>
+          {solutionAreas.map((a) => (
+            <path
+              key={a.key}
+              d={a.path}
+              fill="none"
+              stroke="var(--color-primary)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              opacity="0.45"
+            />
+          ))}
+          {/* Hub → Ahmed */}
           <path
-            d="M500,120 C500,160 500,180 500,220"
+            d="M 550 392 C 550 460, 550 490, 550 528"
             fill="none"
             stroke="var(--color-gold)"
-            strokeWidth="2.5"
+            strokeWidth="3"
             strokeLinecap="round"
-            strokeDasharray="8 8"
-            opacity="0.7"
-          />
-          {/* Hub → branches */}
-          <path
-            d="M500,260 C420,300 300,340 180,380"
-            fill="none"
-            stroke="var(--color-primary)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            opacity="0.5"
           />
           <path
-            d="M500,260 C500,300 500,340 500,380"
+            d="M 540 514 L 550 536 L 560 514"
             fill="none"
-            stroke="var(--color-primary)"
-            strokeWidth="2"
+            stroke="var(--color-gold)"
+            strokeWidth="3"
             strokeLinecap="round"
-            opacity="0.5"
+            strokeLinejoin="round"
           />
-          <path
-            d="M500,260 C580,300 700,340 820,380"
-            fill="none"
-            stroke="var(--color-primary)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            opacity="0.5"
-          />
-          {/* Arrow heads */}
-          <path d="M495,212 L500,224 L505,212" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
-          <path d="M174,372 L180,384 L186,372" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.65" />
-          <path d="M494,372 L500,384 L506,372" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.65" />
-          <path d="M814,372 L820,384 L826,372" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.65" />
         </svg>
 
-        {/* Top node */}
-        <div className="absolute left-1/2 top-[6%] -translate-x-1/2 text-center">
-          <div className="inline-flex flex-col items-center gap-3 rounded-full border border-gold/40 bg-card px-10 py-5 shadow-card">
-            <Lightbulb className="h-6 w-6 text-gold" strokeWidth={1.6} />
-            <span className="font-display text-sm font-bold uppercase tracking-[0.14em] text-espresso">
-              Ahmed&apos;s Knowledge
-            </span>
-          </div>
-        </div>
-
         {/* Hub */}
-        <div className="absolute left-1/2 top-[44%] -translate-x-1/2 -translate-y-1/2 text-center">
-          <div className="relative inline-block">
-            <span className="absolute -inset-8 rounded-full bg-sage-soft/70 blur-2xl" aria-hidden />
-            <div className="relative rounded-full border-2 border-primary/40 bg-accent/60 px-12 py-8 shadow-lift">
-              <p className="font-display text-2xl font-bold uppercase leading-tight tracking-[0.12em] text-espresso">
-                Zaki
-              </p>
-              <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-primary">
-                Operating System
-              </p>
-            </div>
-          </div>
+        <div className="absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2">
+          <JaraHub />
         </div>
 
-        {/* Branches */}
-        {knowledgeBranches.map((b) => (
+        {/* Areas */}
+        {solutionAreas.map((a) => (
           <div
-            key={b.key}
+            key={a.key}
             className="absolute -translate-x-1/2 -translate-y-1/2"
-            style={{ left: `${(b.x / 1000) * 100}%`, top: `${(b.y / 520) * 100}%` }}
+            style={{ left: `${(a.x / 1100) * 100}%`, top: `${(a.y / 660) * 100}%` }}
           >
-            <div className="flex w-[16rem] flex-col items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-sage-soft/70">
-                <b.icon className="h-5 w-5 text-primary" strokeWidth={1.7} />
-              </span>
-              <p className="text-center font-display text-base font-bold uppercase tracking-[0.1em] text-espresso">
-                {b.title}
-              </p>
-              <ul className="space-y-2 text-center">
-                {b.items.map((item) => (
-                  <li key={item} className="text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <AreaCard area={a} />
           </div>
         ))}
+
+        {/* Ahmed */}
+        <div className="absolute left-1/2 top-[91%] -translate-x-1/2 -translate-y-1/2">
+          <AhmedOutput />
+        </div>
       </div>
 
-      {/* Mobile fallback */}
+      {/* Mobile / tablet */}
       <div className="space-y-8 lg:hidden">
-        <div className="flex flex-col items-center gap-3 rounded-full border border-gold/40 bg-card px-8 py-4 shadow-card">
-          <Lightbulb className="h-6 w-6 text-gold" strokeWidth={1.6} />
-          <span className="font-display text-sm font-bold uppercase tracking-[0.14em] text-espresso">
-            Ahmed&apos;s Knowledge
-          </span>
+        <div className="flex justify-center">
+          <JaraHub small />
         </div>
-        <div className="text-center">
-          <div className="relative inline-block">
-            <span className="absolute -inset-6 rounded-full bg-sage-soft/70 blur-2xl" aria-hidden />
-            <div className="relative rounded-full border-2 border-primary/40 bg-accent/60 px-8 py-5 shadow-lift">
-              <p className="font-display text-xl font-bold uppercase leading-tight tracking-[0.12em] text-espresso">
-                Zaki
-              </p>
-              <p className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary">
-                Operating System
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {knowledgeBranches.map((b) => (
-            <div key={b.key} className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-4 shadow-card">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-sage-soft/70">
-                <b.icon className="h-4 w-4 text-primary" strokeWidth={1.7} />
-              </span>
-              <p className="text-center font-display text-sm font-bold uppercase tracking-[0.1em] text-espresso">
-                {b.title}
-              </p>
-              <ul className="space-y-1.5 text-center">
-                {b.items.map((item) => (
-                  <li key={item} className="text-[0.6875rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {solutionAreas.map((a) => (
+            <AreaCard key={a.key} area={a} compact />
           ))}
+        </div>
+        <div className="flex flex-col items-center gap-3">
+          <span className="text-lg text-gold" aria-hidden>
+            ↓
+          </span>
+          <AhmedOutput small />
         </div>
       </div>
 
       {/* Bottom statement */}
       <div className="rounded-lg border border-primary/25 bg-sage-soft/70 px-6 py-10 text-center sm:px-12 sm:py-14">
         <p className="font-display text-2xl font-bold uppercase leading-[1.1] tracking-[0.02em] text-espresso sm:text-4xl">
-          Today: Ahmed is the system.
+          Ahmed leads.
+          <br />
+          The system handles the routine.
         </p>
-        <p className="mt-3 font-display text-2xl font-bold uppercase leading-[1.1] tracking-[0.02em] text-primary sm:text-4xl">
-          Tomorrow: Zaki has the system. Ahmed leads it.
+        <p className="mt-5 font-display text-lg font-bold uppercase leading-[1.2] tracking-[0.04em] text-primary sm:text-2xl">
+          Minimal unnecessary involvement. Maximum operational efficiency.
         </p>
       </div>
     </div>
@@ -1049,17 +1109,17 @@ function PresentationPage() {
       </Scene>
 
 
-      {/* 07 — KNOWLEDGE INTO THE BUSINESS */}
+      {/* 07 — JARA BUILDS THE SYSTEM AROUND ZAKI */}
       <Scene
         id="s07"
         number="07"
-        kicker="Operating system"
-        title="Put the business knowledge into the business."
-        titleClassName="max-w-5xl text-[2.25rem] sm:text-[3.25rem]"
-        lead="So Zaki runs on standards — not on Ahmed repeating the same instructions every day."
+        kicker="The solution"
+        title="JARA builds the system around Zaki."
+        titleClassName="max-w-5xl text-[2.5rem] sm:text-[3.75rem]"
+        lead="Ahmed stays in control — without being required for every task."
         tone="cream"
       >
-        <KnowledgeToSystem />
+        <JaraEcosystem />
       </Scene>
 
       {/* 08 — OPERATIONS A: RECIPE SYSTEM */}
