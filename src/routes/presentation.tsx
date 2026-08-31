@@ -22,6 +22,7 @@ import {
   CalendarCheck,
   ChefHat,
   ClipboardList,
+  Hammer,
   Gauge,
   Globe,
   Instagram,
@@ -80,9 +81,8 @@ const SCENES: { id: string; label: string; chapter: number }[] = [
   { id: "s17", label: "Catering & events", chapter: 3 },
   { id: "s18", label: "90-day roadmap", chapter: 4 },
   { id: "s19", label: "90 days later", chapter: 4 },
-  { id: "s20", label: "The partnership", chapter: 5 },
-  { id: "s21", label: "Investment", chapter: 5 },
-  { id: "s22", label: "Closing", chapter: 5 },
+  { id: "s20", label: "Investment", chapter: 5 },
+  { id: "s21", label: "Closing", chapter: 5 },
 ];
 
 /** Slide 08 — the three real Location Manager job-description documents. */
@@ -1999,117 +1999,60 @@ function PresentationPage() {
         </div>
       </Scene>
 
-      {/* 20 — PARTNERSHIP */}
-      <Scene id="s20" number="20" kicker="Working together" title="JARA + Zaki" tone="white">
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-lg border border-primary/25 bg-sage-soft/35 p-6 shadow-card sm:p-8">
-            <div className="flex items-center gap-3">
-              <img src={jaraOnLight.url} alt="JARA AI" className="h-6 w-auto" />
-              <span className="eyebrow">provides</span>
-            </div>
-            <div className="mt-5 grid gap-2 sm:grid-cols-2">
-              {[
-                "Transformation leadership",
-                "Restaurant operations expertise",
-                "Documentation",
-                "Systems development",
-                "Training architecture",
-                "Digital strategy",
-                "Automation design",
-                "Implementation support",
-                "Management tools",
-                "Defined meetings",
-                "Defined deliverables",
-              ].map((c) => (
-                <Chip key={c} tone="green">
-                  {c}
-                </Chip>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-lg border border-sand bg-gold-soft/40 p-6 shadow-card sm:p-8">
-            <div className="flex items-center gap-3">
-              <img src={zakiWordmark.url} alt="Zaki Grill" className="h-6 w-auto" />
-              <span className="eyebrow">provides</span>
-            </div>
-            <div className="mt-5 grid gap-2 sm:grid-cols-2">
-              {[
-                "Operational access",
-                "Current information",
-                "Staff participation",
-                "Management cooperation",
-                "Required approvals",
-                "Implementation support",
-              ].map((c) => (
-                <Chip key={c} tone="gold">
-                  {c}
-                </Chip>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 rounded-lg border border-border bg-background p-6 text-center sm:p-8">
-          <p className="text-base leading-relaxed text-muted-foreground">
-            This is a professional consulting and transformation engagement — not full-time
-            employment and not unlimited availability. Work is tied to agreed deliverables,
-            implementation and a defined meeting cadence.
-          </p>
-        </div>
-      </Scene>
-
-      {/* 21 — INVESTMENT */}
+      {/* 20 — INVESTMENT */}
       <InvestmentScene />
 
-      {/* 22 — CLOSING */}
-      <section id="s22"
-        data-scene="s22"
-        className="scroll-mt-32 bg-foreground px-5 py-20 sm:px-10 sm:py-28"
+      {/* 21 — CLOSING */}
+      <section
+        id="s21"
+        data-scene="s21"
+        className="scroll-mt-32 bg-foreground px-5 py-28 sm:px-10 sm:py-40"
       >
-        <div className="mx-auto grid max-w-[76rem] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="overflow-hidden rounded-lg border border-background/15">
-            <img
-              src={zakiAssets.ahmedTruckHero}
-              alt="Ahmed, founder of Zaki Grill"
-              className="h-full w-full object-cover"
-            />
+        <div className="mx-auto max-w-[64rem] text-center">
+          <div className="flex items-center justify-center gap-5">
+            <span className="inline-flex rounded-md bg-background px-4 py-2.5">
+              <img src={zakiWordmark.url} alt="Zaki Grill" className="h-8 w-auto" />
+            </span>
+            <span className="text-background/35">×</span>
+            <img src={jaraOnDark.url} alt="JARA AI" className="h-6 w-auto" />
           </div>
-          <div>
-            <h2 className="font-display text-3xl font-bold leading-[1.1] text-background sm:text-5xl">
-              You built Zaki.
-              <br />
-              Now let's build the system that protects what you built.
-            </h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/70">
-              The food is there. The customers are there. The reputation is there. The opportunity
-              is there. The next step is the infrastructure that lets Zaki grow without every part
-              of the business depending on one person.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <span className="inline-flex rounded-md bg-background px-4 py-2.5">
-                <img src={zakiWordmark.url} alt="Zaki Grill" className="h-8 w-auto" />
-              </span>
-              <span className="text-background/40">×</span>
-              <img src={jaraOnDark.url} alt="JARA AI" className="h-6 w-auto" />
-            </div>
-            <p className="mt-3 text-xs font-medium uppercase tracking-[0.22em] text-sage">
-              90-Day Business Transformation
-            </p>
-            <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              {["Approve scope", "Finalize agreement", "Kickoff"].map((s, i) => (
-                <div
-                  key={s}
-                  className="rounded-md border border-background/28 bg-background/12 px-4 py-4 text-center"
-                >
-                  <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-sage">
+
+          <h2 className="mt-16 font-display text-3xl font-bold uppercase leading-[1.14] tracking-[0.01em] text-background sm:text-[3.25rem]">
+            You built Zaki.
+            <br />
+            Now let&rsquo;s build the system
+            <br />
+            that lets you lead it.
+          </h2>
+
+          <p className="mt-12 font-display text-xl font-bold uppercase leading-[1.2] tracking-[0.06em] text-background/80 sm:text-2xl">
+            Minimal involvement.
+            <br />
+            <span className="text-sage">Maximum efficiency.</span>
+          </p>
+
+          <p className="mt-16 text-xs font-medium uppercase tracking-[0.28em] text-background/45">
+            Zaki × JARA AI · 90-Day Business Transformation
+          </p>
+
+          <div className="mt-14 flex flex-wrap items-center justify-center gap-5 sm:gap-8">
+            {["Agree", "Sign", "Kickoff"].map((s, i) => (
+              <div key={s} className="flex items-center gap-5 sm:gap-8">
+                <div className="text-center">
+                  <p className="font-mono text-[0.6875rem] tracking-[0.24em] text-sage">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <p className="mt-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-background">
+                  <p className="mt-2 font-display text-base font-bold uppercase tracking-[0.18em] text-background sm:text-lg">
                     {s}
                   </p>
                 </div>
-              ))}
-            </div>
+                {i < 2 ? (
+                  <span className="text-background/30" aria-hidden>
+                    &rarr;
+                  </span>
+                ) : null}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -2262,59 +2205,135 @@ function AhmedTransformation() {
 }
 
 function InvestmentScene() {
+  const includes = [
+    {
+      icon: Hammer,
+      t: "Hands-on implementation",
+      s: "JARA works directly with Zaki to build and implement the agreed systems.",
+    },
+    {
+      icon: CalendarCheck,
+      t: "Regular working sessions",
+      s: "Defined meetings and implementation sessions throughout the 90 days.",
+    },
+    {
+      icon: MessageCircle,
+      t: "Ongoing communication",
+      s: "Continued communication and support around the agreed transformation work.",
+    },
+    {
+      icon: ClipboardList,
+      t: "Defined deliverables",
+      s: "Work remains focused on the agreed 90-day transformation scope.",
+    },
+  ];
 
-  const [price, setPrice] = useState("");
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem("zaki-engagement-price");
-    if (saved) setPrice(saved);
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem("zaki-engagement-price", price);
-  }, [price]);
+  const schedule = [
+    { m: "Month 1", a: "At agreement signing", b: "End of Month 1" },
+    { m: "Month 2", a: "Beginning of Month 2", b: "End of Month 2" },
+    { m: "Month 3", a: "Beginning of Month 3", b: "End of Month 3" },
+  ];
 
   return (
     <Scene
-      id="s21"
-      number="21"
-      kicker="Investment"
-      title="90-day Zaki business transformation"
-      lead="One engagement. Defined scope. Defined deliverables. Defined implementation period."
+      id="s20"
+      number="20"
+      kicker="The engagement"
+      title="90-Day Zaki Business Transformation"
+      lead="Three months to build the systems, standards and infrastructure behind Zaki's next stage."
       tone="cream"
     >
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-lg border border-sand bg-gold-soft/40 p-8">
-          <p className="eyebrow text-espresso">Diagnostic &amp; discovery</p>
-          <p className="mt-3 font-display text-4xl font-bold text-foreground">Complimentary</p>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Included as JARA's initial investment in understanding Zaki.
+      {/* Investment statement */}
+      <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr]">
+        <div className="rounded-lg border border-primary/25 bg-card px-8 py-12 text-center shadow-card">
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            Investment
+          </p>
+          <p className="mt-6 font-display text-5xl font-bold leading-none text-primary sm:text-7xl">
+            $6,000
+            <span className="ml-2 align-middle font-display text-xl font-bold text-primary/60 sm:text-2xl">
+              / month
+            </span>
+          </p>
+          <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-espresso/70">
+            3-month engagement
+          </p>
+          <div className="mx-auto mt-8 h-px w-24 bg-border-strong" />
+          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-foreground">
+            Total 90-day investment: <span className="text-espresso">$18,000</span>
           </p>
         </div>
-        <div className="rounded-lg border border-primary/25 bg-card p-8 shadow-card">
-          <p className="eyebrow">90-day engagement</p>
-          <div className="mt-3 flex items-baseline gap-2">
-            <span className="font-display text-4xl font-bold text-primary">$</span>
-            <input
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              placeholder="—"
-              aria-label="90-day engagement price"
-              className="w-full border-b border-dashed border-input bg-transparent font-display text-4xl font-bold text-primary outline-none placeholder:text-muted-foreground/50 focus:border-primary"
-            />
-          </div>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Covers the full 90-day scope: operations, people, customer communication, digital,
-            growth and management systems.
+        <div className="flex flex-col justify-center rounded-lg border border-sand bg-gold-soft/50 px-8 py-12 text-center">
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-espresso/70">
+            Diagnostic + discovery
+          </p>
+          <p className="mt-5 font-display text-4xl font-bold text-espresso sm:text-5xl">
+            Complimentary
+          </p>
+          <p className="mt-6 text-sm leading-relaxed text-espresso/70">
+            JARA&rsquo;s initial investment in understanding Zaki.
           </p>
         </div>
       </div>
-      <div className="mt-6 grid gap-3 sm:grid-cols-3">
-        {["Optional: extended support", "Optional: catering acceleration", "Optional: additional locations"].map(
-          (c) => (
-            <Chip key={c}>{c}</Chip>
-          ),
-        )}
+
+      {/* Payment schedule */}
+      <div className="mt-14">
+        <p className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+          Payment schedule
+        </p>
+        <div className="mt-8 grid gap-8 sm:grid-cols-3">
+          {schedule.map((s) => (
+            <div key={s.m} className="text-center">
+              <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-espresso">
+                {s.m}
+              </p>
+              <div className="mt-5 flex items-center justify-center gap-3">
+                {[s.a, s.b].map((when, i) => (
+                  <div key={when} className="flex items-center gap-3">
+                    <div className="min-w-[6.5rem]">
+                      <div className="mx-auto h-2.5 w-2.5 rounded-full bg-primary" />
+                      <p className="mt-3 font-display text-lg font-bold text-foreground">$3,000</p>
+                      <p className="mt-1 text-[0.625rem] font-semibold uppercase leading-snug tracking-[0.12em] text-muted-foreground">
+                        {when}
+                      </p>
+                    </div>
+                    {i === 0 ? (
+                      <span className="mb-10 text-gold" aria-hidden>
+                        &rarr;
+                      </span>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <span className="rounded-full border border-primary/25 bg-sage-soft/60 px-5 py-2 text-xs font-bold uppercase tracking-[0.16em] text-espresso">
+            $18,000 total
+          </span>
+          <span className="rounded-full border border-border bg-card px-5 py-2 text-xs font-bold uppercase tracking-[0.16em] text-foreground">
+            6 payments × $3,000
+          </span>
+        </div>
+      </div>
+
+      {/* What the engagement includes */}
+      <div className="mt-16">
+        <p className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+          What the engagement includes
+        </p>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {includes.map((c) => (
+            <div key={c.t} className="rounded-lg border border-border bg-card p-6 shadow-card">
+              <c.icon className="h-5 w-5 text-primary" aria-hidden />
+              <p className="mt-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-foreground">
+                {c.t}
+              </p>
+              <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{c.s}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </Scene>
   );
